@@ -1305,7 +1305,7 @@ class CRTags:
 		if 'DYNO_RAM' in os.environ:
 			heroku = True
 		if heroku:
-			await self.bot.send_file(destination=ctx.message.channel, fp=r"app/data/crtags/settings.json", filename="settings.json")
+			await self.bot.send_file(destination=ctx.message.channel, fp=r"/app/data/crtags/settings.json", filename="settings.json")
 		else:
 			await self.bot.send_file(destination=ctx.message.channel, fp=r"data\crtags\settings.json", filename="settings.json")
 			# os.environ['playersettings'] = self.settings
