@@ -447,7 +447,8 @@ def interactive_setup(settings):
                   "\nType yes to confirm or no to change it".format(
                       new_prefix))
             confirmation = get_answer()
-        settings.prefixes = [new_prefix]
+        if not heroku:
+            settings.prefixes = [new_prefix]
         settings.save_settings()
 
     if first_run:
