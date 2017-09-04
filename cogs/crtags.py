@@ -1298,10 +1298,10 @@ class CRTags:
 		self.backsettings[str(tag)] = userid
 		dataIO.save_json(SETTINGS_JSON, self.settings)
 		dataIO.save_json(BACKSETTINGS_JSON, self.backsettings)
-		
+
 	@commands.command(pass_context=True)
 	async def sendjson(self, ctx):
-		await self.bot.send_file(ctx.message.channel, 'data/', filename='settings.json')
+		await self.bot.send_file(ctx.message.channel, '/app/data/', filename='settings.json')
 
 	@clashroyale.command(name='get', pass_context=True)
 	async def gettag(self, ctx, user: discord.Member=None):
