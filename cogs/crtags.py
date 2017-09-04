@@ -558,8 +558,6 @@ class CRTags:
 				return None
 			player = CRPlayer(usertag)			
 			tag = player.clan_url.replace(statsurl,'').replace('/clan/', '')
-		print(userid)
-		print(tag)
 		return tag
 
 
@@ -1017,7 +1015,8 @@ class CRTags:
 		em[0].set_thumbnail(url=clan.clan_badge)
 		em[len(em)-1].set_footer(text='Data provided by {}'.format(crapiurl.replace('api.', '', 1)), icon_url='https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
 
-
+		for e in em:
+			await self.bot.say(embed=e)
 
 
 	def goldcalc(self, cardlvl):
