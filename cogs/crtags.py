@@ -512,7 +512,7 @@ class CRTags:
 			await send_cmd_help(ctx)
 
 	async def keyortag2tag(self, keyortag, ctx):
-		originalkey
+		originalkey = keyortag
 		keyortag = keyortag.upper()
 		members = list(ctx.message.server.members)
 		membernames = []
