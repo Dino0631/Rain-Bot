@@ -1302,6 +1302,8 @@ class CRTags:
 	@clashroyale.command(name='get', pass_context=True)
 	async def gettag(self, ctx, user: discord.Member=None):
 		"""Get user tag. If not given a user, get author's tag"""
+		if user == None:
+			user = ctx.message.author
 		tags = dataIO.load_json(SETTINGS_JSON)
 		try:
 			test = tags[user.id]
