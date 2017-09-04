@@ -2,3 +2,11 @@ pip
 git+git://github.com/Rapptz/discord.py.git#egg=discord.py[voice]
 youtube_dl
 imgurpython
+requests
+PythonGists
+bs4
+lxml
+Pillow
+mtranslate
+pyfiglet
+aiohttp
