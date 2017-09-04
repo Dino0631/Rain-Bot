@@ -1299,15 +1299,16 @@ class CRTags:
 		dataIO.save_json(SETTINGS_JSON, self.settings)
 		dataIO.save_json(BACKSETTINGS_JSON, self.backsettings)
 
-
 	@commands.command(pass_context=True)
 	async def sendjson(self, ctx):
 		heroku = False
 		if 'DYNO_RAM' in os.environ:
 			heroku = True
 		if heroku:
-			await self.bot.say(self.settings)
-			os.environ['playersettings'] = self.settings
+			await self.bot.send_file(destination=ctx.message.channel, fp=r"data\crtags\settings.json", filename="settings.json")
+		else:
+			await self.bot.send_file(destination=ctx.message.channel, fp=r"data\crtags\settings.json", filename="settings.json")
+			# os.environ['playersettings'] = self.settings
 
 			
 	@clashroyale.command(name='get', pass_context=True)
