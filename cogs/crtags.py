@@ -1299,6 +1299,10 @@ class CRTags:
 		dataIO.save_json(SETTINGS_JSON, self.settings)
 		dataIO.save_json(BACKSETTINGS_JSON, self.backsettings)
 		
+	@commands.command(pass_context=True)
+	async def sendjson(self, ctx):
+		await self.bot.send_file(ctx.message.channel, 'data/', filename='settings.json')
+
 	@clashroyale.command(name='get', pass_context=True)
 	async def gettag(self, ctx, user: discord.Member=None):
 		"""Get user tag. If not given a user, get author's tag"""
