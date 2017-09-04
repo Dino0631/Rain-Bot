@@ -253,7 +253,7 @@ class Utility2:
         return
 
 
-    @checks.mod_or_permissions()
+    @checks.is_owner()
     @commands.command(pass_context=True)
     async def copyembed(self, ctx):
         channel = ctx.message.channel
@@ -264,7 +264,7 @@ class Utility2:
         await self.bot.say('```'+str(message.embeds[0])+'```')
 
 
-    @checks.mod_or_permissions()
+    @checks.is_owner()
     @commands.command(pass_context=True)
     async def edit(self, ctx, *msg):
         '''edit your previous message 
@@ -287,7 +287,7 @@ class Utility2:
         await self.bot.delete_message(ctx.message)
         await self.bot.edit_message(message, new_content=msg)
 
-    @checks.mod_or_permissions()
+    @checks.is_owner()
     @commands.command(pass_context=True)
     async def replace(self, ctx, old, *newphrase):
         '''replace one phrase to another in your previous message 
@@ -307,7 +307,7 @@ class Utility2:
         await self.bot.delete_message(ctx.message)
         await self.bot.edit_message(message, new_content=msg)
 
-    @checks.mod_or_permissions()
+    @checks.is_owner()
     @commands.command(pass_context=True)
     async def reverse(self, ctx):
         '''reverse your previous message 
@@ -325,7 +325,7 @@ class Utility2:
         await self.bot.delete_message(ctx.message)
         await self.bot.edit_message(message, new_content=message.content[::-1])
 
-    @checks.mod_or_permissions()
+    @checks.is_owner()
     @commands.command(pass_context=True)
     async def merge(self, ctx, msgs:int, join_with='\n'):
         if msgs>10:
@@ -356,7 +356,7 @@ class Utility2:
             await self.bot.delete_message(m)
         await self.bot.edit_message(messages[0], new_content=newmsg)
 
-    @checks.mod_or_permissions()
+    @checks.is_owner()
     @commands.command(pass_context=True)
     async def findcmd(self, ctx, command):
         cog = ''
@@ -460,7 +460,7 @@ class Utility2:
             await self.bot.say('Unable to change nickname.', delete_after=5)
             
 
-    @checks.mod_or_permissions()
+    @checks.is_owner()
     @commands.command(pass_context=True)
     async def raw(self, ctx, ID, chan : discord.channel=None):
         """Get the raw content of someones message!"""
@@ -514,6 +514,7 @@ class Utility2:
 
         await self.bot.say('\n'.join(map(to_string, characters)))
 
+    @checks.is_owner()
     @commands.command(pass_context=True)
     async def quote(self, ctx, id : str, chan : discord.Channel=None):
         """Quote someone's message by ID"""
@@ -546,7 +547,7 @@ class Utility2:
         url="**Result:**\nhttps://www.youtube.com{}".format(result.find_all(attrs={'class': 'yt-uix-tile-link'})[0].get('href'))
         await self.bot.say(url)
 
-    @checks.mod_or_permissions()
+    @checks.is_owner()
     @commands.command(pass_context=True,description='Do .embed to see how to use it.')
     async def embed(self, ctx, *, msg: str = None):
         '''Embed complex rich embeds as the bot.'''
@@ -681,7 +682,7 @@ class Utility2:
 
             await self.bot.say(msg)
 
-    @checks.mod_or_permissions()
+    @checks.is_owner()
     @commands.command(pass_context=True)
     async def source(self, ctx, *, command):
         '''See the source code for any command.'''
