@@ -438,6 +438,9 @@ def interactive_setup(settings):
               "later and add more of them.\nChoose your prefix:")
         confirmation = False
         while confirmation is False:
+            if heroku == True:
+                settings.prefixes = [os.environ['PREFIX']]
+                break
             new_prefix = ensure_reply("\nPrefix> ").strip()
             print("\nAre you sure you want {0} as your prefix?\nYou "
                   "will be able to issue commands like this: {0}help"
@@ -445,8 +448,6 @@ def interactive_setup(settings):
                       new_prefix))
             confirmation = get_answer()
         settings.prefixes = [new_prefix]
-        if heroku == True:
-            settings.prefixes = [os.environ['PREFIX']]
         settings.save_settings()
 
     if first_run:
