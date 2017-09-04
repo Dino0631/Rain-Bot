@@ -508,23 +508,11 @@ class CRTags:
 		# await self.bot.say(racfserver.get_member('222925389641547776').mention)
 		# await self.bot.say(server.get_member('222925389641547776').mention)
 		# print(dir(CRClan('QUYCYV8')))
-		author = ctx.message.author
-		rolenames = []
-		for role in author.roles:
-			rolenames.append(author.name)
-		isbotcmder=False
-		for role in rolenames:
-			if role in BOTCMDER:
-				isbotcmder = True
-				break
-		if checks.is_owner_check(ctx) or isbotcmder:
-			pass
-		else:
-			return
 		if ctx.invoked_subcommand is None:
 			await send_cmd_help(ctx)
 
 	async def keyortag2tag(self, keyortag, ctx):
+		originalkey
 		keyortag = keyortag.upper()
 		members = list(ctx.message.server.members)
 		membernames = []
@@ -548,7 +536,7 @@ class CRTags:
 			userid = userid.replace('!', '')
 		elif keyortag.isdigit(): #assume userid
 			userid = keyortag
-		elif keyortag in members or keyortag in membernames or keyortag in memberswithdiscrim:	#if user in members
+		elif originalkey in members or originalkey in membernames or originalkey in memberswithdiscrim:	#if user in members
 			for member in members:
 				name = member.name
 				if keyortag == member:
@@ -570,13 +558,28 @@ class CRTags:
 				return None
 			player = CRPlayer(usertag)			
 			tag = player.clan_url.replace(statsurl,'').replace('/clan/', '')
+		print(userid)
+		print(tag)
 		return tag
 
-		for e in em:
-			await self.bot.say(embed=e)
 
 	@clan.command(name='set', pass_context=True)
 	async def clansettag(self, ctx, tag, *, key):
+		author = ctx.message.author
+		server = ctx.message.server
+		author = server.get_member(author.id)
+		rolenames = []
+		for role in author.roles:
+			rolenames.append(author.name)
+		isbotcmder=False
+		for role in rolenames:
+			if role in BOTCMDER:
+				isbotcmder = True
+				break
+		if checks.is_owner_check(ctx) or isbotcmder:
+			pass
+		else:
+			return
 		key = key.upper()
 		tag = tag.upper()
 		tag.replace('O', '0')
