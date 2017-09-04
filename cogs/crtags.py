@@ -560,7 +560,7 @@ class CRTags:
 			tag = player.clan_url.replace(statsurl,'').replace('/clan/', '')
 		return tag
 
-
+	@checks.mod_or_permissions()
 	@clan.command(name='set', pass_context=True)
 	async def clansettag(self, ctx, tag, *, key):
 		author = ctx.message.author
@@ -591,7 +591,7 @@ class CRTags:
 			await self.bot.say("Saved {} for {}".format(tag, key))
 		else:
 			await self.bot.say("Invalid tag {}, it must only have the following characters {}".format(author.mention), validChars)
-
+			
 	@clan.command(name='get',pass_context=True)
 	async def get_clan(self, ctx, keyortag=None):
 		user = ctx.message.author
@@ -1152,7 +1152,8 @@ class CRTags:
 		if user == None:
 			user=ctx.message.author
 		await self.bot.say("ID: {}".format(user.id))
-
+	
+	@checks.is_owner()
 	@commands.command(pass_context=True)
 	async def copysettings2back(self, ctx):
 		for x in self.settings:
@@ -1160,7 +1161,7 @@ class CRTags:
 		print(self.backsettings)
 		dataIO.save_json(BACKSETTINGS_JSON, self.backsettings)
 
-
+	@checks.is_owner()
 	@commands.command(pass_context=True)
 	async def mergejsons(self, ctx):
 		tags1 = dataIO.load_json(SETTINGS_JSON)
@@ -1352,7 +1353,7 @@ class CRTags:
 		else:
 			await self.bot.say("Invalid tag {}, it must only have the following characters {}".format(author.mention), validChars)
 
-
+	@checks.mod_or_permissions()
 	@clashroyale.command(pass_context=True)
 	async def setusertag(self, ctx, user: discord.Member, tag):
 		"""Save user tag. If not given a user, save tag to author"""
