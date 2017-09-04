@@ -1284,7 +1284,6 @@ class CRTags:
 	@commands.group(aliases=["stats"], pass_context=True)
 	async def clashroyale(self, ctx):
 		"""Display CR profiles."""
-		await self.bot.delete_message(ctx.message)
 		if ctx.invoked_subcommand is None:
 			await send_cmd_help(ctx)
 
