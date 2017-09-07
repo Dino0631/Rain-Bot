@@ -298,8 +298,8 @@ class CRClan:
 # 		self.donperweek = trophy[2].find('div', {'class':'ui__headerMedium'}).get_text().strip()
 
 
-
 class CRPlayer:
+
 
 
 	async def async_refresh(self,url):
@@ -307,7 +307,9 @@ class CRPlayer:
 			response = await r.json()
 			return response
 
-	def __init__(self, tag):
+	def __init__():
+		a = 1
+	async def create(self, tag):
 		self.clan_badge = ''                 #done
 
 		self.name = ''                       #done
@@ -329,6 +331,7 @@ class CRPlayer:
 
 		asyncio.sleep(1)
 		user_url = 'http://statsroyale.com/profile/'+tag
+		await self.async_refresh(user_url)
 		r = requests.get(user_url, headers=headers)
 		html_doc = r.content
 		soup = BeautifulSoup(html_doc, "html.parser")
@@ -556,7 +559,7 @@ class CRTags:
 			except KeyError:
 				await self.bot.say("That person is not in the database")
 				return None
-			player = CRPlayer(usertag)			
+			player = await CRPlayer.create(usertag)			
 			tag = player.clan_url.replace(statsurl,'').replace('/clan/', '')
 		return tag
 
@@ -1570,7 +1573,7 @@ class CRTags:
 				return
 		
 		user_url = (statscr_url+ tag)
-		things = CRPlayer(tag)
+		things = await CRPlayer.create(tag)
 		player_data  = []
 		player_data.append('[{}]({})'.format(tag, user_url))
 		# player_data.append(things.pb)
@@ -1634,7 +1637,7 @@ class CRTags:
 				return
 		
 		user_url = (statscr_url+ tag)
-		things = CRPlayer(tag)
+		things = await CRPlayer.create(tag)
 		player_data  = []
 		player_data.append('[{}]({})'.format(tag, user_url))
 		# player_data.append(things.pb)
@@ -1698,7 +1701,7 @@ class CRTags:
 				return
 		
 		user_url = (statscr_url+ tag)
-		things = CRPlayer(tag)
+		things = await CRPlayer.create(tag)
 		player_data  = []
 		player_data.append('[{}]({})'.format(tag, user_url))
 		# player_data.append(things.pb)
@@ -1762,7 +1765,7 @@ class CRTags:
 				return
 		
 		user_url = (statscr_url+ tag)
-		things = CRPlayer(tag)
+		things = await CRPlayer.create(tag)
 		player_data  = []
 		player_data.append('[{}]({})'.format(tag, user_url))
 		player_data.append('[{}]({})'.format(things.clan,things.clan_url))
@@ -1826,7 +1829,7 @@ class CRTags:
 				return
 		
 		user_url = (statscr_url+ tag)
-		things = CRPlayer(tag)
+		things =  await CRPlayer.create(tag)
 		player_data  = []
 		player_data.append('[{}]({})'.format(tag, user_url))
 		player_data.append(things.pb)
