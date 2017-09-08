@@ -63,6 +63,11 @@ headers = {
 	'User-Agent': 'Bot(Rain), (https://github.com/Dino0631/discordbot/tree/master)',
 	'From': 'htmldino@gmail.com'  
 }
+async def async_refresh(url):
+	async with aiohttp.get(url) as r:
+		# response = await r.json()
+		a = 1
+		
 class CRClan:
 
 	def __init__(self):
@@ -221,7 +226,7 @@ class CRClan:
 
 # 	def __init__(self):
 # 		a = 1
-
+#	@classmethod
 # 	async def create(self, tag):
 # 		tag2id = dataIO.load_json(BACKSETTINGS_JSON)
 # 		self.member_count = 0                           #done
@@ -298,17 +303,14 @@ class CRClan:
 # 		self.donperweek = trophy[2].find('div', {'class':'ui__headerMedium'}).get_text().strip()
 
 
+
 class CRPlayer:
 
 
+	def __init__(self):
+		self.a = 4
 
-	async def async_refresh(self,url):
-		async with aiohttp.get(url) as r:
-			response = await r.json()
-			return response
-
-	def __init__():
-		a = 1
+	@classmethod
 	async def create(self, tag):
 		self.clan_badge = ''                 #done
 
@@ -331,11 +333,14 @@ class CRPlayer:
 
 		asyncio.sleep(1)
 		user_url = 'http://statsroyale.com/profile/'+tag
-		await self.async_refresh(user_url)
+		print('here')
+		await async_refresh(user_url+'/refresh')
+		print('herelol')
 		r = requests.get(user_url, headers=headers)
 		html_doc = r.content
+		print('herelol')
 		soup = BeautifulSoup(html_doc, "html.parser")
-		html_doc = r.content
+		print('herelol')
 		chests_queue = soup.find('div', {'class':'chests__queue'})
 		chests = chests_queue.get_text().split()
 		for index, item in enumerate(chests):
@@ -441,6 +446,7 @@ class CRPlayer:
 		self.level = playerLevel
 		self.clan = playerClan
 		self.clan_url = clan_url
+		return self
 
 
 class InvalidRarity(Exception):
@@ -1829,7 +1835,7 @@ class CRTags:
 				return
 		
 		user_url = (statscr_url+ tag)
-		things =  await CRPlayer.create(tag)
+		things = await CRPlayer.create(tag)
 		player_data  = []
 		player_data.append('[{}]({})'.format(tag, user_url))
 		player_data.append(things.pb)
@@ -1855,7 +1861,7 @@ class CRTags:
 		em.set_footer(text='Data provided by StatsRoyale', icon_url='http://i.imgur.com/17R3DVU.png')
 		await self.bot.say(embed=em)
 
-
+	
 
 def check_folder():
 	if not os.path.exists(PATH):
