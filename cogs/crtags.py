@@ -1347,9 +1347,10 @@ class CRTags:
 				await self.bot.say("User {} does not have a tag set.".format(user.display_name))
 
 
-	@clashroyale.command(pass_context=True)
+	@clashroyale.command(aliases=['set'],pass_context=True)
 	async def settag(self, ctx, tag):
 		"""Save user tag. If not given a user, save tag to author"""
+		author = ctx.message.author
 		tag = tag.upper()
 		tag.replace('O', '0')
 		valid = True
@@ -1357,11 +1358,10 @@ class CRTags:
 			if letter not in validChars:
 				valid = False
 		if valid: #self.is_valid(tag):
-			author = ctx.message.author
 			self.savetag(author.id, tag)
 			await self.bot.say("Saved {} for {}".format(tag, author.display_name))
 		else:
-			await self.bot.say("Invalid tag {}, it must only have the following characters {}".format(author.mention), validChars)
+			await self.bot.say("Invalid tag {}, it must only have the following characters {}".format(author.mention, validChars))
 
 	@checks.mod_or_permissions()
 	@clashroyale.command(pass_context=True)
