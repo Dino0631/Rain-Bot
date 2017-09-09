@@ -140,7 +140,7 @@ class CRClan:
 			memberdict['formatted'] = '`'+ memberdict['role']+'` ' + memberdict['name']+' [`#'+memberdict['tag']+'`]('+memberdict['url'].replace('api.', '', 1)+')'
 			if memberdict['userid'] != '':
 				try:
-					memberdict['formatted'] += ' <@!'+memberdict['userid'] + '>'
+					memberdict['formatted'] += ' <@'+memberdict['userid'] + '>'
 				except:
 					pass
 			if memberdict['role'] == 'Co-Leader':
@@ -1309,7 +1309,7 @@ class CRTags:
 		dataIO.save_json(BACKSETTINGS_JSON, self.backsettings)
 
 	@commands.command(pass_context=True)
-	async def sendjson(self, ctx):
+	async def crsendjson(self, ctx):
 		heroku = False
 		if 'DYNO_RAM' in os.environ:
 			heroku = True
@@ -1319,6 +1319,8 @@ class CRTags:
 			await self.bot.send_file(destination=ctx.message.channel, fp=r"/app/data/crtags/clan.json", filename="clan.json")
 		else:
 			await self.bot.send_file(destination=ctx.message.channel, fp=r"data\crtags\settings.json", filename="settings.json")
+			await self.bot.send_file(destination=ctx.message.channel, fp=r"data\crtags\backsettings.json", filename="backsettings.json")
+			await self.bot.send_file(destination=ctx.message.channel, fp=r"data\crtags\clan.json", filename="clan.json")
 			# os.environ['playersettings'] = self.settings
 
 			

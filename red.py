@@ -28,6 +28,63 @@ heroku = False
 if 'DYNO_RAM' in os.environ:
     heroku = True
 
+@asyncio.coroutine
+def myon_member_join(member):
+
+
+    # randomserv = bot.get_server('354544842845716480')
+    # randomserv = bot.get_server('351873361023991821')
+    # testystuff = randomserv.get_channel('355724086149906434')
+    # testystuff = randomserv.get_channel('351873361023991821')
+    
+    # try:
+    #     servinvites = yield from bot.invites_from(member.server)
+    # except:
+    #     servinvites = []
+    # # x = randomserv
+    # # print('***********************')
+    # # print(x)
+    # # print('*********type**********')
+    # # print(type(x))
+    # # print('**********dir**********')
+    # # print(dir(x))
+    # # print('***********************')
+    # x = randomserv.channels
+    # print('***********************')
+    # print(x)
+    # print('*********type**********')
+    # print(type(x))
+    # print('**********dir**********')
+    # print(dir(x))
+    # print('***********************')
+
+    # server = randomserv
+    # # channels = list(server.channels)
+    # # channelsend = channels[0]
+    # channels = list(server.channels)
+    # print(type(channels))
+    # # for chan in channels:
+    # #     print(chan)
+    # channelsend = None
+    # for channel in channels:
+    #     if channelsend == None or (channelsend.created_at > channel.created_at and channel.type == 'text'):
+    #         channelsend = channel
+    server = member.server
+    print(dataIO.load_json(os.path.join('data', 'welcome', 'settings.json')))
+    welcomesettings = dataIO.load_json(os.path.join('data', 'welcome', 'settings.json'))
+    try:    
+        channel = welcomesettings[server.id]['channel']
+    except KeyError:
+        return
+    channel = bot.get_channel(channel)
+    print(welcomesettings[server.id]['message'])
+    welcomemessage = eval(welcomesettings[server.id]['message'])
+    # yield from bot.send_message(channel, 'Welcome to {}, {}!'.format(member.server.name, member.name))
+    yield from bot.send_message(channel, welcomemessage)
+    # print('Welcome to {}, {}!'.format(member.server.name, member.name+'#'+member.discriminator))
+    invite = None
+    # inviter = invite.inviter
+
 #
 # Red, a Discord bot by Twentysix, based on discord.py and its command
 #                             extension.
@@ -288,6 +345,7 @@ def initialize(bot_class=Bot, formatter_class=Formatter):
 
     @bot.event
     async def on_ready():
+        bot.on_member_join = myon_member_join # add welcome message
         if bot._intro_displayed:
             return
         bot._intro_displayed = True
@@ -622,12 +680,14 @@ def main(bot):
     yield from bot.connect()
 
 
+
 if __name__ == '__main__':
     sys.stdout = TextIOWrapper(sys.stdout.detach(),
                                encoding=sys.stdout.encoding,
                                errors="replace",
                                line_buffering=True)
     bot = initialize()
+
     loop = asyncio.get_event_loop()
     try:
         loop.run_until_complete(main(bot))
