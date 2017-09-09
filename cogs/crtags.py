@@ -116,8 +116,8 @@ class CRClan:
 		for i, m in enumerate(datadict['members']):
 			rank = str(m['currenRank'])
 			name = str(m['name'])
-			tag = str(m['tag'])
-			url = crapiurl + tag
+			tag = str(m['tag']).upper()
+			url = crapiurl +'/profile/'+ tag
 			level = str(m['expLevel'])
 			trophy = str(m['score'])
 			donations = str(m['donations'])
