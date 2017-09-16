@@ -114,7 +114,7 @@ class CRClan:
 		# html_doc = r.text
 
 		for i, m in enumerate(datadict['members']):
-			rank = str(m['currenRank'])
+			rank = str(m['currentRank'])
 			name = str(m['name'])
 			tag = str(m['tag']).upper()
 			url = crapiurl +'/profile/'+ tag
