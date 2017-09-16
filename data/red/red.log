@@ -1,0 +1,153 @@
+[08/09/2017 21:02] ERROR owner load 68: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RainBot\\cogs\\welcome.py', 55, 37, '\t\tif ctx.invoked_subcommand is None:\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 55
+    if ctx.invoked_subcommand is None:
+                                     ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\owner.py", line 64, in load
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RainBot\\cogs\\welcome.py', 55, 37, '\t\tif ctx.invoked_subcommand is None:\n'))
+[08/09/2017 21:07] ERROR red on_command_error 426: Exception in command 'welcome delserv'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 70, in delserv
+    if channel == None:
+UnboundLocalError: local variable 'channel' referenced before assignment
+[08/09/2017 21:23] ERROR red on_command_error 426: Exception in command 'welcome sendjson'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 84, in sendjson
+    await self.bot.send_file(destination=ctx.message.channel, fp=r"data\crtags\welcome.json", filename="welcome.json")
+  File "lib\discord\client.py", line 1226, in send_file
+    with open(fp, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'data\\crtags\\welcome.json'
+[08/09/2017 21:28] ERROR red on_command_error 426: Exception in command 'welcome sendjson'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 84, in sendjson
+    await self.bot.send_file(destination=ctx.message.channel, fp=r"data\crtags\welcome.json", filename="welcome.json")
+  File "lib\discord\client.py", line 1226, in send_file
+    with open(fp, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'data\\crtags\\welcome.json'
+[08/09/2017 21:54] ERROR red load_cogs 649: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RainBot\\cogs\\welcome.py', 69, 54, "\t@welcome.command(aliases=['msg'], pass_context=True):\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 69
+    @welcome.command(aliases=['msg'], pass_context=True):
+                                                        ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "red.py", line 646, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RainBot\\cogs\\welcome.py', 69, 54, "\t@welcome.command(aliases=['msg'], pass_context=True):\n"))
+[08/09/2017 22:14] ERROR red on_command_error 430: Exception in command 'welcome setmessage'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 74, in setmessage
+    if channel == None:
+UnboundLocalError: local variable 'channel' referenced before assignment
+[08/09/2017 22:15] ERROR red on_command_error 430: Exception in command 'welcome setmessage'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 75, in setmessage
+    message = message.content
+AttributeError: 'str' object has no attribute 'content'
+[08/09/2017 22:15] ERROR red on_command_error 430: Exception in command 'welcome setmessage'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 76, in setmessage
+    self.settings[server.id]['message'] = message
+KeyError: '264119826069454849'
+[08/09/2017 22:16] ERROR red on_command_error 430: Exception in command 'welcome setmessage'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 77, in setmessage
+    self.settings[server.id]['message'] = message
+KeyError: '264119826069454849'
+[08/09/2017 22:17] ERROR red on_command_error 430: Exception in command 'welcome setchan'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 64, in setchan
+    self.settings[server.id]['channel'] = channel.id
+KeyError: '264119826069454849'
+[08/09/2017 22:30] ERROR red on_command_error 431: Exception in command 'welcome setchan'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 68, in setchan
+    self.settings[server.id]['channel'] = channel.id
+TypeError: 'str' object does not support item assignment
+[08/09/2017 22:30] ERROR red on_command_error 431: Exception in command 'welcome setchan'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\welcome.py", line 68, in setchan
+    self.settings[server.id]['channel'] = channel.id
+TypeError: 'str' object does not support item assignment
+[08/09/2017 22:51] ERROR red on_command_error 431: Exception in command 'clean'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\mod.py", line 124, in clean
+    await self.bot.delete_message(ctx.message)
+  File "lib\discord\client.py", line 1263, in delete_message
+    yield from self.http.delete_message(channel.id, message.id, guild_id)
+  File "lib\discord\http.py", line 196, in request
+    raise Forbidden(r, data)
+discord.errors.Forbidden: FORBIDDEN (status code: 403): Missing Permissions
+[08/09/2017 22:59] ERROR red on_command_error 431: Exception in command 'clashroyale settag'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\crtags.py", line 1364, in settag
+    await self.bot.say("Invalid tag {}, it must only have the following characters {}".format(author.mention), validChars)
+UnboundLocalError: local variable 'author' referenced before assignment
+[08/09/2017 23:01] ERROR red on_command_error 431: Exception in command 'clashroyale settag'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\crtags.py", line 1364, in settag
+    await self.bot.say("Invalid tag {}, it must only have the following characters {}".format(author.mention), validChars)
+IndexError: tuple index out of range
