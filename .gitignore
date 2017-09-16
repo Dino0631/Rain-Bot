@@ -1,6 +1,10 @@
-*.json
+data/red/config.json
+
 *.pyc
+
 __pycache__
 
+
 *.exe
+
 *.dll
