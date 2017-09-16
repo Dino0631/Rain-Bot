@@ -114,7 +114,7 @@ class CRClan:
 		# html_doc = r.text
 
 		for i, m in enumerate(datadict['members']):
-			rank = str(m['currenRank'])
+			rank = str(m['currentRank'])
 			name = str(m['name'])
 			tag = str(m['tag']).upper()
 			url = crapiurl +'/profile/'+ tag
@@ -1133,7 +1133,7 @@ class CRTags:
 			except IndexError:
 				await self.bot.say("Invalid card level")
 			print(allgold)
-			locale.setlocale(locale.LC_ALL, 'US')
+			locale.setlocale(locale.LC_ALL, 'en-US')
 			formattedgold = locale.format("%d", allgold, grouping=True)
 		await self.bot.say("{} {} {}".format(msg, formattedgold, msg2))
 		# for rarity in totalgold:

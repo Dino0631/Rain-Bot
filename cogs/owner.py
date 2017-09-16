@@ -187,7 +187,7 @@ class Owner:
         for page in pagify(msg, [" "], shorten_by=16):
             await self.bot.say(box(page.lstrip(" "), lang="diff"))
 
-    @commands.command(pass_context=True, hidden=True)
+    @commands.command(aliases = ['d'], pass_context=True, hidden=True)
     @checks.is_owner()
     async def debug(self, ctx, *, code):
         """Evaluates code"""

@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+pip
+git+git://github.com/Rapptz/discord.py.git#egg=discord.py[voice]
+youtube_dl
+imgurpython
+=======
+discord.py
+>>>>>>> 6a5e1800a9a418bae375fd9d2f90923b610e1e24
+requests
+PythonGists
+bs4
+lxml
+Pillow
+mtranslate
+<<<<<<< HEAD
+pyfiglet
+aiohttp
+=======
+>>>>>>> 6a5e1800a9a418bae375fd9d2f90923b610e1e24

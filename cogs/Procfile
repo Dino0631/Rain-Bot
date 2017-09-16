@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+worker: python launcher.py --start
+=======
+worker: python bot.py
+>>>>>>> 6a5e1800a9a418bae375fd9d2f90923b610e1e24
