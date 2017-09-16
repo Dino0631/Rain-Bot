@@ -1133,7 +1133,7 @@ class CRTags:
 			except IndexError:
 				await self.bot.say("Invalid card level")
 			print(allgold)
-			locale.setlocale(locale.LC_ALL, 'en-us')
+			locale.setlocale(locale.LC_ALL, 'english')
 			formattedgold = locale.format("%d", allgold, grouping=True)
 		await self.bot.say("{} {} {}".format(msg, formattedgold, msg2))
 		# for rarity in totalgold:
