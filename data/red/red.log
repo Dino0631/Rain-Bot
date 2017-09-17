@@ -1011,3 +1011,10 @@ Traceback (most recent call last):
   File "lib\discord\ext\commands\core.py", line 487, in add_command
     raise discord.ClientException('Command {0.name} is already registered.'.format(command))
 discord.errors.ClientException: Command cremoji is already registered.
+[17/09/2017 13:30] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags2.py", line 331, in trapi
+    trophyreq = self.cremojis['gitgud']
+KeyError: 'gitgud'
