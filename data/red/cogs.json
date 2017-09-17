@@ -2,6 +2,7 @@
     "cogs.alias" : true,
     "cogs.audio" : true,
     "cogs.crtags" : true,
+    "cogs.crtags2" : true,
     "cogs.customcom" : true,
     "cogs.downloader" : true,
     "cogs.economy" : true,

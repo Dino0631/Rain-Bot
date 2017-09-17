@@ -151,3 +151,863 @@ Traceback (most recent call last):
   File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RainBot\cogs\crtags.py", line 1364, in settag
     await self.bot.say("Invalid tag {}, it must only have the following characters {}".format(author.mention), validChars)
 IndexError: tuple index out of range
+[16/09/2017 15:12] ERROR red load_cogs 650: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1195, 54, "\t@commands.command(aliases=['tr'], pass_context=True):\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1195
+    @commands.command(aliases=['tr'], pass_context=True):
+                                                        ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "red.py", line 647, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1195, 54, "\t@commands.command(aliases=['tr'], pass_context=True):\n"))
+[16/09/2017 15:13] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1195, 54, "\t@commands.command(aliases=['tr'], pass_context=True):\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1195
+    @commands.command(aliases=['tr'], pass_context=True):
+                                                        ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1195, 54, "\t@commands.command(aliases=['tr'], pass_context=True):\n"))
+[16/09/2017 15:16] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1205, in trapi
+    await self.bot.say(uclan)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 153, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Cannot send an empty message
+[16/09/2017 15:20] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1208, in trapi
+    tag = await self.keyortag2tag(clan)
+TypeError: keyortag2tag() missing 1 required positional argument: 'ctx'
+[16/09/2017 15:22] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1211, in trapi
+    await self.bot.say(clan_data.description)
+AttributeError: 'coroutine' object has no attribute 'description'
+[16/09/2017 15:22] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1211, in trapi
+    await self.bot.say(clan_data.description)
+AttributeError: type object 'CRClan' has no attribute 'description'
+[16/09/2017 16:23] ERROR red on_command_error 431: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1009, in claninfo
+    tag = await self.keyortag2tag(keyortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 582, in keyortag2tag
+    player = await CRPlayer.create(usertag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 419, in create
+    clan_url = statsurl + str(profilehead.find('a').attrs['href'])
+AttributeError: 'NoneType' object has no attribute 'attrs'
+[16/09/2017 16:26] ERROR red on_command_error 431: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1010, in claninfo
+    tag = await self.keyortag2tag(keyortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 582, in keyortag2tag
+    player = await CRPlayer.create(usertag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 419, in create
+    clan_url = statsurl + str(profilehead.find('a').attrs['href'])
+AttributeError: 'NoneType' object has no attribute 'attrs'
+[16/09/2017 16:28] ERROR red on_command_error 431: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1011, in claninfo
+    tag = await self.keyortag2tag(keyortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 583, in keyortag2tag
+    player = await CRPlayer.create(usertag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 419, in create
+    clan_url = statsurl + str(profilehead.find('a').attrs['href'])
+AttributeError: 'NoneType' object has no attribute 'attrs'
+[16/09/2017 16:28] ERROR red on_command_error 431: Exception in command 'clashroyale profile'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1553, in profile
+    things = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 419, in create
+    clan_url = statsurl + str(profilehead.find('a').attrs['href'])
+AttributeError: 'NoneType' object has no attribute 'attrs'
+[16/09/2017 16:28] ERROR red on_command_error 431: Exception in command 'clashroyale profile'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1553, in profile
+    things = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 419, in create
+    clan_url = statsurl + str(profilehead.find('a').attrs['href'])
+AttributeError: 'NoneType' object has no attribute 'attrs'
+[16/09/2017 16:28] ERROR red on_command_error 431: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1011, in claninfo
+    tag = await self.keyortag2tag(keyortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 583, in keyortag2tag
+    player = await CRPlayer.create(usertag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 419, in create
+    clan_url = statsurl + str(profilehead.find('a').attrs['href'])
+AttributeError: 'NoneType' object has no attribute 'attrs'
+[16/09/2017 16:45] ERROR red on_command_error 431: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1014, in claninfo
+    tag = await self.keyortag2tag(keyortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 586, in keyortag2tag
+    player = await CRPlayer.create(usertag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 427, in create
+    playerClan = profilehead.find('a', 'ui__link ui__mediumText profileHeader__userClan').text.strip()
+AttributeError: 'NoneType' object has no attribute 'text'
+[16/09/2017 16:47] ERROR red on_command_error 431: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1017, in claninfo
+    tag = await self.keyortag2tag(keyortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 589, in keyortag2tag
+    player = await CRPlayer.create(usertag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 467, in create
+    self.clan = playerClan
+UnboundLocalError: local variable 'playerClan' referenced before assignment
+[16/09/2017 16:48] ERROR red on_command_error 431: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1022, in claninfo
+    clan = await CRClan.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 116, in create
+    for i, m in enumerate(datadict['members']):
+KeyError: 'members'
+[16/09/2017 16:50] ERROR red on_command_error 431: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1023, in claninfo
+    clan = await CRClan.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 117, in create
+    for i, m in enumerate(datadict['members']):
+KeyError: 'members'
+[16/09/2017 16:52] ERROR red on_command_error 431: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1024, in claninfo
+    clan = await CRClan.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 117, in create
+    for i, m in enumerate(datadict['members']):
+KeyError: 'members'
+[16/09/2017 16:52] ERROR red on_command_error 431: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1024, in claninfo
+    clan = await CRClan.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 117, in create
+    for i, m in enumerate(datadict['members']):
+KeyError: 'members'
+[16/09/2017 17:28] ERROR owner _reload 155: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1014, 5, '\t\ttag = await self.keyortag2tag(keyortag, ctx)\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1014
+    tag = await self.keyortag2tag(keyortag, ctx)
+      ^
+IndentationError: expected an indented block
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1014, 5, '\t\ttag = await self.keyortag2tag(keyortag, ctx)\n'))
+[16/09/2017 17:28] ERROR owner load 68: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1014, 5, '\t\ttag = await self.keyortag2tag(keyortag, ctx)\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1014
+    tag = await self.keyortag2tag(keyortag, ctx)
+      ^
+IndentationError: expected an indented block
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 64, in load
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1014, 5, '\t\ttag = await self.keyortag2tag(keyortag, ctx)\n'))
+[16/09/2017 21:06] ERROR red on_command_error 431: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1698, in setup
+    bot.add_cog(CRTags(bot))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 549, in __init__
+    for server in emojiservers:
+NameError: name 'emojiservers' is not defined
+[16/09/2017 21:12] ERROR red load_cogs 650: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1243, 39, ' \t@commands.command(pass_context=True)\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1243
+    @commands.command(pass_context=True)
+                                       ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "red.py", line 647, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1243, 39, ' \t@commands.command(pass_context=True)\n'))
+[16/09/2017 21:13] ERROR owner _reload 155: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1244, 39, ' \t@commands.command(pass_context=True)\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1244
+    @commands.command(pass_context=True)
+                                       ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1244, 39, ' \t@commands.command(pass_context=True)\n'))
+[16/09/2017 21:16] ERROR red load_cogs 650: 'NoneType' object has no attribute 'emojis'
+Traceback (most recent call last):
+  File "red.py", line 647, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1706, in setup
+    bot.add_cog(CRTags(bot))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 550, in __init__
+    for emoji in server.emojis:
+AttributeError: 'NoneType' object has no attribute 'emojis'
+[16/09/2017 21:18] ERROR red on_command_error 431: Exception in command 'cremojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1256, in cremojis
+    for emoji in self.cremojis:
+TypeError: 'Command' object is not iterable
+[16/09/2017 21:19] ERROR red on_command_error 431: Exception in command 'cremojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1253, in _cremojis
+    print(emojis)
+NameError: name 'emojis' is not defined
+[16/09/2017 21:20] ERROR red on_command_error 431: Exception in command 'cremojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1247, in _cremojis
+    print(emojiservers)
+NameError: name 'emojiservers' is not defined
+[16/09/2017 21:21] ERROR red load_cogs 650: 'NoneType' object has no attribute 'emojis'
+Traceback (most recent call last):
+  File "red.py", line 647, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1707, in setup
+    bot.add_cog(CRTags(bot))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 550, in __init__
+    for emoji in server.emojis:
+AttributeError: 'NoneType' object has no attribute 'emojis'
+[17/09/2017 09:09] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1279, in trapi
+    parseddesc = await parsereq()
+NameError: name 'parsereq' is not defined
+[17/09/2017 09:09] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1279, in trapi
+    parseddesc = await self.parsereq()
+TypeError: parsereq() missing 1 required positional argument: 'desc'
+[17/09/2017 09:14] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1279, in trapi
+    parseddesc = await self.parsereq(clan_data.desc)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1288, in parsereq
+    if l == " " and trophynums[len(trophynums)-1] != " ":
+IndexError: list index out of range
+[17/09/2017 09:21] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1289, 19, '\t\t\t\telse trophynums[len(trophynums)-1] != " ":\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1289
+    else trophynums[len(trophynums)-1] != " ":
+                  ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1289, 19, '\t\t\t\telse trophynums[len(trophynums)-1] != " ":\n'))
+[17/09/2017 09:28] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1279, in trapi
+    parseddesc = await self.parsereq(clan_data.desc)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1299, in parsereq
+    print("{}, len: {}".format(d, len(d)))
+NameError: name 'd' is not defined
+[17/09/2017 09:31] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1279, in trapi
+    parseddesc = await self.parsereq(clan_data.desc)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1309, in parsereq
+    trnums = trnums.replace('O', '0')
+AttributeError: 'list' object has no attribute 'replace'
+[17/09/2017 09:36] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1281, 18, '\t\t\tif parseddesc =\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1281
+    if parseddesc =
+                  ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crtags.py', 1281, 18, '\t\t\tif parseddesc =\n'))
+[17/09/2017 09:54] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1292, in trapi
+    print("parseddesc len: {}\nn: {}\nnextone: {}".format(len(parseddesc) ,n, parseddesc[n+1].lower()))
+IndexError: list index out of range
+[17/09/2017 10:11] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1275, in trapi
+    if c.lower() == clan.lower():
+AttributeError: 'list' object has no attribute 'lower'
+[17/09/2017 10:12] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1276, in trapi
+    if c.lower() == clan.lower():
+AttributeError: 'list' object has no attribute 'lower'
+[17/09/2017 10:13] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1276, in trapi
+    if c.lower() == clan.lower():
+AttributeError: 'list' object has no attribute 'lower'
+[17/09/2017 10:14] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1277, in trapi
+    if racfc.lower() == clan.lower():
+AttributeError: 'list' object has no attribute 'lower'
+[17/09/2017 10:14] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1279, in trapi
+    clan_data = await CRClan.create(tag)
+UnboundLocalError: local variable 'tag' referenced before assignment
+[17/09/2017 10:15] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1279, in trapi
+    clan_data = await CRClan.create(tag)
+UnboundLocalError: local variable 'tag' referenced before assignment
+[17/09/2017 10:15] ERROR red load_cogs 650: 'NoneType' object has no attribute 'emojis'
+Traceback (most recent call last):
+  File "red.py", line 647, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1786, in setup
+    bot.add_cog(CRTags(bot))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 550, in __init__
+    for emoji in server.emojis:
+AttributeError: 'NoneType' object has no attribute 'emojis'
+[17/09/2017 10:18] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1287, in trapi
+    trophyreq = await self.parsereq(clan_data.desc)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1331, in parsereq
+    parseddesc = clan_data.tr_req
+NameError: name 'clan_data' is not defined
+[17/09/2017 10:20] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1289, in trapi
+    trophyreq = await self.parsereq(clan_data.desc)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1351, in parsereq
+    return trophyreq
+UnboundLocalError: local variable 'trophyreq' referenced before assignment
+[17/09/2017 10:20] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1289, in trapi
+    trophyreq = await self.parsereq(clan_data.desc)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1351, in parsereq
+    return trophyreq
+UnboundLocalError: local variable 'trophyreq' referenced before assignment
+[17/09/2017 10:21] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1289, in trapi
+    trophyreq = await self.parsereq(clan_data.desc)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1329, in parsereq
+    if parseddesc == None:
+UnboundLocalError: local variable 'parseddesc' referenced before assignment
+[17/09/2017 10:23] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1279, in trapi
+    clan_data = await CRClan.create(tag)
+UnboundLocalError: local variable 'tag' referenced before assignment
+[17/09/2017 10:42] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1301, in trapi
+    trophyreq = cremojis['gitgud']
+NameError: name 'cremojis' is not defined
+[17/09/2017 10:43] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1304, in trapi
+    await self.bot.say(embed=em)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 153, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 126, in request
+    kwargs['data'] = utils.to_json(kwargs.pop('json'))
+  File "lib\discord\utils.py", line 252, in to_json
+    return json.dumps(obj, separators=(',', ':'), ensure_ascii=True)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 198, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 256, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 179, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <discord.emoji.Emoji object at 0x000001E81C766570> is not JSON serializable
+[17/09/2017 10:44] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1305, in trapi
+    await self.bot.say(embed=em)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 153, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 126, in request
+    kwargs['data'] = utils.to_json(kwargs.pop('json'))
+  File "lib\discord\utils.py", line 252, in to_json
+    return json.dumps(obj, separators=(',', ':'), ensure_ascii=True)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 198, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 256, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 179, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <discord.emoji.Emoji object at 0x000001E81C766570> is not JSON serializable
+[17/09/2017 10:45] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1305, in trapi
+    await self.bot.say(embed=em)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 153, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 126, in request
+    kwargs['data'] = utils.to_json(kwargs.pop('json'))
+  File "lib\discord\utils.py", line 252, in to_json
+    return json.dumps(obj, separators=(',', ':'), ensure_ascii=True)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 198, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 256, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 179, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <discord.emoji.Emoji object at 0x000001E81C766570> is not JSON serializable
+[17/09/2017 10:46] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1305, in trapi
+    await self.bot.say(embed=em)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 153, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 126, in request
+    kwargs['data'] = utils.to_json(kwargs.pop('json'))
+  File "lib\discord\utils.py", line 252, in to_json
+    return json.dumps(obj, separators=(',', ':'), ensure_ascii=True)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\__init__.py", line 237, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 198, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 256, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\encoder.py", line 179, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <discord.emoji.Emoji object at 0x000001E81C766570> is not JSON serializable
+[17/09/2017 10:56] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1295, in trapi
+    trophyreq = await self.parsereq(clan_data.desc)
+AttributeError: 'str' object has no attribute 'desc'
+[17/09/2017 11:07] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags2.py", line 590, in trapi
+    tag = await self.keyortag2tag(clan, ctx)
+AttributeError: 'CRTags' object has no attribute 'keyortag2tag'
+[17/09/2017 11:08] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags2.py", line 641, in trapi
+    clan_data = await CRClan.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags2.py", line 95, in create
+    self.clan_url = crapiurl + '/clan/' + tag       #done
+TypeError: Can't convert 'NoneType' object to str implicitly
+[17/09/2017 11:09] ERROR red on_command_error 431: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1803, in setup
+    bot.add_cog(CRTags(bot))
+  File "lib\discord\ext\commands\bot.py", line 655, in add_cog
+    self.add_command(member)
+  File "lib\discord\ext\commands\core.py", line 487, in add_command
+    raise discord.ClientException('Command {0.name} is already registered.'.format(command))
+discord.errors.ClientException: Command trapi is already registered.
+[17/09/2017 11:12] ERROR red on_command_error 431: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1803, in setup
+    bot.add_cog(CRTags(bot))
+  File "lib\discord\ext\commands\bot.py", line 655, in add_cog
+    self.add_command(member)
+  File "lib\discord\ext\commands\core.py", line 487, in add_command
+    raise discord.ClientException('Command {0.name} is already registered.'.format(command))
+discord.errors.ClientException: Command cremoji is already registered.
+[17/09/2017 11:13] ERROR red on_command_error 431: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1803, in setup
+    bot.add_cog(CRTags(bot))
+  File "lib\discord\ext\commands\bot.py", line 655, in add_cog
+    self.add_command(member)
+  File "lib\discord\ext\commands\core.py", line 487, in add_command
+    raise discord.ClientException('Command {0.name} is already registered.'.format(command))
+discord.errors.ClientException: Command cremoji is already registered.
+[17/09/2017 11:14] ERROR red on_command_error 431: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1803, in setup
+    bot.add_cog(CRTags(bot))
+  File "lib\discord\ext\commands\bot.py", line 655, in add_cog
+    self.add_command(member)
+  File "lib\discord\ext\commands\core.py", line 487, in add_command
+    raise discord.ClientException('Command {0.name} is already registered.'.format(command))
+discord.errors.ClientException: Command cremoji is already registered.
+[17/09/2017 11:16] ERROR red on_command_error 431: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1803, in setup
+    bot.add_cog(CRTags(bot))
+  File "lib\discord\ext\commands\bot.py", line 655, in add_cog
+    self.add_command(member)
+  File "lib\discord\ext\commands\core.py", line 487, in add_command
+    raise discord.ClientException('Command {0.name} is already registered.'.format(command))
+discord.errors.ClientException: Command cremoji is already registered.
+[17/09/2017 11:16] ERROR red on_command_error 431: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1803, in setup
+    bot.add_cog(CRTags(bot))
+  File "lib\discord\ext\commands\bot.py", line 655, in add_cog
+    self.add_command(member)
+  File "lib\discord\ext\commands\core.py", line 487, in add_command
+    raise discord.ClientException('Command {0.name} is already registered.'.format(command))
+discord.errors.ClientException: Command cremoji is already registered.
+[17/09/2017 11:16] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags2.py", line 337, in trapi
+    clan_data = await CRClan.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags2.py", line 88, in create
+    tag2id = dataIO.load_json(BACKSETTINGS_JSON)
+NameError: name 'BACKSETTINGS_JSON' is not defined
+[17/09/2017 11:22] ERROR red on_command_error 431: Exception in command 'trapi'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags2.py", line 332, in trapi
+    em.add_field(name="{}:".format(goodcapsclan),url=clan_data.clanurl, value=trophyreq)
+TypeError: add_field() got an unexpected keyword argument 'url'
+[17/09/2017 11:23] ERROR red on_command_error 431: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1803, in setup
+    bot.add_cog(CRTags(bot))
+  File "lib\discord\ext\commands\bot.py", line 655, in add_cog
+    self.add_command(member)
+  File "lib\discord\ext\commands\core.py", line 487, in add_command
+    raise discord.ClientException('Command {0.name} is already registered.'.format(command))
+discord.errors.ClientException: Command cremoji is already registered.
+[17/09/2017 11:25] ERROR owner load 73: Command cremoji is already registered.
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 64, in load
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags.py", line 1803, in setup
+    bot.add_cog(CRTags(bot))
+  File "lib\discord\ext\commands\bot.py", line 655, in add_cog
+    self.add_command(member)
+  File "lib\discord\ext\commands\core.py", line 487, in add_command
+    raise discord.ClientException('Command {0.name} is already registered.'.format(command))
+discord.errors.ClientException: Command cremoji is already registered.

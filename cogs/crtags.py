@@ -47,6 +47,19 @@ racfclans = {
 	"MINI" : "22LR8JJ2",
 	"MINI2" : "2Q09VJC8"
 }
+racfclanslist = [
+	"Alpha",
+	"Bravo",
+	"Charlie",
+	"Delta",
+	"Echo",
+	"eSports",
+	"Foxtrot",
+	"Golf",
+	"Hotel",
+	"Mini",
+	"Mini2"
+]
 BOTCMDER = ["Bot Commander"]
 NUMITEMS = 9
 statscr_url = "http://statsroyale.com/profile/"
@@ -92,6 +105,7 @@ class CRClan:
 		self.coleaders = []								#done
 		self.elders = []								#done
 		self.norole = []								#done
+		# if clan_url != '':
 		async with aiohttp.ClientSession() as session:
 			async with session.get(self.clan_url) as resp:
 				datadict = await resp.json()
@@ -183,7 +197,7 @@ class CRClan:
 			discordlink = d3[d3.find('discord.'):endlink+d3.find('discord.')]
 			# print(discordlink)
 			# print(d2[index:index+len(discordlink)])
-			d2 = d2.replace(d2[index:index+len(discordlink)], "[{}](https://{})".format(d2[index:index+len(discordlink)], discordlink))
+			d2 = d2.replace(d2[index:index+len(discordlink)], " [{}](https://{})".format(d2[index:index+len(discordlink)], discordlink))
 
 			# print(d2)
 		# 	if i>10:
@@ -199,20 +213,34 @@ class CRClan:
 			x = ''
 			i2 = 1
 			thing = ''
+			print("test")
 			while x != ' ':
 				thing += x
 				x = d2[index+i2]
 				i2 += 1
 			valid = True
+			n = 0
+			thing2 = ''
 			for l in thing:
 				if l not in validChars:
-					valid=False
+					if n>4 and not l.isalnum():
+						valid = True
+					else:
+						valid = False
 					break
-			if valid and len(thing)>5:
+				thing2 += l
+				n+=1
+			print(thing)
+			print(thing2)
+			print(valid)
+			if valid and len(thing2)>4:
 				numtagsind2 += 1
-				tagsind2.append(thing)
+				tagsind2.append(thing2)
 			i += 1
+			print(tagsind2)
 		for tag in tagsind2:
+			tag = tag.replace(sym, '')
+			print(tag)
 			d2 = d2.replace(sym+tag, '[{}]({})'.format(sym+tag, 'https://cr-api.com/clan/'+tag))
 		self.desc2 =  d2
 		self.clan_trophy = datadict['score']
@@ -333,14 +361,10 @@ class CRPlayer:
 
 		asyncio.sleep(1)
 		user_url = 'http://statsroyale.com/profile/'+tag
-		print('here')
 		await async_refresh(user_url+'/refresh')
-		print('herelol')
 		r = requests.get(user_url, headers=headers)
 		html_doc = r.content
-		print('herelol')
 		soup = BeautifulSoup(html_doc, "html.parser")
-		print('herelol')
 		chests_queue = soup.find('div', {'class':'chests__queue'})
 		chests = chests_queue.get_text().split()
 		for index, item in enumerate(chests):
@@ -402,12 +426,18 @@ class CRPlayer:
 		losses = thing2[9]
 		crown3 = thing2[10]
 		league = thing2[11]
-		clan_url = statsurl + str(profilehead.find('a').attrs['href'])
+		try:
+			clan_url = statsurl + str(profilehead.find('a').attrs['href'])
+		except AttributeError:
+			clan_url  = ''
 		playerLevel = profilehead.find('span', 'profileHeader__userLevel')
 		playerLevel = playerLevel.text
 		playerName = profilehead.find('div', 'ui__headerMedium profileHeader__name').text.strip()
 		playerName = playerName.replace(playerLevel, '').strip()
-		playerClan = profilehead.find('a', 'ui__link ui__mediumText profileHeader__userClan').text.strip()
+		try:
+			playerClan = profilehead.find('a', 'ui__link ui__mediumText profileHeader__userClan').text.strip()
+		except AttributeError:
+			playerClan  = 'No Clan'
 		playerTag = tag
 		clan_badge = profilehead.find('img').attrs['src']
 		clan_badge = statsurl + clan_badge
@@ -416,7 +446,7 @@ class CRPlayer:
 		player_data.append('[#{}]({})'.format(tag, user_url))
 		for x in statsdict:
 			if(statsdict[x].isdigit()):
-				statsdict[x] = '[' + statsdict[x] + '](nothing)'
+				statsdict[x] = '[' + statsdict[x] + '](http://)'
 		for x in statsdict:
 			if 'League' in x:
 				self.league = x
@@ -508,6 +538,13 @@ class CRTags:
 		self.backsettings = dataIO.load_json(BACKSETTINGS_JSON)
 		self.clansettings = dataIO.load_json(CLAN_JSON)
 		self.bot = bot
+		self.emojiservers = []
+		for server in bot.servers:
+			self.emojiservers.append(server)
+		self.cremojis = {}
+		for server in self.emojiservers:
+			for emoji in server.emojis:
+				self.cremojis[emoji.name] = "<:{}:{}>".format(emoji.name,emoji.id)
 
 	@commands.group(pass_context=True)
 	async def clan(self, ctx):
@@ -617,8 +654,8 @@ class CRTags:
 		clan_data.append(clan.desc2)
 		clan_data.append(clan.leader['formatted'])
 		clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clanurl))
-		clan_data.append("Clan Score: [{}](nothing)".format(clan.clan_trophy))
-		clan_data.append("Trophy Requirement: [{}](nothing)".format(clan.tr_req))
+		clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
+		clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
 		# clan_data.append("")
 		# n = 0
 		# while n<len(clan.members):
@@ -683,8 +720,8 @@ class CRTags:
 		# clan_data.append(clan.desc2)
 		# clan_data.append(clan.leader['formatted'])
 		# clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clan_url))
-		# clan_data.append("Clan Score: [{}](nothing)".format(clan.clan_trophy))
-		# clan_data.append("Trophy Requirement: [{}](nothing)".format(clan.tr_req))
+		# clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
+		# clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
 		# clan_data.append("")
 		# n = 0
 		# while n<len(clan.members):
@@ -750,8 +787,8 @@ class CRTags:
 		# clan_data.append(clan.desc2)
 		# clan_data.append(clan.leader['formatted'])
 		# clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clan_url))
-		# clan_data.append("Clan Score: [{}](nothing)".format(clan.clan_trophy))
-		# clan_data.append("Trophy Requirement: [{}](nothing)".format(clan.tr_req))
+		# clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
+		# clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
 		# clan_data.append("")
 		# n = 0
 		# while n<len(clan.members):
@@ -835,8 +872,8 @@ class CRTags:
 		# clan_data.append(clan.desc2)
 		# clan_data.append(clan.leader['formatted'])
 		# clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clan_url))
-		# clan_data.append("Clan Score: [{}](nothing)".format(clan.clan_trophy))
-		# clan_data.append("Trophy Requirement: [{}](nothing)".format(clan.tr_req))
+		# clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
+		# clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
 		# clan_data.append("")
 		# n = 0
 		# while n<len(clan.members):
@@ -920,8 +957,8 @@ class CRTags:
 		# clan_data.append(clan.desc2)
 		# clan_data.append(clan.leader['formatted'])
 		# clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clan_url))
-		# clan_data.append("Clan Score: [{}](nothing)".format(clan.clan_trophy))
-		# clan_data.append("Trophy Requirement: [{}](nothing)".format(clan.tr_req))
+		# clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
+		# clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
 		# clan_data.append("")
 		# n = 0
 		# while n<len(clan.members):
@@ -992,8 +1029,16 @@ class CRTags:
 		user = ctx.message.author
 		if keyortag == None:
 			keyortag = user.id
+		elif keyortag.lower() == 'racf':
+			for clan in racfclanslist:
+				await ctx.invoke(self.claninfo, clan)
+			return
+
 		tag = await self.keyortag2tag(keyortag, ctx)
 		if tag == None:
+			return
+		if tag == '':
+			await self.bot.say("That user is not in a clan.")
 			return
 		clanurl = crapiurl + '/clan/' + tag
 		await self.async_refresh(clanurl+ '/refresh')
@@ -1003,8 +1048,8 @@ class CRTags:
 		clan_data.append(clan.desc2)
 		clan_data.append(clan.leader['formatted'])
 		clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clanurl))
-		clan_data.append("Clan Score: [{}](nothing)".format(clan.clan_trophy))
-		clan_data.append("Trophy Requirement: [{}](nothing)".format(clan.tr_req))
+		clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
+		clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
 
 
 		em = []
@@ -1190,105 +1235,138 @@ class CRTags:
 			dataIO.save_json(SET_JSON, self.settings)
 		print(len(self.settings))
 		dataIO.save_json(SET_JSON, self.settings)
+		
+	@checks.is_owner()
+	@commands.command(name="cremojis",pass_context=True)
+	async def _cremojis(self, ctx):
+		
+		await self.bot.say('penis')
+		print('penis')
+		for emoji in self.cremojis:
+			print(emoji)
+		for emoji in self.cremojis:
+			await self.bot.say(self.cremojis[emoji])
 
-	# @commands.command(pass_context=True)
-	# async def initall(self, ctx):
-	#     racfserver = self.bot.get_server('218534373169954816')
-	#     auditchannel = self.bot.get_channel('268769178234781696')
-	#     members = racfserver.members
-	#     n = 0
-	#     for member in members:
-	#         m = await self.bot.send_message(auditchannel, '!crprofile gettag '+member.id)
-	#         await asyncio.sleep(4)
-	#         await self.bot.delete_message(m)
-	#         messages = []
-	#         async for m in self.bot.logs_from(auditchannel, limit=10):
-	#             if(m.author.id == '280936035536338945'):
-	#                 messages.append(m)
-	#                 break
-	#         message = messages[0].content
-	#         if(message.find('#') == -1):
-	#             pass
-	#         else:
-	#             tag = message[message.find('#')+1:]
-	#             self.settings[str(member.id)] = tag
+	@checks.is_owner()
+	@commands.command(name="cremoji",pass_context=True)
+	async def _cremoji(self, ctx, emojiname):
+		try:
+			await self.bot.say(self.cremojis[emojiname])
+		except KeyError:
+			await self.bot.say("{} is not a saved cr emoji".format(emojiname))
 
-	#             # await self.bot.send_message(auditchannel, member.display_name + ' ' + tag)
-	#         n += 1
-	#         print(n)
-	#     dataIO.save_json(SETTINGS_JSON, self.settings)
+	# @commands.command(aliases=['tra'], pass_context=True)
+	# async def trapi(self,ctx,clan=None):
+	# 	uclan = None
+	# 	if clan != None:
+	# 		uclan = clan.upper()
+	# 	if clan == None:
+	# 		clan = racfclanslist
+	# 	elif uclan not in racfclans:
+	# 		await self.bot.say("the clan, *\u200b{}* is not in racf".format(clan))
+	# 		return
+	# 	if type(clan) == type(['list']):
+	# 		await self.bot.send_typing(ctx.message.channel)
+	# 		em = discord.Embed(color=discord.Color(0xFF3844), title="RACF requirements:")
+	# 		for c in clan:
+	# 			for racfc in racfclanslist:
+	# 				if racfc.lower() == c.lower():
+	# 					goodcapsclan = racfc
+	# 					break
+	# 			tag = await self.keyortag2tag(c, ctx)
+	# 			clan_data = await CRClan.create(tag)
+	# 			trophyreq = await self.parsereq(clan_data.desc)
+	# 			if trophyreq==None:
+	# 				trophyreq = clan_data.tr_req
+	# 			if goodcapsclan == 'eSports':
+	# 				trophyreq = self.cremojis['gitgud']
+	# 			em.add_field(name="{}:".format(goodcapsclan), value=trophyreq)
+
+	# 	else:
+	# 		tag = await self.keyortag2tag(clan, ctx)
+	# 		print("Tag: {}".format(tag))
+	# 		clan_data = await CRClan.create(tag)
+	# 		# clan_data.desc = "WE are reddit delta, we require a pb 4500 and our feeder is reddit echo"
+	# 		#uncomment the above line to test the pb detection
+	# 		trophyreq = await self.parsereq(clan_data.desc)
+	# 		if trophyreq==None:
+	# 			trophyreq = clan_data.tr_req
+	# 		for c in racfclanslist:
+	# 			if c.lower() == clan.lower():
+	# 				goodcapsclan = c
+	# 				break
+	# 		if goodcapsclan == 'eSports':
+	# 			trophyreq = self.cremojis['gitgud']
+	# 		em = discord.Embed(color=discord.Color(0xFF3844), title="{} trophy req:".format(goodcapsclan), description=trophyreq)
+
+	# 	await self.bot.say(embed=em)
+
+	# async def parsereq(self, desc):
+	# 	trophynums = []
+	# 	n = 0
+	# 	for l in desc:
+	# 		try:
+	# 			if l.isdigit() or (l.lower()=='p' and desc[n+1].lower()=='b')or (l.lower()=='b' and desc[n-1].lower()=='p') or l.lower() == 'o':
+	# 				trophynums.append(l)
+	# 			elif trophynums[len(trophynums)-1] != " ":
+	# 				trophynums.append(' ')
+	# 		except IndexError:
+	# 			pass
+	# 		n+=1
+	# 	n = 0
+	# 	trnums = ''.join(trophynums)
+	# 	trnums = trnums.split(' ')
+	# 	while n<len(trnums):
+	# 		d = trnums[n]
+	# 		# print("trnums: {}".format(trnums))
+	# 		# print("{}, len: {}".format(d, len(d)))
+	# 		if len(d) == 4 or d.lower() =='pb':
+	# 			if d.isdigit():
+	# 				trnums[n] = "{:,}".format(int(d))
+	# 			n += 1
+	# 		else:
+	# 			trnums.remove(d)
+	# 	print(trnums)
+	# 	print(len(trnums))
+	# 	n = 0
+	# 	for d in trnums:
+	# 		trnums[n] = trnums[n].replace('O', '0').replace('o', '0')
+	# 		n += 1
+	# 	trophyreq = None
+	# 	if len(trnums)==0:
+	# 		trnums = None
+	# 	elif len(trnums) == 1:
+	# 		trnums = trnums[0]
+	# 	elif len(trnums)==2:
+	# 		n = 0
+	# 		while n<len(trnums):
+	# 			if trnums[n].isdigit():
+	# 				trnums[n] = "{:,}".format(int(d))
+	# 			n+=1
+	# 		trnums = ' '.join(trnums)
+	# 	parseddesc = trnums
+	# 	if parseddesc == None:
+	# 		trophyreq = None
+	# 	if type(parseddesc) == type('string'):
+	# 		trophyreq = parseddesc
+	# 	elif type(parseddesc) == type(['list']):
+	# 		trreqs =''
+	# 		n = 0
+	# 		for d in parseddesc:
+	# 			trreqs +=d 
+	# 			# print("parseddesc len: {}\nn: {}\nnextone: {}".format(len(parseddesc) ,n, parseddesc[n+1].lower()))
+	# 			try:
+	# 				if n !=len(parseddesc)-1 and parseddesc[n+1].lower()!='pb':
+	# 					trreqs += ', '
+	# 				else:
+	# 					trreqs += ' '
+	# 			except IndexError:
+	# 				pass
+	# 			n+=1
+	# 		trophyreq = trreqs
+	# 	return trophyreq
 
 
-	# @commands.command(pass_context=True)
-	# async def racfinitall(self, ctx):
-	#     """macro for s.racfinit"""
-	#     await self.bot.say('s.racfinit alpha', delete_after=1)
-	#     await self.bot.say('s.racfinit bravo', delete_after=1)
-	#     await self.bot.say('s.racfinit charlie', delete_after=1)
-	#     await self.bot.say('s.racfinit delta', delete_after=1)
-	#     await self.bot.say('s.racfinit echo', delete_after=1)
-	#     await self.bot.say('s.racfinit foxtrot', delete_after=1)
-	#     await self.bot.say('s.racfinit golf', delete_after=1)
-	#     await self.bot.say('s.racfinit hotel', delete_after=1)
-	#     await self.bot.say('s.racfinit esports', delete_after=1)
-	#     await self.bot.say('s.racfinit mini', delete_after=1)
-	#     await self.bot.say('s.racfinit mini2', delete_after=1)
-
-	# @commands.command(pass_context=True)
-	# async def racfinit(self,ctx, clan:str):
-	#     """Save user tag. If not given a user, save tag to author"""
-	#     racfaudits = self.bot.get_channel('268769178234781696')
-	#     await self.bot.send_message(racfaudits, '!crclan roster '+clan, delete_after=5)
-	#     await asyncio.sleep(5)
-	#     messages = []
-	#     async for m in self.bot.logs_from(racfaudits, limit=10):
-	#         if(m.author.id == '280936035536338945'):
-	#             messages.append(m)
-	#     messages = messages[:2]
-	#     # for m in messages:
-	#     # print(messages)
-	#     # await self.bot.say()
-	#     playerids = []
-	#     playertags = []
-	#     for index, message in enumerate(messages):
-	#         for i, person in enumerate(messages[index].embeds[0]['fields']):
-	#             messages[index].embeds[0]['fields'][i]['name'] =  ''
-	#         for i, person in enumerate(messages[index].embeds[0]['fields']):
-	#             messages[index].embeds[0]['fields'][i]['value'] =  messages[index].embeds[0]['fields'][i]['value'].replace('\u2193','').replace('\u2191','').replace('`','').replace('League','')
-	#             value = messages[index].embeds[0]['fields'][i]['value']
-	#             # print(value)
-	#             messages[index].embeds[0]['fields'][i]['value'] = messages[index].embeds[0]['fields'][i]['value'][messages[index].embeds[0]['fields'][i]['value'].find('<@')+len('<@'):]
-	#             value = messages[index].embeds[0]['fields'][i]['value']
-	#             # print(value)
-	#             try:
-	#                 playerid = int(value[:value.find('>')].replace('!',''))
-	#                 playerids.append(playerid)
-	#                 playertags.append(value[value.find('#')+len('#'):])
-	#             except:
-	#                 pass
-	#     print(260577636957421568 in playerids)
-	#     print(playerids)
-	#     print(playertags)
-	#     for x in range(0, len(playerids)):
-	#         self.settings[str(playerids[x])] = playertags[x]
-	#         dataIO.save_json(SETTINGS_JSON, self.settings)
-	#     await self.bot.say("initalized", delete_after=1)
-	#     await self.bot.delete_message(ctx.message)
-	#     return
-
-		# #update profile
-		# driver = webdriver.Firefox()
-		# driver.get(user_url)#put here the adress of your page
-		# try:
-		#     driver.find_element_by_xpath(".//*[@id='refreshProfile']").click()
-		# except:
-		#     pass
-		# # print(elem.get_attribute("class"))
-		# try:
-		#     driver.find_element_by_xpath(".//*[@id='refreshBattles']").click()
-		# except:
-		#     pass
-		# driver.close()
 
 	@commands.group(aliases=["stats"], pass_context=True)
 	async def clashroyale(self, ctx):
@@ -1381,168 +1459,6 @@ class CRTags:
 			self.savetag(user.id, tag)
 		else:
 			await self.bot.say("Invalid tag {}, it must only have the following characters {}".format(ctx.message.author.mention, validChars))
-
-	# @clashroyale.command(pass_context=True)
-	# async def profile(self, ctx, user: discord.Member=None):
-	#     """Get user profile. If not given a user, get author's profile"""
-	#     tags = dataIO.load_json(SETTINGS_JSON)
-	#     if user == None:
-	#         user = ctx.message.author
-	#     try:
-	#         user_url = (statscr_url+ tags[user.id])
-	#     except(KeyError):
-	#         await self.bot.say("{} does not have a tag set.".format(user.display_name))
-	#         return
-	#     button = []
-	#     battleButton = ""
-	#     await self.async_refresh('http://statsroyale.com/profile/'+tags[user.id]+'/refresh')
-	#     r = requests.get(user_url, headers=headers)
-	#     html_doc = r.content
-	#     soup = BeautifulSoup(html_doc, "html.parser")
-	#     statsurl = 'http://statsroyale.com'
-	#     html_doc = r.content
-	#     chests_queue = soup.find('div', {'class':'chests__queue'})
-	#     self.chests = chests_queue.get_text().split()
-	#     for index, item in enumerate(self.chests):
-	#         if item.startswith('+') and item.endswith(':'):
-	#             del self.chests[index]
-	#         elif item == 'Chest':
-	#             del self.chests[index]
-	#         if item == 'Super':
-	#             self.chests[index] = 'SMC'
-	#         elif item == 'Magic':
-	#             self.chests[index] = 'Magical'
-
-	#     for index, chest in enumerate(self.chests):
-	#         if str(chest) == 'Magic':
-	#             self.chests[index] = 'Magical'
-	#         elif str(chest) == 'Super':
-	#             self.chests[index] = 'SMC'
-	#     new_chests = []
-	#     x = 0
-	#     while x<len(chests):
-	#         new_chests.append(chests[x:x+2])
-	#         x += 2
-	#     chests = []
-
-
-	#     for index, chest in enumerate(new_chests):
-	#         chests.append(': '.join(chest))
-
-	#     chests = '\n'.join(chests)
-
-	#     soup = BeautifulSoup(html_doc, "html.parser")
-	#     profilehead = soup.find_all("div", "profileHeader profile__header")
-	#     statistics = soup.find_all("div", "statistics profile__statistics")
-	#     profilehead = profilehead[0]
-	#     statistics = statistics[0]
-	#     thing2 = statistics.get_text()
-	#     thing2 = thing2.replace('\n', ' ')
-	#     thing2 = thing2.split('   ')
-	#     for index, item in enumerate(thing2):
-	#         thing2[index] = item.strip()
-	#     statsdict = {}
-	#     for index, item in enumerate(thing2):
-	#         if item[:item.find(' ')].isdigit():
-	#             thing2[index] = item[item.find(' ')+1:]+ ': '+item[:item.find(' ')]
-	#             statsdict[item[item.find(' ')+1:].strip()] = item[:item.find(' ')] 
-	#         else:
-	#             statsdict[item.strip()] = ' '
-	#         thing2[index].strip()
-
-	#     pb = thing2[0]
-	#     trophy = thing2[1]
-	#     cardswon = thing2[2]
-	#     tcardswon = thing2[3]
-	#     donations = thing2[4]
-	#     prevseasonrank = thing2[5]
-	#     prevseasontrophy = thing2[6]
-	#     prevseasonpb = thing2[7]
-	#     wins = thing2[8]
-	#     losses = thing2[9]
-	#     crown3 = thing2[10]
-	#     league = thing2[11]
-	#     # thing3 = []
-	#     # a  = ''
-	#     # for x in thing2:
-	#     #     a += ''
-	#     clan_url = statsurl + str(profilehead.find('a').attrs['href'])
-	#     playerLevel = profilehead.find('span', 'profileHeader__userLevel')
-	#     playerLevel = playerLevel.text
-	#     playerName = profilehead.find('div', 'ui__headerMedium profileHeader__name').text.strip()
-	#     playerName = playerName.replace(playerLevel, '').strip()
-	#     playerClan = profilehead.find('a', 'ui__link ui__mediumText profileHeader__userClan').text.strip()
-	#     playerTag = tags[user.id]
-	#     player_data = []
-	#     player_data.append('[#{}]({})'.format(tags[user.id], user_url))
-	#     player_data.append('Level {}'.format(playerLevel))
-	#     player_data.append('Clan: [{}]({})'.format(playerClan, clan_url))
-	#     for x in statsdict:
-	#         if(statsdict[x].isdigit()):
-	#             statsdict[x] = '[' + statsdict[x] + '](nothing)'
-	#     for x in statsdict:
-	#         if(x=='Prev season rank' and statsdict[x]=='0'):
-	#             pass
-	#         elif(statsdict[x]==' '):
-	#             a = x
-	#             a = a.replace('crown', 'crown👑')
-	#             player_data.append(a)
-	#         else:
-	#             a = x+': '+statsdict[x]
-	#             a = a.replace('crown', 'crown👑')
-	#             if 'troph' in a:
-	#                 a += '🏆'
-	#             player_data.append(a)
-	#     # player_data.append(chests)
-	#     clan_badge = profilehead.find('img').attrs['src']
-	#     clan_badge = statsurl + clan_badge
-	#     if clan_badge == 'http://statsroyale.com/images/badges/16000167.png':
-	#         clan_badge = 'http://cr-api.com/badge/A_Char_Rocket_02.png'
-	#     em = discord.Embed(title=playerName, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
-	#     em.set_author(icon_url=user.avatar_url,name=user.display_name)
-	#     em.set_thumbnail(url=clan_badge)
-	#     em.set_footer(text='Data provided by StatsRoyale', icon_url='http://i.imgur.com/17R3DVU.png')
-	#     await self.bot.say(embed=em)
-		# return
-		# d = soup.find_all("div", "description")
-		# c = soup.find_all("div", "content")
-		# b = soup.find_all("span", "supercell")
-		# misc = []
-		# desc = []
-		# cont = []
-
-		# for w in b:
-		#     # print("(misc)Type: {}, contents: {}".format(type(w.text), w.text))
-		#     misc.append(w.text)
-		# print("Misc: {}".format(misc))
-		# for x in d:
-		#     # print("(description)Type: {}, contents: {}".format(type(x.text), x.text))
-		#     desc.append(x.text)
-		# for y in c:
-		#     # print("(content)Type: {}, contents: {}".format(type(y.text), y.text))
-		#     cont.append(y.text)
-		# data = discord.Embed(description="", colour=user.colour)
-		# data.add_field(name="CR Name: ", value=name)
-		# data.add_field(name="Level: ", value=misc[0])
-		# for i in range(1, NUMITEMS):
-		#     data.add_field(name=desc[i]+":", value=cont[i], inline=True)
-		# data.set_footer(text="Tag: {}".format(tags[user.id]))
-
-		# name = str(user)
-		# name = " ~ ".join((name, user.nick)) if user.nick else name
-
-		# if user.avatar_url:
-		#     data.set_author(name=name, url=user.avatar_url)
-		#     data.set_thumbnail(url=user.avatar_url)
-		# else:
-		#     data.set_author(name=name)
-
-		# try:
-		#     await self.bot.say(embed=data)
-		# except discord.HTTPException:
-		#     await self.bot.say("I need the `Embed links` permission "
-		#                        "to send this")
-
 		
 	@clashroyale.command(name='trophy', aliases=['tr'],  pass_context=True)
 	async def _trophy(self, ctx, userortag=None):
@@ -1776,7 +1692,10 @@ class CRTags:
 		things = await CRPlayer.create(tag)
 		player_data  = []
 		player_data.append('[{}]({})'.format(tag, user_url))
-		player_data.append('[{}]({})'.format(things.clan,things.clan_url))
+		if things.clan_url != '':
+			player_data.append('[{}]({})'.format(things.clan,things.clan_url))
+		else:
+			player_data.append('{}'.format(things.clan))
 		player_data.append(things.pb)
 		player_data.append(things.trophy)
 		player_data.append(things.cardswon)
