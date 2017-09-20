@@ -331,6 +331,61 @@ class CRClan:
 # 		self.donperweek = trophy[2].find('div', {'class':'ui__headerMedium'}).get_text().strip()
 
 
+class XP:
+	def __init__(self, denom, xp, level):
+		self.current = xp
+		self.denom = denom
+		self.level = level
+	
+	@property
+	def xpleft(self):
+		return self.denom-self.current
+
+class Arena:
+	def __init__(self, imageurl,name):
+		self.url = imageurl
+		self.name = name
+class Card:
+	def __init__(self, name, rarity, level, count, denom):
+		self.name = name
+		self.rarity = rarity
+		self.level = level
+		self.count = count
+		self.countreq = denom
+
+	@property
+	def cardsleft(self):
+		return denom-count
+
+class Deck:
+	def __init__(self, carddicts):
+		self.cards = []
+		for card in carddicts:
+			c = Card(card['name'], card['rarity'], card['level'], card['count'], card['requiredForUpgrade'])
+			self.cards.append(c)
+
+	@property
+	def goldspent(self):
+
+class CRPlayersml:
+
+
+	def __init__(self):
+		self.a = 4
+
+	@classmethod
+	async def create(self, tag):
+		
+		self.url = crapiurl +'/profile/'+tag
+		async with aiohttp.ClientSession() as session:
+			async with session.get(user_url) as resp:
+				datadict = await resp.json()
+		self.tag = tag
+		self.name = datadict['name']
+		self.trophies = datadict['trophies']
+		self.arena =  Arena(datadict['arena']['imageURL'], datadict['arena']['name'])
+		self.
+		return self
 
 class CRPlayer:
 
@@ -1158,7 +1213,7 @@ class CRTags:
 					allgold.append(self.goldcalc(c))
 				except IndexError:
 					await self.bot.say("Invalid card level")
-			formattedgold = locale.format("%d", allgold[0]-allgold[1], grouping=True)
+			formattedgold = '{:,}'.format(allgold[0]-allgold[1])
 		else:
 			while '' in args:
 				args.remove('')
@@ -1178,8 +1233,7 @@ class CRTags:
 			except IndexError:
 				await self.bot.say("Invalid card level")
 			print(allgold)
-			locale.setlocale(locale.LC_ALL, 'US')
-			formattedgold = locale.format("%d", allgold, grouping=True)
+			formattedgold = '{:,}'.format(allgold)
 		await self.bot.say("{} {} {}".format(msg, formattedgold, msg2))
 		# for rarity in totalgold:
 		#     await self.bot.say("You have spent a total of {} gold on upgrading {} cards".format(totalgold[rarity], rarity))
