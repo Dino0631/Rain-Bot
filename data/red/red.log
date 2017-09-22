@@ -1018,3 +1018,932 @@ Traceback (most recent call last):
   File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crtags2.py", line 331, in trapi
     trophyreq = self.cremojis['gitgud']
 KeyError: 'gitgud'
+[21/09/2017 16:41] ERROR owner load 68: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 347, 0, 'class CRPlayer:\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 347
+    class CRPlayer:
+                  ^
+IndentationError: expected an indented block
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 64, in load
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 347, 0, 'class CRPlayer:\n'))
+[21/09/2017 16:42] ERROR owner load 73: Command cremoji is already registered.
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 64, in load
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1698, in setup
+    bot.add_cog(CRTags(bot))
+  File "lib\discord\ext\commands\bot.py", line 655, in add_cog
+    self.add_command(member)
+  File "lib\discord\ext\commands\core.py", line 487, in add_command
+    raise discord.ClientException('Command {0.name} is already registered.'.format(command))
+discord.errors.ClientException: Command cremoji is already registered.
+[21/09/2017 16:43] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1392, in _trophy
+    tag = await self.keyortag2tag2(userortag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1366, in keyortag2tag2
+    userid = ctx.message.author.id
+NameError: name 'ctx' is not defined
+[21/09/2017 16:43] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1395, in _trophy
+    things = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 358, in create
+    async with session.get(user_url) as resp:
+NameError: name 'user_url' is not defined
+[21/09/2017 16:44] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1395, in _trophy
+    things = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 368, in create
+    self.stats = CRStats(datadict['stats'])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 310, in __init__
+    self.actage = s['accountAgeInDays']
+KeyError: 'accountAgeInDays'
+[21/09/2017 16:47] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1398, in _trophy
+    things = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 370, in create
+    self.chestcycle = CRChests(datadict['chestCycle'])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 321, in __init__
+    self.SMC = s['superMagicalPos']-pos
+NameError: name 'pos' is not defined
+[21/09/2017 16:48] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1400, in _trophy
+    player_data.append('[{}]({})'.format(tag, user_url))
+NameError: name 'user_url' is not defined
+[21/09/2017 16:49] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1402, in _trophy
+    player_data.append(things.trophy)
+NameError: name 'things' is not defined
+[21/09/2017 16:50] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1403, in _trophy
+    player_data.append(player.trophy)
+AttributeError: type object 'CRPlayer' has no attribute 'trophy'
+[21/09/2017 16:50] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1415, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 1: expected str instance, int found
+[21/09/2017 16:51] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1416, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 1: expected str instance, int found
+[21/09/2017 16:52] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1404, in _trophy
+    print('\n'.join(player_data))
+TypeError: sequence item 1: expected str instance, int found
+[21/09/2017 16:52] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1418, in _trophy
+    discordname = user.name if user.nick is None else user.nick
+NameError: name 'user' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1420, in _trophy
+    discordname = user.name
+NameError: name 'user' is not defined
+[21/09/2017 16:54] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1425, in _trophy
+    em.set_thumbnail(url=player.clan_badge)
+AttributeError: type object 'CRPlayer' has no attribute 'clan_badge'
+[21/09/2017 19:10] ERROR owner _reload 155: ('unindent does not match any outer indentation level', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 401, 11, '\t@property\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 401
+    @property
+            ^
+IndentationError: unindent does not match any outer indentation level
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('unindent does not match any outer indentation level', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 401, 11, '\t@property\n'))
+[21/09/2017 19:10] ERROR owner _reload 155: ('unindent does not match any outer indentation level', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 401, 11, '\t@property\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 401
+    @property
+            ^
+IndentationError: unindent does not match any outer indentation level
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('unindent does not match any outer indentation level', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 401, 11, '\t@property\n'))
+[21/09/2017 19:10] ERROR owner _reload 155: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 400, 19, '\t\tself.seasons = s\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 400
+    self.seasons = s
+                   ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 400, 19, '\t\tself.seasons = s\n'))
+[21/09/2017 19:11] ERROR owner _reload 155: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 400, 19, '\t\tself.seasons = s\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 400
+    self.seasons = s
+                   ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 400, 19, '\t\tself.seasons = s\n'))
+[21/09/2017 19:11] ERROR owner _reload 155: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 400, 19, '\t\tself.seasons = s\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 400
+    self.seasons = s
+                   ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 400, 19, '\t\tself.seasons = s\n'))
+[21/09/2017 19:12] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 452, 75, '\t\tformatted.namechangeleft = "Can change name" if self.namechangeleft else: "Can\'t Change Name"\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 452
+    formatted.namechangeleft = "Can change name" if self.namechangeleft else: "Can't Change Name"
+                                                                            ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 452, 75, '\t\tformatted.namechangeleft = "Can change name" if self.namechangeleft else: "Can\'t Change Name"\n'))
+[21/09/2017 19:12] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1506, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 446, in create
+    formatted.trophies = "Trophies: {}{}".format(self.trophies, cremojis['trophy'])
+NameError: name 'cremojis' is not defined
+[21/09/2017 19:14] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1506, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 446, in create
+    formatted.trophies = "Trophies: {}{}".format(self.trophies, cremojis['trophy'])
+KeyError: 'trophy'
+[21/09/2017 19:15] ERROR red on_command_error 431: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 36, in <module>
+    CRTags()
+NameError: name 'CRTags' is not defined
+[21/09/2017 19:17] ERROR red on_command_error 431: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1341, in <module>
+    CRTags()
+TypeError: __init__() missing 1 required positional argument: 'bot'
+[21/09/2017 19:20] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 35, 13, 'cremojis =  = dataIO.load_json(CREMOJIS_JSON)\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 35
+    cremojis =  = dataIO.load_json(CREMOJIS_JSON)
+                ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 35, 13, 'cremojis =  = dataIO.load_json(CREMOJIS_JSON)\n'))
+[21/09/2017 19:21] ERROR red on_command_error 431: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 35, in <module>
+    cremojis = dataIO.load_json(CREMOJIS_JSON)
+NameError: name 'CREMOJIS_JSON' is not defined
+[21/09/2017 19:21] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1508, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 447, in create
+    formatted.trophies = "Trophies: {}{}".format(self.trophies, cremojis['trophy'])
+KeyError: 'trophy'
+[21/09/2017 19:24] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 547, 38, '\t@commands.command(pass_context=True):\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 547
+    @commands.command(pass_context=True):
+                                        ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 547, 38, '\t@commands.command(pass_context=True):\n'))
+[21/09/2017 19:25] ERROR red on_command_error 431: Exception in command 'cremojiinit'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 550, in cremojiinit
+    emojiservers.append(server)
+NameError: name 'emojiservers' is not defined
+[21/09/2017 19:29] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1514, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 458, in create
+    self.clan = await CRClan.create(datadict['clan']['tag'])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 96, in create
+    self.url = self.clan_url.replace('api.', '', 1)#done
+AttributeError: type object 'CRClan' has no attribute 'clan_url'
+[21/09/2017 19:29] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1514, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 458, in create
+    self.clan = await CRClan.create(datadict['clan']['tag'])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 110, in create
+    async with session.get(self.clan_url) as resp:
+AttributeError: type object 'CRClan' has no attribute 'clan_url'
+[21/09/2017 19:30] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1517, in _trophy
+    player_data.append('[{}]({})'.format(tag, player.url))
+AttributeError: 'list' object has no attribute 'url'
+[21/09/2017 19:34] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1498, 12, '\t\tfor thing\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1498
+    for thing
+            ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1498, 12, '\t\tfor thing\n'))
+[21/09/2017 19:41] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1506, in _trophy
+    eval('\n'.join(elements))
+  File "<string>", line 2
+    player_data.append(fplayer.chestcycle)
+              ^
+SyntaxError: invalid syntax
+[21/09/2017 19:42] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1506, in _trophy
+    eval('\n		'.join(elements))
+  File "<string>", line 2
+    player_data.append(fplayer.chestcycle)
+    ^
+IndentationError: unexpected indent
+[21/09/2017 19:47] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1500, in _trophy
+    eval(ele)
+  File "<string>", line 1, in <module>
+NameError: name 'player_data' is not defined
+[21/09/2017 19:50] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1500, in _trophy
+    eval(ele, globals=None,locals=None)
+TypeError: eval() takes no keyword arguments
+[21/09/2017 19:59] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1500, in _trophy
+    eval(ele)
+  File "<string>", line 1, in <module>
+NameError: name 'player_data' is not defined
+[21/09/2017 19:59] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1500, in _trophy
+    eval(ele)
+  File "<string>", line 1, in <module>
+NameError: name 'player_data' is not defined
+[21/09/2017 20:11] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1510, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 3: expected str instance, list found
+[21/09/2017 20:14] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1509, 30, "\t\t\tif thing == type(['list'])\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1509
+    if thing == type(['list'])
+                             ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1509, 30, "\t\t\tif thing == type(['list'])\n"))
+[21/09/2017 20:14] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1515, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 3: expected str instance, list found
+[21/09/2017 20:15] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1516, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 3: expected str instance, list found
+[21/09/2017 20:16] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1517, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 3: expected str instance, list found
+[21/09/2017 20:17] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1517, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 3: expected str instance, list found
+[21/09/2017 20:18] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1518, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 3: expected str instance, list found
+[21/09/2017 20:20] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1518, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 3: expected str instance, list found
+[21/09/2017 20:20] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1517, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 3: expected str instance, list found
+[21/09/2017 20:25] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1520, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 3: expected str instance, list found
+[21/09/2017 20:26] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1520, in _trophy
+    em = discord.Embed(title=player.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
+TypeError: sequence item 3: expected str instance, list found
+[21/09/2017 20:35] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1494, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 461, in create
+    formatted.seasons = self.seasons.formatted
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 391, in formatted
+    s['seasonEnding'],s['seasonHighest'],cremojis['trophy']))
+ValueError: cannot switch from automatic field numbering to manual field specification
+[21/09/2017 20:48] ERROR red on_command_error 431: Exception in command 'clan elders'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 857, in clanelders
+    tag = await self.keyortag2tag(keyortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 599, in keyortag2tag
+    tag = player.clan.url.replace(statsurl,'').replace('/clan/', '')
+AttributeError: 'list' object has no attribute 'clan'
+[21/09/2017 20:49] ERROR red on_command_error 431: Exception in command 'clan elders'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 857, in clanelders
+    tag = await self.keyortag2tag(keyortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 599, in keyortag2tag
+    tag = player.clan.url.replace(statsurl,'').replace('/clan/', '')[0]
+AttributeError: 'list' object has no attribute 'clan'
+[21/09/2017 20:49] ERROR red on_command_error 431: Exception in command 'clan elders'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 861, in clanelders
+    await self.async_refresh(clanurl+ '/refresh')
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1187, in async_refresh
+    response = await r.json()
+  File "lib\aiohttp\client_reqrep.py", line 789, in json
+    return loads(stripped.decode(encoding))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[21/09/2017 20:50] ERROR red on_command_error 431: Exception in command 'clan elders'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 861, in clanelders
+    await self.async_refresh(clanurl+ '/refresh')
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1187, in async_refresh
+    response = await r.json()
+  File "lib\aiohttp\client_reqrep.py", line 789, in json
+    return loads(stripped.decode(encoding))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[21/09/2017 20:51] ERROR red on_command_error 431: Exception in command 'clan elders'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 862, in clanelders
+    await self.async_refresh(clanurl+ '/refresh')
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1188, in async_refresh
+    response = await r.json()
+  File "lib\aiohttp\client_reqrep.py", line 789, in json
+    return loads(stripped.decode(encoding))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[21/09/2017 20:53] ERROR red on_command_error 431: Exception in command 'clan elders'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 863, in clanelders
+    await self.async_refresh(clanurl+ '/refresh')
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1189, in async_refresh
+    response = await r.json()
+  File "lib\aiohttp\client_reqrep.py", line 789, in json
+    return loads(stripped.decode(encoding))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[21/09/2017 20:54] ERROR red on_command_error 431: Exception in command 'clan elders'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 859, in clanelders
+    tag = await self.keyortag2tag(keyortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 599, in keyortag2tag
+    player = await CRPlayer.create(usertag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 443, in create
+    self.clan = await CRClan.create(datadict['clan']['tag'])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 134, in create
+    for i, m in enumerate(datadict['members']):
+KeyError: 'members'
+[21/09/2017 20:57] ERROR red on_command_error 431: Exception in command 'clan elders'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 918, in clanelders
+    e = discord.Embed(url=clan.clanurl, title="{}".format(clan.name), description='{}{}'.format(currentdesc, '\n'.join(data)),color = discord.Color(0x50d2fe))
+AttributeError: type object 'CRClan' has no attribute 'clanurl'
+[21/09/2017 21:03] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1516, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 421, in create
+    datadict = await resp.json()
+  File "lib\aiohttp\client_reqrep.py", line 789, in json
+    return loads(stripped.decode(encoding))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[21/09/2017 21:12] ERROR red on_command_error 431: Exception in command 'clashroyale deltag'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1477, in _deltag
+    self.deltag(author.id, tag)
+AttributeError: 'CRTags' object has no attribute 'deltag'
+[21/09/2017 21:13] ERROR red on_command_error 431: Exception in command 'clashroyale deltag'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1477, in _deltag
+    self.deltag(author.id, tag)
+NameError: name 'tag' is not defined
+[21/09/2017 21:18] ERROR red on_command_error 431: Exception in command 'clashroyale deltag'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1477, in _deltag
+    self.deltag(author.id, self.settings(author.id))
+TypeError: 'dict' object is not callable
+[21/09/2017 21:19] ERROR red on_command_error 431: Exception in command 'clashroyale deltag'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1477, in _deltag
+    self.deltag(author.id, self.settings[author.id])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1413, in deltag
+    self.settings.remove(userid)
+AttributeError: 'dict' object has no attribute 'remove'
+[21/09/2017 21:23] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1536, in _trophy
+    tag = await self.keyortag2tag2(userortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1524, in keyortag2tag2
+    user = ctx.message.server.get_member(userid)
+AttributeError: 'NoneType' object has no attribute 'get_member'
+[21/09/2017 21:28] ERROR red on_command_error 431: Exception in command 'clashroyale deltag'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1477, in _deltag
+    self.deltag(author.id, self.settings[author.id])
+KeyError: '222925389641547776'
+[21/09/2017 21:28] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1537, in _trophy
+    if tag[0] == None:
+TypeError: 'NoneType' object is not subscriptable
+[21/09/2017 21:31] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1537, in _trophy
+    if tag[0] == None or tag == None:
+TypeError: 'NoneType' object is not subscriptable
+[21/09/2017 21:38] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1536, in _trophy
+    tag = await self.keyortag2tag2(userortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1529, in keyortag2tag2
+    await self.bot.say("{} does not have a tag set.".format(user.display_name))
+AttributeError: 'NoneType' object has no attribute 'display_name'
+[21/09/2017 21:39] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1536, in _trophy
+    tag = await self.keyortag2tag2(userortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1529, in keyortag2tag2
+    await self.bot.say("{} does not have a tag set.".format(user.display_name))
+UnboundLocalError: local variable 'user' referenced before assignment
+[21/09/2017 21:43] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1536, in _trophy
+    tag = await self.keyortag2tag2(userortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1529, in keyortag2tag2
+    await self.bot.say("{} does not have a tag set.".format(user.display_name))
+AttributeError: 'NoneType' object has no attribute 'display_name'
+[21/09/2017 21:51] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1536, in _trophy
+    tag = await self.keyortag2tag2(userortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1529, in keyortag2tag2
+    await self.bot.say("{} does not have a tag set.".format(user.display_name))
+AttributeError: 'NoneType' object has no attribute 'display_name'
+[21/09/2017 21:52] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1536, in _trophy
+    tag = await self.keyortag2tag2(userortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1529, in keyortag2tag2
+    await self.bot.say("{} does not have a tag set.".format(user.display_name))
+AttributeError: 'NoneType' object has no attribute 'display_name'
+[21/09/2017 21:53] ERROR red on_command_error 431: Exception in command 'clashroyale deltag'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1477, in _deltag
+    self.deltag(author.id, self.settings[author.id])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1410, in deltag
+    for t in self.backsettings:
+RuntimeError: dictionary changed size during iteration
+[21/09/2017 21:54] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1578, in _trophy
+    discordname = user.name if user.nick is None else user.nick
+AttributeError: 'NoneType' object has no attribute 'nick'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1580, in _trophy
+    discordname = user.name
+AttributeError: 'NoneType' object has no attribute 'name'
+[21/09/2017 22:00] ERROR red on_command_error 431: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1540, in _trophy
+    tag = await self.keyortag2tag2(userortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1527, in keyortag2tag2
+    user = await self.bot.get_user(userid)
+  File "lib\discord\client.py", line 296, in __getattr__
+    raise AttributeError(msg.format(self.__class__, name))
+AttributeError: '<class '__main__.Bot'>' object has no attribute 'get_user'

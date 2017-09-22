@@ -1,7 +1,8 @@
 {
     "cogs.alias" : true,
     "cogs.audio" : true,
-    "cogs.crtags" : true,
+    "cogs.crsml" : true,
+    "cogs.crtags" : false,
     "cogs.crtags2" : true,
     "cogs.customcom" : true,
     "cogs.downloader" : true,
