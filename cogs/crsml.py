@@ -1395,7 +1395,8 @@ class CRTags:
 		self.settings[userid] = str(tag)
 		for t in self.backsettings:
 			if self.backsettings[t] == userid:
-				self.backsettings.remove(t)
+				self.backsettings.pop(t, None)
+				break
 		self.backsettings[str(tag)] = userid
 		dataIO.save_json(SETTINGS_JSON, self.settings)
 		dataIO.save_json(BACKSETTINGS_JSON, self.backsettings)
