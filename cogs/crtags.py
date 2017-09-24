@@ -451,27 +451,27 @@ class CRPlayer:
 			if 'League' in x:
 				self.league = x
 			elif 'Highest trophies' in x:
-				self.pb = x+ ': ' + statsdict[x]
+				self.pb = statsdict[x]
 			elif'Last known trophies' in x:
-				self.trophy = x+ ': ' + statsdict[x]
+				self.trophy = statsdict[x]
 			elif 'Challenge cards won' in x:
-				self.cardswon = x+ ': ' + statsdict[x]
+				self.cardswon = statsdict[x]
 			elif 'Tourney cards won' in x:
-				self.tcardswon = x+ ': ' + statsdict[x]
+				self.tcardswon = statsdict[x]
 			elif 'Total donations' in x:
-				self.donations = x+ ': ' + statsdict[x]
+				self.donations = statsdict[x]
 			elif 'Prev season rank' in x:
-				self.prevseasonrank = x+ ': ' + statsdict[x]
+				self.prevseasonrank = statsdict[x]
 			elif 'Prev season trophies' in x:
-				self.prevseasontrophy = x+ ': ' + statsdict[x]
+				self.prevseasontrophy = statsdict[x]
 			elif 'Prev season highest' in x:
-				self.prevseasonpb = x+ ': ' + statsdict[x]
+				self.prevseasonpb = statsdict[x]
 			elif 'Wins' in x:
-				self.wins = x+ ': ' + statsdict[x]
+				self.wins = statsdict[x]
 			elif 'Loses' in x:
-				self.losses = x+ ': ' + statsdict[x]
+				self.losses = statsdict[x]
 			elif '3 crown wins' in x:
-				self.crown3 = x+ ': ' + statsdict[x]
+				self.crown3 = statsdict[x]
 		self.name = playerName
 		self.level = playerLevel
 		self.clan = playerClan

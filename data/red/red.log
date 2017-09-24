@@ -1956,3 +1956,2312 @@ Traceback (most recent call last):
   File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1398, in savetag
     self.backsettings.remove(t)
 AttributeError: 'dict' object has no attribute 'remove'
+[22/09/2017 07:29] ERROR red load_cogs 650: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 535, 63, '\t\tawait self.bot.create_custom_emoji(ctx.message.server, name=, image=e)\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 535
+    await self.bot.create_custom_emoji(ctx.message.server, name=, image=e)
+                                                                ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "red.py", line 647, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 535, 63, '\t\tawait self.bot.create_custom_emoji(ctx.message.server, name=, image=e)\n'))
+[22/09/2017 07:32] ERROR red on_command_error 431: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 536, in initemojis
+    await self.bot.create_custom_emoji(ctx.message.server, name=emojiname, image=emoji)
+NameError: name 'emojiname' is not defined
+[22/09/2017 07:32] ERROR red on_command_error 431: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 536, in initemojis
+    await self.bot.create_custom_emoji(ctx.message.server, name=emojiname, image=emoji)
+NameError: name 'emojiname' is not defined
+[22/09/2017 07:33] ERROR red on_command_error 431: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 536, in initemojis
+    await self.bot.create_custom_emoji(ctx.message.server, name=emojiname, image=emoji)
+NameError: name 'emojiname' is not defined
+[22/09/2017 07:35] ERROR red on_command_error 431: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 540, in initemojis
+    await self.bot.create_custom_emoji(ctx.message.server, name=emojiname, image=emoji)
+NameError: name 'emojiname' is not defined
+[22/09/2017 07:42] ERROR red on_command_error 431: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 540, in initemojis
+    await self.bot.create_custom_emoji(ctx.message.server, name=emojiname, image=emoji)
+NameError: name 'emojiname' is not defined
+[22/09/2017 07:42] ERROR red on_command_error 431: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 540, in initemojis
+    await self.bot.create_custom_emoji(ctx.message.server, name=emojiname, image=emoji)
+NameError: name 'emojiname' is not defined
+[22/09/2017 07:54] ERROR red <module> 695: Traceback (most recent call last):
+  File "lib\discord\http.py", line 258, in static_login
+    data = yield from self.request(Route('GET', '/users/@me'))
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: UNAUTHORIZED (status code: 401): 401: Unauthorized
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "red.py", line 693, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 676, in main
+    bot=not bot.settings.self_bot)
+  File "lib\discord\client.py", line 416, in login
+    yield from getattr(self, '_login_' + str(n))(*args, **kwargs)
+  File "lib\discord\client.py", line 346, in _login_1
+    data = yield from self.http.static_login(token, bot=is_bot)
+  File "lib\discord\http.py", line 262, in static_login
+    raise LoginFailure('Improper token has been passed.') from e
+discord.errors.LoginFailure: Improper token has been passed.
+
+[22/09/2017 07:57] ERROR red <module> 697: Traceback (most recent call last):
+  File "lib\discord\http.py", line 258, in static_login
+    data = yield from self.request(Route('GET', '/users/@me'))
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: UNAUTHORIZED (status code: 401): 401: Unauthorized
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "red.py", line 695, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 678, in main
+    bot=not bot.settings.self_bot)
+  File "lib\discord\client.py", line 416, in login
+    yield from getattr(self, '_login_' + str(n))(*args, **kwargs)
+  File "lib\discord\client.py", line 346, in _login_1
+    data = yield from self.http.static_login(token, bot=is_bot)
+  File "lib\discord\http.py", line 262, in static_login
+    raise LoginFailure('Improper token has been passed.') from e
+discord.errors.LoginFailure: Improper token has been passed.
+
+[22/09/2017 08:05] ERROR red <module> 695: Traceback (most recent call last):
+  File "lib\discord\http.py", line 258, in static_login
+    data = yield from self.request(Route('GET', '/users/@me'))
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: UNAUTHORIZED (status code: 401): 401: Unauthorized
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "red.py", line 693, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 676, in main
+    bot=not bot.settings.self_bot)
+  File "lib\discord\client.py", line 416, in login
+    yield from getattr(self, '_login_' + str(n))(*args, **kwargs)
+  File "lib\discord\client.py", line 346, in _login_1
+    data = yield from self.http.static_login(token, bot=is_bot)
+  File "lib\discord\http.py", line 262, in static_login
+    raise LoginFailure('Improper token has been passed.') from e
+discord.errors.LoginFailure: Improper token has been passed.
+
+[22/09/2017 16:00] ERROR red load_cogs 650: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 534, 31, '        print(type(emojipath))\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 534
+    print(type(emojipath))
+                         ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "red.py", line 647, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 534, 31, '        print(type(emojipath))\n'))
+[22/09/2017 16:00] ERROR red <module> 695: Traceback (most recent call last):
+  File "lib\discord\http.py", line 258, in static_login
+    data = yield from self.request(Route('GET', '/users/@me'))
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: UNAUTHORIZED (status code: 401): 401: Unauthorized
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "red.py", line 693, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 676, in main
+    bot=not bot.settings.self_bot)
+  File "lib\discord\client.py", line 416, in login
+    yield from getattr(self, '_login_' + str(n))(*args, **kwargs)
+  File "lib\discord\client.py", line 346, in _login_1
+    data = yield from self.http.static_login(token, bot=is_bot)
+  File "lib\discord\http.py", line 262, in static_login
+    raise LoginFailure('Improper token has been passed.') from e
+discord.errors.LoginFailure: Improper token has been passed.
+
+[22/09/2017 16:02] ERROR red <module> 695: Traceback (most recent call last):
+  File "lib\discord\http.py", line 258, in static_login
+    data = yield from self.request(Route('GET', '/users/@me'))
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: UNAUTHORIZED (status code: 401): 401: Unauthorized
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "red.py", line 693, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 676, in main
+    bot=not bot.settings.self_bot)
+  File "lib\discord\client.py", line 416, in login
+    yield from getattr(self, '_login_' + str(n))(*args, **kwargs)
+  File "lib\discord\client.py", line 346, in _login_1
+    data = yield from self.http.static_login(token, bot=is_bot)
+  File "lib\discord\http.py", line 262, in static_login
+    raise LoginFailure('Improper token has been passed.') from e
+discord.errors.LoginFailure: Improper token has been passed.
+
+[22/09/2017 16:13] ERROR owner load 68: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 534, 31, '        print(type(emojipath))\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 534
+    print(type(emojipath))
+                         ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 64, in load
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 534, 31, '        print(type(emojipath))\n'))
+[22/09/2017 16:14] ERROR owner load 68: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 534, 31, '        print(type(emojipath))\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 534
+    print(type(emojipath))
+                         ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 64, in load
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 534, 31, '        print(type(emojipath))\n'))
+[22/09/2017 16:15] ERROR owner load 68: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 534, 31, '        print(type(emojipath))\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 534
+    print(type(emojipath))
+                         ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 64, in load
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 534, 31, '        print(type(emojipath))\n'))
+[22/09/2017 16:15] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1627, in _trophy
+    tag = await self.keyortag2tag2(userortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1614, in keyortag2tag2
+    user = await self.bot.get_user_info(userid)
+  File "lib\discord\client.py", line 3318, in get_user_info
+    data = yield from self.http.get_user_info(user_id)
+  File "lib\discord\http.py", line 196, in request
+    raise Forbidden(r, data)
+discord.errors.Forbidden: FORBIDDEN (status code: 403): Only bots can use this endpoint
+[22/09/2017 16:16] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 542, in initemojis
+    await self.bot.create_custom_emoji(ctx.message.server, name=emojiname, image=emoji)
+NameError: name 'emojiname' is not defined
+[22/09/2017 16:18] ERROR red <module> 698: Traceback (most recent call last):
+  File "lib\discord\http.py", line 258, in static_login
+    data = yield from self.request(Route('GET', '/users/@me'))
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: UNAUTHORIZED (status code: 401): 401: Unauthorized
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "red.py", line 696, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 679, in main
+    bot=not bot.settings.self_bot)
+  File "lib\discord\client.py", line 416, in login
+    yield from getattr(self, '_login_' + str(n))(*args, **kwargs)
+  File "lib\discord\client.py", line 346, in _login_1
+    data = yield from self.http.static_login(token, bot=is_bot)
+  File "lib\discord\http.py", line 262, in static_login
+    raise LoginFailure('Improper token has been passed.') from e
+discord.errors.LoginFailure: Improper token has been passed.
+
+[22/09/2017 16:28] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 542, 17, "\t\tpenisserv await self.bot.create_server('penis')\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 542
+    penisserv await self.bot.create_server('penis')
+                  ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 542, 17, "\t\tpenisserv await self.bot.create_server('penis')\n"))
+[22/09/2017 16:29] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 542, in initemojis
+    penisserv = await self.bot.create_server('penis')
+  File "lib\discord\client.py", line 2280, in create_server
+    data = yield from self.http.create_server(name, region, icon)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Maximum number of guilds reached (10). You may request this limit be raised by contacting support@discordapp.com
+[22/09/2017 16:31] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 543, in initemojis
+    await self.bot.say(await self.bot.create_invite(penisserv.channels[0]))
+TypeError: 'dict_values' object does not support indexing
+[22/09/2017 16:43] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 540, 38, '\t\t\t\temojiservers[server.name[0]]server\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 540
+    emojiservers[server.name[0]]server
+                                     ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 540, 38, '\t\t\t\temojiservers[server.name[0]]server\n'))
+[22/09/2017 16:43] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 540, in initemojis
+    emojiservers[server.name[0]] = server
+TypeError: list indices must be integers or slices, not str
+[22/09/2017 16:44] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 540, in initemojis
+    emojiservers[int(server.name[0])-1] = server
+ValueError: invalid literal for int() with base 10: 'e'
+[22/09/2017 16:49] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 554, in initemojis
+    tempe.append()
+TypeError: append() takes exactly one argument (0 given)
+[22/09/2017 16:56] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 555, in initemojis
+    if file.name == 'watch.png':
+AttributeError: 'str' object has no attribute 'name'
+[22/09/2017 16:56] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 557, in initemojis
+    if file.name == 'watch.png':
+AttributeError: 'str' object has no attribute 'name'
+[22/09/2017 16:59] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 557, in initemojis
+    if file.name == 'watch.png':
+AttributeError: 'str' object has no attribute 'name'
+[22/09/2017 16:59] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 560, in initemojis
+    with open(os.path.join(emojipath,os.path.basename(root))) as f:
+PermissionError: [Errno 13] Permission denied: 'data\\crtags\\images\\arenas'
+[22/09/2017 17:00] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 561, in initemojis
+    tempe.append(f.read())
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8f in position 57: character maps to <undefined>
+[22/09/2017 17:01] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 561, in initemojis
+    tempe.append(f.read())
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8f in position 57: character maps to <undefined>
+[22/09/2017 17:04] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 563, in initemojis
+    await self.bot.send_file(ctx.message.channel, l[0])
+UnboundLocalError: local variable 'l' referenced before assignment
+[22/09/2017 17:04] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 563, in initemojis
+    await self.bot.send_file(ctx.message.channel, f.read())
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8f in position 57: character maps to <undefined>
+[22/09/2017 17:05] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 564, in initemojis
+    await self.bot.send_file(ctx.message.channel, f.read())
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8f in position 57: character maps to <undefined>
+[22/09/2017 17:08] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 564, in initemojis
+    await self.bot.send_file(ctx.message.channel, f.read())
+  File "lib\discord\client.py", line 1226, in send_file
+    with open(fp, 'rb') as f:
+ValueError: embedded null byte
+[22/09/2017 17:15] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 571, in initemojis
+    if (tempe)>0:
+TypeError: unorderable types: list() > int()
+[22/09/2017 17:38] ERROR owner _reload 155: ('unexpected indent', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 572, 6, '\t\t\t\t\t\tpass\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 572
+    pass
+    ^
+IndentationError: unexpected indent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('unexpected indent', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 572, 6, '\t\t\t\t\t\tpass\n'))
+[22/09/2017 18:50] ERROR owner _reload 155: ('unexpected indent', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 572, 6, '\t\t\t\t\t\tpass\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 572
+    pass
+    ^
+IndentationError: unexpected indent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('unexpected indent', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 572, 6, '\t\t\t\t\t\tpass\n'))
+[22/09/2017 18:51] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 567, in initemojis
+    tempe.append(binfile)
+AttributeError: 'dict' object has no attribute 'append'
+[22/09/2017 18:52] ERROR owner _reload 155: ('unexpected indent', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 564, 5, "\t\t\t\t\tename = file.replace('.png','')\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 564
+    ename = file.replace('.png','')
+    ^
+IndentationError: unexpected indent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('unexpected indent', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 564, 5, "\t\t\t\t\tename = file.replace('.png','')\n"))
+[22/09/2017 18:52] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 570, in initemojis
+    tempe.append(binfile)
+AttributeError: 'dict' object has no attribute 'append'
+[22/09/2017 18:57] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\aiohttp\client_reqrep.py", line 407, in write_bytes
+    result = stream.send(value)
+  File "lib\aiohttp\helpers.py", line 185, in _gen_form_data
+    part = self._writer.append(value, headers)
+  File "lib\aiohttp\multipart.py", line 943, in append
+    self.parts.append(self.part_writer_cls(obj, headers))
+  File "lib\aiohttp\multipart.py", line 683, in __init__
+    self._fill_headers_with_defaults()
+  File "lib\aiohttp\multipart.py", line 701, in _fill_headers_with_defaults
+    content_length = self._guess_content_length(self.obj)
+  File "lib\aiohttp\multipart.py", line 725, in _guess_content_length
+    return os.fstat(obj.fileno()).st_size - obj.tell()
+ValueError: I/O operation on closed file
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 592, in initemojis
+    await self.bot.send_file(ctx.message.channel, allemojis[0]['hog-rider'])
+  File "lib\discord\client.py", line 1235, in send_file
+    filename=filename, content=content, tts=tts)
+  File "lib\discord\http.py", line 137, in request
+    r = yield from self.session.request(method, url, **kwargs)
+  File "lib\aiohttp\client.py", line 555, in __iter__
+    resp = yield from self._coro
+  File "lib\aiohttp\client.py", line 202, in _request
+    yield from resp.start(conn, read_until_eof)
+  File "lib\aiohttp\client_reqrep.py", line 640, in start
+    message = yield from httpstream.read()
+  File "lib\aiohttp\streams.py", line 641, in read
+    result = yield from super().read()
+  File "lib\aiohttp\streams.py", line 476, in read
+    yield from self._waiter
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 304, in _wakeup
+    future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+aiohttp.errors.ClientRequestError: Can not write request body for https://discordapp.com/api/v6/channels/305591335111360512/messages
+[22/09/2017 18:58] ERROR owner _reload 155: ('unexpected indent', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 573, 6, '\t\t\t\t\t\tif len(tempe)==1:\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 573
+    if len(tempe)==1:
+    ^
+IndentationError: unexpected indent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('unexpected indent', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 573, 6, '\t\t\t\t\t\tif len(tempe)==1:\n'))
+[22/09/2017 18:58] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\aiohttp\client_reqrep.py", line 407, in write_bytes
+    result = stream.send(value)
+  File "lib\aiohttp\helpers.py", line 185, in _gen_form_data
+    part = self._writer.append(value, headers)
+  File "lib\aiohttp\multipart.py", line 943, in append
+    self.parts.append(self.part_writer_cls(obj, headers))
+  File "lib\aiohttp\multipart.py", line 683, in __init__
+    self._fill_headers_with_defaults()
+  File "lib\aiohttp\multipart.py", line 701, in _fill_headers_with_defaults
+    content_length = self._guess_content_length(self.obj)
+  File "lib\aiohttp\multipart.py", line 725, in _guess_content_length
+    return os.fstat(obj.fileno()).st_size - obj.tell()
+ValueError: I/O operation on closed file
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 574, in initemojis
+    await self.bot.send_file(ctx.message.channel, f)
+  File "lib\discord\client.py", line 1235, in send_file
+    filename=filename, content=content, tts=tts)
+  File "lib\discord\http.py", line 137, in request
+    r = yield from self.session.request(method, url, **kwargs)
+  File "lib\aiohttp\client.py", line 555, in __iter__
+    resp = yield from self._coro
+  File "lib\aiohttp\client.py", line 202, in _request
+    yield from resp.start(conn, read_until_eof)
+  File "lib\aiohttp\client_reqrep.py", line 640, in start
+    message = yield from httpstream.read()
+  File "lib\aiohttp\streams.py", line 641, in read
+    result = yield from super().read()
+  File "lib\aiohttp\streams.py", line 476, in read
+    yield from self._waiter
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 304, in _wakeup
+    future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+aiohttp.errors.ClientRequestError: Can not write request body for https://discordapp.com/api/v6/channels/305591335111360512/messages
+[22/09/2017 18:59] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\aiohttp\client_reqrep.py", line 407, in write_bytes
+    result = stream.send(value)
+  File "lib\aiohttp\helpers.py", line 185, in _gen_form_data
+    part = self._writer.append(value, headers)
+  File "lib\aiohttp\multipart.py", line 943, in append
+    self.parts.append(self.part_writer_cls(obj, headers))
+  File "lib\aiohttp\multipart.py", line 683, in __init__
+    self._fill_headers_with_defaults()
+  File "lib\aiohttp\multipart.py", line 701, in _fill_headers_with_defaults
+    content_length = self._guess_content_length(self.obj)
+  File "lib\aiohttp\multipart.py", line 725, in _guess_content_length
+    return os.fstat(obj.fileno()).st_size - obj.tell()
+ValueError: I/O operation on closed file
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 574, in initemojis
+    await self.bot.send_file(ctx.message.channel, f)
+  File "lib\discord\client.py", line 1235, in send_file
+    filename=filename, content=content, tts=tts)
+  File "lib\discord\http.py", line 137, in request
+    r = yield from self.session.request(method, url, **kwargs)
+  File "lib\aiohttp\client.py", line 555, in __iter__
+    resp = yield from self._coro
+  File "lib\aiohttp\client.py", line 202, in _request
+    yield from resp.start(conn, read_until_eof)
+  File "lib\aiohttp\client_reqrep.py", line 640, in start
+    message = yield from httpstream.read()
+  File "lib\aiohttp\streams.py", line 641, in read
+    result = yield from super().read()
+  File "lib\aiohttp\streams.py", line 476, in read
+    yield from self._waiter
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 304, in _wakeup
+    future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+aiohttp.errors.ClientRequestError: Can not write request body for https://discordapp.com/api/v6/channels/331566850897084426/messages
+[22/09/2017 18:59] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\aiohttp\client_reqrep.py", line 407, in write_bytes
+    result = stream.send(value)
+  File "lib\aiohttp\helpers.py", line 185, in _gen_form_data
+    part = self._writer.append(value, headers)
+  File "lib\aiohttp\multipart.py", line 943, in append
+    self.parts.append(self.part_writer_cls(obj, headers))
+  File "lib\aiohttp\multipart.py", line 683, in __init__
+    self._fill_headers_with_defaults()
+  File "lib\aiohttp\multipart.py", line 701, in _fill_headers_with_defaults
+    content_length = self._guess_content_length(self.obj)
+  File "lib\aiohttp\multipart.py", line 725, in _guess_content_length
+    return os.fstat(obj.fileno()).st_size - obj.tell()
+ValueError: I/O operation on closed file
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 593, in initemojis
+    await self.bot.send_file(ctx.message.channel, allemojis[0]['hog-rider'])
+  File "lib\discord\client.py", line 1235, in send_file
+    filename=filename, content=content, tts=tts)
+  File "lib\discord\http.py", line 137, in request
+    r = yield from self.session.request(method, url, **kwargs)
+  File "lib\aiohttp\client.py", line 555, in __iter__
+    resp = yield from self._coro
+  File "lib\aiohttp\client.py", line 202, in _request
+    yield from resp.start(conn, read_until_eof)
+  File "lib\aiohttp\client_reqrep.py", line 640, in start
+    message = yield from httpstream.read()
+  File "lib\aiohttp\streams.py", line 641, in read
+    result = yield from super().read()
+  File "lib\aiohttp\streams.py", line 476, in read
+    yield from self._waiter
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 304, in _wakeup
+    future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+aiohttp.errors.ClientRequestError: Can not write request body for https://discordapp.com/api/v6/channels/331566850897084426/messages
+[22/09/2017 19:04] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\aiohttp\client_reqrep.py", line 407, in write_bytes
+    result = stream.send(value)
+  File "lib\aiohttp\helpers.py", line 185, in _gen_form_data
+    part = self._writer.append(value, headers)
+  File "lib\aiohttp\multipart.py", line 943, in append
+    self.parts.append(self.part_writer_cls(obj, headers))
+  File "lib\aiohttp\multipart.py", line 683, in __init__
+    self._fill_headers_with_defaults()
+  File "lib\aiohttp\multipart.py", line 701, in _fill_headers_with_defaults
+    content_length = self._guess_content_length(self.obj)
+  File "lib\aiohttp\multipart.py", line 725, in _guess_content_length
+    return os.fstat(obj.fileno()).st_size - obj.tell()
+ValueError: I/O operation on closed file
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 578, in initemojis
+    await self.bot.send_file(ctx.message.channel, binfile)
+  File "lib\discord\client.py", line 1235, in send_file
+    filename=filename, content=content, tts=tts)
+  File "lib\discord\http.py", line 137, in request
+    r = yield from self.session.request(method, url, **kwargs)
+  File "lib\aiohttp\client.py", line 555, in __iter__
+    resp = yield from self._coro
+  File "lib\aiohttp\client.py", line 202, in _request
+    yield from resp.start(conn, read_until_eof)
+  File "lib\aiohttp\client_reqrep.py", line 640, in start
+    message = yield from httpstream.read()
+  File "lib\aiohttp\streams.py", line 641, in read
+    result = yield from super().read()
+  File "lib\aiohttp\streams.py", line 476, in read
+    yield from self._waiter
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 304, in _wakeup
+    future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+aiohttp.errors.ClientRequestError: Can not write request body for https://discordapp.com/api/v6/channels/331566850897084426/messages
+[22/09/2017 19:07] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 599, in initemojis
+    await self.bot.send_file(ctx.message.channel, e)
+  File "lib\discord\client.py", line 1226, in send_file
+    with open(fp, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'hog-rider'
+[22/09/2017 19:08] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\aiohttp\client_reqrep.py", line 407, in write_bytes
+    result = stream.send(value)
+  File "lib\aiohttp\helpers.py", line 185, in _gen_form_data
+    part = self._writer.append(value, headers)
+  File "lib\aiohttp\multipart.py", line 943, in append
+    self.parts.append(self.part_writer_cls(obj, headers))
+  File "lib\aiohttp\multipart.py", line 683, in __init__
+    self._fill_headers_with_defaults()
+  File "lib\aiohttp\multipart.py", line 701, in _fill_headers_with_defaults
+    content_length = self._guess_content_length(self.obj)
+  File "lib\aiohttp\multipart.py", line 725, in _guess_content_length
+    return os.fstat(obj.fileno()).st_size - obj.tell()
+ValueError: I/O operation on closed file
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 599, in initemojis
+    await self.bot.send_file(ctx.message.channel, l[e])
+  File "lib\discord\client.py", line 1235, in send_file
+    filename=filename, content=content, tts=tts)
+  File "lib\discord\http.py", line 137, in request
+    r = yield from self.session.request(method, url, **kwargs)
+  File "lib\aiohttp\client.py", line 555, in __iter__
+    resp = yield from self._coro
+  File "lib\aiohttp\client.py", line 202, in _request
+    yield from resp.start(conn, read_until_eof)
+  File "lib\aiohttp\client_reqrep.py", line 640, in start
+    message = yield from httpstream.read()
+  File "lib\aiohttp\streams.py", line 641, in read
+    result = yield from super().read()
+  File "lib\aiohttp\streams.py", line 476, in read
+    yield from self._waiter
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 304, in _wakeup
+    future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+aiohttp.errors.ClientRequestError: Can not write request body for https://discordapp.com/api/v6/channels/331566850897084426/messages
+[22/09/2017 19:10] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 576, in initemojis
+    await self.bot.send_file(emojiservers[servercount], tempe[ename])
+  File "lib\discord\client.py", line 1235, in send_file
+    filename=filename, content=content, tts=tts)
+  File "lib\discord\http.py", line 198, in request
+    raise NotFound(r, data)
+discord.errors.NotFound: NOT FOUND (status code: 404): Unknown Channel
+[22/09/2017 19:10] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 576, in initemojis
+    await self.bot.send_file(emojiservers[servercount].channels[0], tempe[ename])
+TypeError: 'dict_values' object does not support indexing
+[22/09/2017 19:11] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 576, in initemojis
+    await self.bot.send_file(list(emojiservers[servercount].channels)[0], tempe[ename])
+  File "lib\discord\client.py", line 1235, in send_file
+    filename=filename, content=content, tts=tts)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Cannot send messages in a non-text channel
+[22/09/2017 19:13] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 582, in initemojis
+    await self.bot.send_file([0], tempe[ename])
+  File "lib\discord\client.py", line 1223, in send_file
+    channel_id, guild_id = yield from self._resolve_destination(destination)
+  File "lib\discord\client.py", line 289, in _resolve_destination
+    raise InvalidArgument(fmt.format(destination))
+discord.errors.InvalidArgument: Destination must be Channel, PrivateChannel, User, or Object. Received list
+[22/09/2017 19:14] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 582, in initemojis
+    await self.bot.send_file([0], tempe[ename])
+  File "lib\discord\client.py", line 1223, in send_file
+    channel_id, guild_id = yield from self._resolve_destination(destination)
+  File "lib\discord\client.py", line 289, in _resolve_destination
+    raise InvalidArgument(fmt.format(destination))
+discord.errors.InvalidArgument: Destination must be Channel, PrivateChannel, User, or Object. Received list
+[22/09/2017 19:15] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 568, in initemojis
+    binfile = f
+UnboundLocalError: local variable 'f' referenced before assignment
+[22/09/2017 19:17] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 582, in initemojis
+    await self.bot.create_custom_emoji(emojiservers[servercount], ename, tempe[ename])
+TypeError: create_custom_emoji() takes 2 positional arguments but 4 were given
+[22/09/2017 19:18] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 582, in initemojis
+    await self.bot.create_custom_emoji(server=emojiservers[servercount], name=ename, image=tempe[ename])
+  File "lib\discord\client.py", line 2526, in create_custom_emoji
+    img = utils._bytes_to_base64_data(image)
+  File "lib\discord\utils.py", line 247, in _bytes_to_base64_data
+    mime = _get_mime_type_for_image(data)
+  File "lib\discord\utils.py", line 238, in _get_mime_type_for_image
+    if data.startswith(b'\x89\x50\x4E\x47\x0D\x0A\x1A\x0A'):
+AttributeError: '_io.BufferedReader' object has no attribute 'startswith'
+[22/09/2017 19:18] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 582, in initemojis
+    await self.bot.create_custom_emoji(server=emojiservers[servercount], name=ename, image=tempe[ename].read())
+  File "lib\discord\client.py", line 2527, in create_custom_emoji
+    data = yield from self.http.create_custom_emoji(server.id, name, img)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400)
+[22/09/2017 19:19] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 582, in initemojis
+    await self.bot.create_custom_emoji(server=emojiservers[servercount], name=ename, image=f.read())
+  File "lib\discord\client.py", line 2527, in create_custom_emoji
+    data = yield from self.http.create_custom_emoji(server.id, name, img)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400)
+[22/09/2017 19:23] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 582, in initemojis
+    await self.bot.create_custom_emoji(server=emojiservers[servercount], name=ename, image=f.read())
+  File "lib\discord\client.py", line 2527, in create_custom_emoji
+    data = yield from self.http.create_custom_emoji(server.id, name, img)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400)
+[22/09/2017 19:26] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 582, in initemojis
+    await self.bot.create_custom_emoji(server=emojiservers[servercount], name=ename, image=f.read())
+  File "lib\discord\client.py", line 2527, in create_custom_emoji
+    data = yield from self.http.create_custom_emoji(server.id, name, img)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400)
+[22/09/2017 19:26] ERROR red <module> 698: Traceback (most recent call last):
+  File "lib\discord\http.py", line 258, in static_login
+    data = yield from self.request(Route('GET', '/users/@me'))
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: UNAUTHORIZED (status code: 401): 401: Unauthorized
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "red.py", line 696, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 679, in main
+    bot=not bot.settings.self_bot)
+  File "lib\discord\client.py", line 416, in login
+    yield from getattr(self, '_login_' + str(n))(*args, **kwargs)
+  File "lib\discord\client.py", line 346, in _login_1
+    data = yield from self.http.static_login(token, bot=is_bot)
+  File "lib\discord\http.py", line 262, in static_login
+    raise LoginFailure('Improper token has been passed.') from e
+discord.errors.LoginFailure: Improper token has been passed.
+
+[22/09/2017 19:31] ERROR red on_command_error 434: Exception in command 'initemojis'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 582, in initemojis
+    await self.bot.create_custom_emoji(server=emojiservers[servercount], name=ename, image=f.read())
+  File "lib\discord\client.py", line 2527, in create_custom_emoji
+    data = yield from self.http.create_custom_emoji(server.id, name, img)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400)
+[22/09/2017 19:53] ERROR red on_command_error 434: Exception in command 'cremoji'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1392, in _cremoji
+    await self.bot.say(self[emojiname])
+TypeError: 'CRTags' object is not subscriptable
+[22/09/2017 19:53] ERROR red on_command_error 434: Exception in command 'cremoji'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1392, in _cremoji
+    await self.bot.say(self[emojiname])
+TypeError: 'CRTags' object is not subscriptable
+[22/09/2017 19:54] ERROR red on_command_error 434: Exception in command 'cremoji'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1392, in _cremoji
+    await self.bot.say(self.cremojis[emojiname])
+AttributeError: 'CRTags' object has no attribute 'cremojis'
+[22/09/2017 19:54] ERROR red on_command_error 434: Exception in command 'cremoji'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1392, in _cremoji
+    await self.bot.say(self.allemojis[emojiname])
+AttributeError: 'CRTags' object has no attribute 'allemojis'
+[22/09/2017 19:56] ERROR red on_command_error 434: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1995, in setup
+    bot.add_cog(CRTags(bot))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 529, in __init__
+    self.allemojis = dadataIO.load_json(CREMOJIS_JSON)
+NameError: name 'dadataIO' is not defined
+[22/09/2017 20:16] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1676, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 428, in create
+    self.name = datadict['name']
+KeyError: 'name'
+[22/09/2017 20:17] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1676, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 428, in create
+    self.name = datadict['name']
+KeyError: 'name'
+[22/09/2017 20:18] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1676, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 428, in create
+    self.name = datadict['name']
+KeyError: 'name'
+[22/09/2017 20:19] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1677, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 429, in create
+    self.name = datadict['name']
+KeyError: 'name'
+[22/09/2017 20:23] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1683, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 420, in create
+    r = requests.get(user_url, headers=headers)
+NameError: name 'user_url' is not defined
+[22/09/2017 20:23] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1684, in _trophy
+    fplayer = player[1]
+TypeError: 'NoneType' object is not subscriptable
+[22/09/2017 20:24] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1684, in _trophy
+    fplayer = player[1]
+TypeError: 'NoneType' object is not subscriptable
+[22/09/2017 20:24] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1684, in _trophy
+    fplayer = player[1]
+TypeError: 'NoneType' object is not subscriptable
+[22/09/2017 20:26] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1683, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 420, in create
+    r = requests.get(user_url, headers=headers)
+  File "lib\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "lib\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "lib\requests\sessions.py", line 502, in request
+    resp = self.send(prep, **send_kwargs)
+  File "lib\requests\sessions.py", line 606, in send
+    adapter = self.get_adapter(url=request.url)
+  File "lib\requests\sessions.py", line 697, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'view-source:http://api.cr-api.com/profile/V82UVQVV82UQVV'
+[22/09/2017 20:27] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1683, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 420, in create
+    r = requests.get(self.url, headers=headers)
+  File "lib\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "lib\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "lib\requests\sessions.py", line 502, in request
+    resp = self.send(prep, **send_kwargs)
+  File "lib\requests\sessions.py", line 606, in send
+    adapter = self.get_adapter(url=request.url)
+  File "lib\requests\sessions.py", line 697, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'view-source:http://api.cr-api.com/profile/V82UVQVV82UQVV'
+[22/09/2017 20:27] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1683, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 426, in create
+    async with session.get(self.url) as resp:
+  File "lib\aiohttp\client.py", line 565, in __aenter__
+    self._resp = yield from self._coro
+  File "lib\aiohttp\client.py", line 195, in _request
+    proxy=proxy, proxy_auth=proxy_auth, timeout=timeout)
+  File "lib\aiohttp\client_reqrep.py", line 91, in __init__
+    self.update_host(url)
+  File "lib\aiohttp\client_reqrep.py", line 111, in update_host
+    raise ValueError('Host could not be detected.')
+ValueError: Host could not be detected.
+[22/09/2017 20:29] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1683, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 426, in create
+    async with session.get(self.url.replace('api.','',1)) as resp:
+  File "lib\aiohttp\client.py", line 565, in __aenter__
+    self._resp = yield from self._coro
+  File "lib\aiohttp\client.py", line 195, in _request
+    proxy=proxy, proxy_auth=proxy_auth, timeout=timeout)
+  File "lib\aiohttp\client_reqrep.py", line 91, in __init__
+    self.update_host(url)
+  File "lib\aiohttp\client_reqrep.py", line 111, in update_host
+    raise ValueError('Host could not be detected.')
+ValueError: Host could not be detected.
+[22/09/2017 20:29] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1683, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 427, in create
+    datadict = await resp.json()
+  File "lib\aiohttp\client_reqrep.py", line 789, in json
+    return loads(stripped.decode(encoding))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[22/09/2017 20:30] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1684, in _trophy
+    fplayer = player[1]
+TypeError: 'NoneType' object is not subscriptable
+[22/09/2017 20:52] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 429, 20, '\t\t\tdefaultdatadict = {"tag":"","name":"","trophies":\'\',"arena":\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 429
+    defaultdatadict = {"tag":"","name":"","trophies":'',"arena":
+                    ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 429, 20, '\t\t\tdefaultdatadict = {"tag":"","name":"","trophies":\'\',"arena":\n'))
+[22/09/2017 20:52] ERROR red load_cogs 653: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 429, 20, '\t\t\tdefaultdatadict = {"tag":"","name":"","trophies":\'\',"arena":\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 429
+    defaultdatadict = {"tag":"","name":"","trophies":'',"arena":
+                    ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "red.py", line 650, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 429, 20, '\t\t\tdefaultdatadict = {"tag":"","name":"","trophies":\'\',"arena":\n'))
+[22/09/2017 20:53] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 443, 17, '\t\t\t{"legendary":,"epic":\'\',"arena":\'\'},"currentDeck":[\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 443
+    {"legendary":,"epic":'',"arena":''},"currentDeck":[
+                 ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 443, 17, '\t\t\t{"legendary":,"epic":\'\',"arena":\'\'},"currentDeck":[\n'))
+[22/09/2017 20:53] ERROR owner _reload 155: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 461, 2, '\t\tprint(datadict)\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 461
+    print(datadict)
+    ^
+IndentationError: expected an indented block
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 461, 2, '\t\tprint(datadict)\n'))
+[22/09/2017 20:54] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1716, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 427, in create
+    datas = mostofdata.find_all('div', {'class': 'content'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+[22/09/2017 20:54] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1716, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 427, in create
+    datas = mostofdata.find_all('div', {'class': 'content'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+[22/09/2017 20:56] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1717, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 428, in create
+    datas = mostofdata.find_all('div', {'class': 'content'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+[22/09/2017 20:57] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1717, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 428, in create
+    datas = mostofdata.find_all('div', {'class': 'content'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+[22/09/2017 20:57] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1717, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 428, in create
+    datas = mostofdata.find_all('div', {'class': 'content'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+[22/09/2017 20:58] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1717, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 428, in create
+    datas = mostofdata.find_all('div', {'class': 'content'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+[22/09/2017 20:59] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1717, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 428, in create
+    datas = mostofdata.find_all('div', {'class': 'content'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+[22/09/2017 20:59] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1717, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 469, in create
+    self.name = datadict['name']
+KeyError: 'name'
+[22/09/2017 21:01] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1717, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 469, in create
+    self.name = datadict['name']
+KeyError: 'name'
+[22/09/2017 21:36] ERROR red on_command_error 434: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1234, in claninfo
+    clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clanurl))
+AttributeError: type object 'CRClan' has no attribute 'clanurl'
+[22/09/2017 21:38] ERROR red on_command_error 434: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1390, in claninfo
+    em.append(discord.Embed(url=clan.clanurl, title="{}".format(clan.name), description='\n'.join(clan_data),color = discord.Color(0x50d2fe)))
+AttributeError: type object 'CRClan' has no attribute 'clanurl'
+[22/09/2017 21:38] ERROR red on_command_error 434: Exception in command 'clan get'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 958, in get_clan
+    tag = await self.keyortag2tag(keyortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 916, in keyortag2tag
+    player = await CRPlayer.create(usertag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 469, in create
+    self.name = datadict['name']
+KeyError: 'name'
+[22/09/2017 21:39] ERROR red on_command_error 434: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1383, in claninfo
+    clan_data.append("Clan Score: [{}](http://)".format(clan.trophies))
+AttributeError: type object 'CRClan' has no attribute 'trophies'
+[22/09/2017 21:39] ERROR red on_command_error 434: Exception in command 'clan info'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1390, in claninfo
+    em.append(discord.Embed(url=clan.clanurl, title="{}".format(clan.name), description='\n'.join(clan_data),color = discord.Color(0x50d2fe)))
+AttributeError: type object 'CRClan' has no attribute 'clanurl'
+[22/09/2017 21:41] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1865, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 469, in create
+    self.name = datadict['name']
+KeyError: 'name'
+[22/09/2017 21:57] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1860, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 423, in create
+    await StatsCRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 541, in create
+    chests = chests_queue.get_text().split()
+AttributeError: 'NoneType' object has no attribute 'get_text'
+[22/09/2017 21:59] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1860, in _trophy
+    tag = tag[0]
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 423, in create
+    await StatsCRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 541, in create
+    chests_queue = soup.find('div', {'class':'chests__queue'})
+AttributeError: 'NoneType' object has no attribute 'get_text'
+[22/09/2017 21:59] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1861, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 423, in create
+    await StatsCRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 542, in create
+    chests = chests_queue.get_text().split()
+AttributeError: 'NoneType' object has no attribute 'get_text'
+[22/09/2017 22:06] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1861, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 483, in create
+    formatted.xp = self.xp.formatted
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 246, in formatted
+    return "Level {}, {}/{}{}".format(self.level, self.current,self.denom, cremojis['experience'])
+KeyError: 'experience'
+[22/09/2017 22:07] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1861, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 483, in create
+    formatted.xp = self.xp.formatted
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 246, in formatted
+    return "Level {}, {}/{}{}".format(self.level, self.current,self.denom, cremojis['experience'])
+KeyError: 'experience'
+[22/09/2017 22:11] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1862, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 484, in create
+    formatted.xp = self.xp.formatted
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 246, in formatted
+    return "Level {}, {}/{}{}".format(self.level, self.current,self.denom, cremojis['experience'])
+KeyError: 'experience'
+[22/09/2017 22:11] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1862, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 484, in create
+    formatted.xp = self.xp.formatted
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 246, in formatted
+    return "Level {}, {}/{}{}".format(self.level, self.current,self.denom, cremojis['experience'])
+KeyError: 'experience'
+[22/09/2017 22:18] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1862, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 484, in create
+    formatted.xp = self.xp.formatted
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 246, in formatted
+    return "Level {}, {}/{}{}".format(self.level, self.current,self.denom, cremojis['level-small'])
+KeyError: 'level-small'
+[22/09/2017 22:19] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1862, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 487, in create
+    formatted.stats = self.stats.formatted
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 333, in formatted
+    "Tourney Cards Won: {}{}".format(self.tcardswon, cremojis['cards']),
+KeyError: 'cards'
+[22/09/2017 22:33] ERROR red on_command_error 434: Exception in command 'clashroyale profile'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 2068, in profile
+    things = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 487, in create
+    formatted.stats = self.stats.formatted
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 333, in formatted
+    "Tourney Cards Won: {}{}{}".format(self.tcardswon, cremojis['deck'], cremojis['tournament']),
+KeyError: 'cards'
+[22/09/2017 22:34] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1855, in _trophy
+    tag = await self.keyortag2tag2(userortag, ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1850, in keyortag2tag2
+    return [tag, user]
+UnboundLocalError: local variable 'user' referenced before assignment
+[22/09/2017 22:34] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1863, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 493, in create
+    formatted.chestcycle = self.chestcycle.formatted
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 353, in formatted
+    "{}{}".format(cremojis['chestsupermagical'],self.SMC),
+KeyError: 'chestsupermagical'
+[22/09/2017 22:36] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1895, in _trophy
+    discordname = user.name if user.nick is None else user.nick
+AttributeError: 'NoneType' object has no attribute 'nick'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1897, in _trophy
+    discordname = user.name
+AttributeError: 'NoneType' object has no attribute 'name'
+[22/09/2017 22:55] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1912, in _trophy
+    await self.bot.say(embed=em)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 157, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400)
+[22/09/2017 23:07] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1919, in _trophy
+    em.add_field(name = elements2display[n], value = '\n'.join(data))
+IndexError: list index out of range
+[22/09/2017 23:08] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1919, in _trophy
+    em.add_field(name = elements2display[n], value = data)
+IndexError: list index out of range
+[22/09/2017 23:09] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1920, in _trophy
+    em.add_field(name = elements2display[n], value = data)
+IndexError: list index out of range
+[22/09/2017 23:11] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1914, in _trophy
+    em.add_field(name = elements2display[n], value = '\n'.join(data[:len(data)/2]))
+TypeError: slice indices must be integers or None or have an __index__ method
+[22/09/2017 23:13] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1914, in _trophy
+    em.add_field(name = elements2display[n], value = '\n'.join(data[:int(len(data))/2]))
+TypeError: slice indices must be integers or None or have an __index__ method
+[23/09/2017 11:36] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1904, in _trophy
+    player_data = self.elements2data(elements2display, fplayer)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1862, in elements2data
+    thing = eval('fplayer.{}'.format(ele))
+  File "<string>", line 1, in <module>
+AttributeError: 'CRPlayer' object has no attribute 'offers'
+[23/09/2017 11:42] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1940, in _trophy
+    tempee.add_field(name = elements2display[n].title(), value = data)
+NameError: name 'tempee' is not defined
+[23/09/2017 11:42] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1945, in _trophy
+    await self.bot.say(player.clan.badge)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 157, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Cannot send an empty message
+[23/09/2017 11:44] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1891, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 484, in create
+    self.clan = await CRClan.create(datadict['clan']['tag'])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 233, in create
+    self.badge = crapi_url + datadict['badgeUrl']
+KeyError: 'badgeUrl'
+[23/09/2017 12:08] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1948, 14, "\t\t\t\t\tif cele = 'stats':\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1948
+    if cele = 'stats':
+            ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1948, 14, "\t\t\t\t\tif cele = 'stats':\n"))
+[23/09/2017 12:08] ERROR red on_command_error 434: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 2254, in setup
+    bot.add_cog(CRTags(bot))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 726, in __init__
+    cremojis[''],
+KeyError: ''
+[23/09/2017 12:09] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1908, in _trophy
+    player = await CRPlayer.create(tag)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 470, in create
+    self.name = datadict['name']
+KeyError: 'name'
+[23/09/2017 12:10] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1971, in _trophy
+    await self.reactembeds(ctx, specembeds)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1896, in reactembeds
+    await wait_for_reaction()
+NameError: name 'wait_for_reaction' is not defined
+[23/09/2017 12:17] ERROR red on_command_error 434: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 2260, in setup
+    bot.add_cog(CRTags(bot))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 726, in __init__
+    for e in cremojis:
+UnboundLocalError: local variable 'cremojis' referenced before assignment
+[23/09/2017 12:19] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1975, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1900, in reactembeds
+    await self.bot.say(emoji)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 157, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Cannot send an empty message
+[23/09/2017 12:21] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1976, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1901, in reactembeds
+    await self.bot.say(emoji)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 157, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Cannot send an empty message
+[23/09/2017 12:22] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1977, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1899, in reactembeds
+    await self.bot.add_reaction(message,reactionemojis[0])
+NameError: name 'reactionemojis' is not defined
+[23/09/2017 12:22] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1977, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1899, in reactembeds
+    await self.bot.add_reaction(message,self.reactionemojis[0])
+  File "lib\discord\client.py", line 956, in add_reaction
+    yield from self.http.add_reaction(message.id, message.channel.id, emoji)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400)
+[23/09/2017 12:24] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1977, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1899, in reactembeds
+    await self.bot.add_reaction(message,'eye')
+  File "lib\discord\client.py", line 956, in add_reaction
+    yield from self.http.add_reaction(message.id, message.channel.id, emoji)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Unknown Emoji
+[23/09/2017 12:24] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1977, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1899, in reactembeds
+    await self.bot.add_reaction(message,'smile')
+  File "lib\discord\client.py", line 956, in add_reaction
+    yield from self.http.add_reaction(message.id, message.channel.id, emoji)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Unknown Emoji
+[23/09/2017 12:24] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1977, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1899, in reactembeds
+    await self.bot.add_reaction(message,':smile:')
+  File "lib\discord\client.py", line 956, in add_reaction
+    yield from self.http.add_reaction(message.id, message.channel.id, emoji)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Unknown Emoji
+[23/09/2017 12:26] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1977, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1901, in reactembeds
+    await self.bot.say(emoji)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 157, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Cannot send an empty message
+[23/09/2017 12:28] ERROR red on_command_error 434: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 2266, in setup
+    bot.add_cog(CRTags(bot))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 732, in __init__
+    cremojiobjs[emoji.name] = emoji
+TypeError: list indices must be integers or slices, not str
+[23/09/2017 12:28] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1981, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1903, in reactembeds
+    await self.bot.add_reaction(message,cremojiobjs['shopgranpagoblin'])
+NameError: name 'cremojiobjs' is not defined
+[23/09/2017 12:29] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1982, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1904, in reactembeds
+    await self.bot.add_reaction(message,cremojiobjs['shopgranpagoblin'])
+KeyError: 'shopgranpagoblin'
+[23/09/2017 12:29] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1983, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1905, in reactembeds
+    await self.bot.add_reaction(message,cremojiobjs['shopgranpagoblin'])
+KeyError: 'shopgranpagoblin'
+[23/09/2017 12:36] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 744, 14, "\t\t\tcremojiobjs['rank'],\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 744
+    cremojiobjs['rank'],
+              ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 744, 14, "\t\t\tcremojiobjs['rank'],\n"))
+[23/09/2017 12:36] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 744, 14, "\t\t\tcremojiobjs['rank'],\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 744
+    cremojiobjs['rank'],
+              ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 744, 14, "\t\t\tcremojiobjs['rank'],\n"))
+[23/09/2017 12:37] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1982, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1904, in reactembeds
+    await self.bot.add_reaction(message,cremojiobjs)
+  File "lib\discord\client.py", line 951, in add_reaction
+    raise InvalidArgument('emoji argument must be a string or Emoji')
+discord.errors.InvalidArgument: emoji argument must be a string or Emoji
+[23/09/2017 12:37] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1983, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1905, in reactembeds
+    await self.bot.add_reaction(message,e)
+  File "lib\discord\client.py", line 956, in add_reaction
+    yield from self.http.add_reaction(message.id, message.channel.id, emoji)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Unknown Emoji
+[23/09/2017 12:39] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1984, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1906, in reactembeds
+    await self.bot.add_reaction(message,cremojiobjs[e])
+  File "lib\discord\client.py", line 956, in add_reaction
+    yield from self.http.add_reaction(message.id, message.channel.id, emoji)
+  File "lib\discord\http.py", line 196, in request
+    raise Forbidden(r, data)
+discord.errors.Forbidden: FORBIDDEN (status code: 403): Maximum number of reactions reached (20)
+[23/09/2017 12:40] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1984, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1904, in reactembeds
+    for e in reactionemojis:
+NameError: name 'reactionemojis' is not defined
+[23/09/2017 12:40] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1984, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1904, in reactembeds
+    for e in reactionemojis:
+NameError: name 'reactionemojis' is not defined
+[23/09/2017 12:41] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1984, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1906, in reactembeds
+    await self.bot.add_reaction(message,self.reactionemojis[e])
+TypeError: list indices must be integers or slices, not Emoji
+[23/09/2017 12:42] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1983, in _trophy
+    message = await self.bot.say('react to this')
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1907, in reactembeds
+    emoji = await self.bot.wait_for_reaction(emoji=self.reactionemojis,user=ctx.message.author,timeout=60,message=message)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 157, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Cannot send an empty message
+[23/09/2017 12:43] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1983, in _trophy
+    message = await self.bot.say('react to this')
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1907, in reactembeds
+    reaction = await self.bot.wait_for_reaction(emoji=self.reactionemojis,user=ctx.message.author,timeout=60,message=message)
+  File "lib\discord\ext\commands\bot.py", line 309, in _augmented_msg
+    msg = yield from coro
+  File "red.py", line 157, in send_message
+    return await super().send_message(*args, **kwargs)
+  File "lib\discord\client.py", line 1152, in send_message
+    data = yield from self.http.send_message(channel_id, content, guild_id=guild_id, tts=tts, embed=embed)
+  File "lib\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: BAD REQUEST (status code: 400): Cannot send an empty message
+[23/09/2017 12:45] ERROR red on_command_error 434: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 947, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "lib\discord\ext\commands\bot.py", line 738, in load_extension
+    lib.setup(self)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 2271, in setup
+    bot.add_cog(CRTags(bot))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 748, in __init__
+    for e in emojis:
+NameError: name 'emojis' is not defined
+[23/09/2017 12:46] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1987, in _trophy
+    em.set_author(icon_url=user.avatar_url,name=discordname)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1911, in reactembeds
+AttributeError: 'NoneType' object has no attribute 'emoji'
+[23/09/2017 12:47] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1909, 9, '\t\twhile \n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1909
+    while
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1909, 9, '\t\twhile \n'))
+[23/09/2017 12:47] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1986, in _trophy
+    # 	await self.bot.say(embed=specembeds[key])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1910, in reactembeds
+    reaction = await self.bot.wait_for_reaction(emoji=self.reactionemojis,user=ctx.message.author,timeout=5,message=message)
+AttributeError: 'NoneType' object has no attribute 'emoji'
+[23/09/2017 12:47] ERROR red on_command_error 434: Exception in command 'clashroyale trophy'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1988, in _trophy
+    await self.reactembeds(ctx, specembeds, message)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1912, in reactembeds
+    await self.bot.say(reaction.emoji)
+AttributeError: 'NoneType' object has no attribute 'emoji'
+[23/09/2017 12:51] ERROR owner _reload 155: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1910, 10, '\t\treaction = await self.bot.wait_for_reaction(emoji=self.reactionemojis,user=ctx.message.author,timeout=5,message=message)\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1910
+    reaction = await self.bot.wait_for_reaction(emoji=self.reactionemojis,user=ctx.message.author,timeout=5,message=message)
+           ^
+IndentationError: expected an indented block
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1910, 10, '\t\treaction = await self.bot.wait_for_reaction(emoji=self.reactionemojis,user=ctx.message.author,timeout=5,message=message)\n'))
+[23/09/2017 12:52] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1912, 38, "\t\t\tif reaction==None or reaction.name='nocancel':\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1912
+    if reaction==None or reaction.name='nocancel':
+                                      ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsml.py', 1912, 38, "\t\t\tif reaction==None or reaction.name='nocancel':\n"))
+[24/09/2017 09:05] ERROR red <module> 716: Fatal exception, attempting graceful logout
+Traceback (most recent call last):
+  File "lib\discord\gateway.py", line 430, in poll_event
+    msg = yield from self.recv()
+  File "lib\websockets\protocol.py", line 299, in recv
+    raise ConnectionClosed(self.close_code, self.close_reason)
+websockets.exceptions.ConnectionClosed: WebSocket connection is closed: code = 4004, reason = Authentication failed..
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "red.py", line 696, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 683, in main
+    yield from bot.connect()
+  File "lib\discord\client.py", line 448, in connect
+    yield from self.ws.poll_event()
+  File "lib\discord\gateway.py", line 437, in poll_event
+    raise ConnectionClosed(e) from e
+discord.errors.ConnectionClosed: WebSocket connection is closed: code = 4004, reason = Authentication failed..
