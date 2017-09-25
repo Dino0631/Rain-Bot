@@ -35,6 +35,7 @@ import locale
 cremojis = {}
 cremojilist = []
 cremojiobjs = {}
+refreshemoji = '🔄'
 racfclans = {
 	"ALPHA" : "2CCCP",
 	"BRAVO" : "2U2GGQJ",
@@ -91,16 +92,11 @@ async def async_refresh(url):
 class CRClan:
 
 	def __init__(self):
-		self.a = 1
-
-	@classmethod
-	async def create(self, tag):
-		tag2id = dataIO.load_json(BACKSETTINGS_JSON)
 		self.member_count = 0                           #done
 		self.members = []                               #done
-		self.clan_tag = tag                             #done
-		self._url = crapiurl + '/clan/' + tag       	#done
-		self.url = crapi_url + '/clan/' + tag 			#done
+		self.clan_tag = ''                             #done
+		self._url = ''
+		self.url = '' 			#done
 		self.tr_req = '0'                               #done
 		self.clan_trophy = ''                           #done
 		self.name = ''                                  #done
@@ -112,6 +108,42 @@ class CRClan:
 		self.coleaders = []								#done
 		self.elders = []								#done
 		self.norole = []								#done
+		self.clan_badge = ''
+		self.name = ''
+		self.desc = ''
+		self.desc2 = ''
+		self.clan_trophy = ''
+		self.tr_req = ''
+		self.donperweek = ''
+		self.badge = ''
+
+	@classmethod
+	async def create(self, tag):
+		tag2id = dataIO.load_json(BACKSETTINGS_JSON)
+		formatted = CRClan()
+		self.member_count = 0                           #done
+		self.members = []                               #done
+		formatted.members = ['All Members']
+		self.clan_tag = tag                             #done
+		formatted.clan_tag = tag
+		self._url = crapiurl + '/clan/' + tag       	#done
+		formatted._url = crapiurl + '/clan/' + tag
+		self.url = crapi_url + '/clan/' + tag 			#done
+		formatted.url = crapi_url + '/clan/' + tag
+		self.tr_req = '0'                               #done
+		self.clan_trophy = ''                           #done
+		self.name = ''                                  #done
+		self.donperweek = ''							#done
+		self.desc = ''									#done
+		self.badge = ''									#done
+		self.leader = {}								#done
+		self.size = 0									#done
+		self.coleaders = []								#done
+		formatted.coleaders = ['Coleaders:']
+		self.elders = []								#done
+		formatted.elders = ['Elders:']
+		self.norole = []								#done
+		formatted.norole = ["No Role:"]
 		# if clan_url != '':
 		async with aiohttp.ClientSession() as session:
 			async with session.get(self._url) as resp:
@@ -133,7 +165,7 @@ class CRClan:
 		# 		print('some member')
 		# r = requests.get(self.clan_url, headers=headers)
 		# html_doc = r.text
-
+		formattedmembers = []
 		for i, m in enumerate(datadict['members']):
 			rank = str(m['currentRank'])
 			name = str(m['name'])
@@ -164,20 +196,29 @@ class CRClan:
 					memberdict['formatted'] += ' <@'+memberdict['userid'] + '>'
 				except:
 					pass
+				formattedmembers.append(memberdict['formatted'])
 			if memberdict['role'] == 'Co-Leader':
 				self.coleaders.append(memberdict)
+			formatted.coleaders.extend(memberdict)
 			if memberdict['role'] == 'Member':
 				self.norole.append(memberdict)
+			formatted.norole.extend(memberdict)
 			if memberdict['role'] == 'Elder':
 				self.elders.append(memberdict)
+			formatted.elders.extend(memberdict)
 			if memberdict['role'] == 'Leader':
 				self.leader = memberdict
+				formatted.leader = memberdict
 			self.size += 1
 			self.members.append(memberdict)
 
+		formatted.members = formattedmembers
 		self.clan_badge = crapiurl + datadict['badge_url']
+		formatted.clan_badge = self.badge
 		self.name = datadict['name']
+		formatted.name = "Clan: {}".format(self.name)
 		self.desc = datadict['description']
+		formatted.desc = "Description: {}".format(self.desc)
 		d = self.desc
 		
 		d2 = d
@@ -230,11 +271,15 @@ class CRClan:
 			tag = tag.replace(sym, '')
 			d2 = d2.replace(sym+tag, '[{}]({})'.format(sym+tag, 'https://cr-api.com/clan/'+tag))
 		self.desc2 =  d2
+		formatted.desc2 = "Description: {}".format(desc2)
 		self.clan_trophy = datadict['score']
+		formatted.clan_trophy = "Trophies: {}".format(str(self.clan_trophy))
 		self.tr_req = datadict['requiredScore']
+		formatted.tr_req = "Trophy requirement: {}".format(str(self.tr_req))
 		self.donperweek = datadict['donations']
+		formatted.donperweek = "Donations this week: {}".format(str(self.donperweek))
 		self.badge = crapi_url +'/static/img'+ datadict['badge_url']
-		return self
+		return [self, formatted]
 
 class XP:
 	def __init__(self, denom, xp, level):
@@ -427,7 +472,7 @@ class CRPlayer:
 			async with session.get(self.url) as resp:
 				datadict = await resp.json()
 		if 'error' in datadict:
-			datadict = {"tag":"V82UVQV","name":"GhostlyDino","trophies":4709,"arena":{"imageURL":"/arena/league3.png","arena":"League 3","arenaID":14,"name":"Challenger III","trophyLimit":4600},"legendaryTrophies":614,"nameChanged":false,"globalRank":null,"clan":{"tag":"LGVV2CG","name":"Reddit Echo","role":"Co-Leader","badgeUrl":"/badge/A_Char_Rocket_02.png"},"experience":{"level":12,"xp":12549,"xpRequiredForLevelUp":80000,"xpToLevelUp":67451},"stats":{"legendaryTrophies":614,"tournamentCardsWon":895,"maxTrophies":5064,"threeCrownWins":849,"cardsFound":76,"favoriteCard":"mortar","totalDonations":36783,"challengeMaxWins":20,"challengeCardsWon":48674,"level":15},"games":{"total":5819,"tournamentGames":258,"wins":2496,"losses":1516,"draws":1807,"currentWinStreak":2},"chestCycle":{"position":1170,"superMagicalPos":1374,"legendaryPos":1196,"epicPos":1991},"shopOffers":{"legendary":23,"epic":2,"arena":6},"currentDeck":[{"name":"ice_spirit","rarity":"common","level":12,"count":1722,"requiredForUpgrade":5000,"leftToUpgrade":3278},{"name":"arrows","rarity":"common","level":11,"count":3866,"requiredForUpgrade":2000,"leftToUpgrade":-1866},{"name":"knight","rarity":"common","level":12,"count":3075,"requiredForUpgrade":5000,"leftToUpgrade":1925},{"name":"archers","rarity":"common","level":12,"count":1513,"requiredForUpgrade":5000,"leftToUpgrade":3487},{"name":"the_log","rarity":"legendary","level":2,"count":1,"requiredForUpgrade":4,"leftToUpgrade":3},{"name":"mortar","rarity":"common","level":12,"count":2853,"requiredForUpgrade":5000,"leftToUpgrade":2147},{"name":"rocket","rarity":"rare","level":9,"count":314,"requiredForUpgrade":800,"leftToUpgrade":486},{"name":"bats","rarity":"common","level":12,"count":1140,"requiredForUpgrade":5000,"leftToUpgrade":3860}],"previousSeasons":[{"seasonNumber":6,"seasonHighest":4949,"seasonEnding":4886,"seasonEndGlobalRank":null},{"seasonNumber":5,"seasonHighest":4652,"seasonEnding":4617,"seasonEndGlobalRank":null},{"seasonNumber":4,"seasonHighest":4911,"seasonEnding":4911,"seasonEndGlobalRank":null},{"seasonNumber":3,"seasonHighest":5064,"seasonEnding":4913,"seasonEndGlobalRank":null},{"seasonNumber":2,"seasonHighest":4899,"seasonEnding":4804,"seasonEndGlobalRank":null},{"seasonNumber":1,"seasonHighest":4808,"seasonEnding":4508,"seasonEndGlobalRank":null}]}
+			datadict = {"tag":"V82UVQV","name":"GhostlyDino","trophies":4709,"arena":{"imageURL":"/arena/league3.png","arena":"League 3","arenaID":14,"name":"Challenger III","trophyLimit":4600},"legendaryTrophies":614,"nameChanged":False,"globalRank":null,"clan":{"tag":"LGVV2CG","name":"Reddit Echo","role":"Co-Leader","badgeUrl":"/badge/A_Char_Rocket_02.png"},"experience":{"level":12,"xp":12549,"xpRequiredForLevelUp":80000,"xpToLevelUp":67451},"stats":{"legendaryTrophies":614,"tournamentCardsWon":895,"maxTrophies":5064,"threeCrownWins":849,"cardsFound":76,"favoriteCard":"mortar","totalDonations":36783,"challengeMaxWins":20,"challengeCardsWon":48674,"level":15},"games":{"total":5819,"tournamentGames":258,"wins":2496,"losses":1516,"draws":1807,"currentWinStreak":2},"chestCycle":{"position":1170,"superMagicalPos":1374,"legendaryPos":1196,"epicPos":1991},"shopOffers":{"legendary":23,"epic":2,"arena":6},"currentDeck":[{"name":"ice_spirit","rarity":"common","level":12,"count":1722,"requiredForUpgrade":5000,"leftToUpgrade":3278},{"name":"arrows","rarity":"common","level":11,"count":3866,"requiredForUpgrade":2000,"leftToUpgrade":-1866},{"name":"knight","rarity":"common","level":12,"count":3075,"requiredForUpgrade":5000,"leftToUpgrade":1925},{"name":"archers","rarity":"common","level":12,"count":1513,"requiredForUpgrade":5000,"leftToUpgrade":3487},{"name":"the_log","rarity":"legendary","level":2,"count":1,"requiredForUpgrade":4,"leftToUpgrade":3},{"name":"mortar","rarity":"common","level":12,"count":2853,"requiredForUpgrade":5000,"leftToUpgrade":2147},{"name":"rocket","rarity":"rare","level":9,"count":314,"requiredForUpgrade":800,"leftToUpgrade":486},{"name":"bats","rarity":"common","level":12,"count":1140,"requiredForUpgrade":5000,"leftToUpgrade":3860}],"previousSeasons":[{"seasonNumber":6,"seasonHighest":4949,"seasonEnding":4886,"seasonEndGlobalRank":null},{"seasonNumber":5,"seasonHighest":4652,"seasonEnding":4617,"seasonEndGlobalRank":null},{"seasonNumber":4,"seasonHighest":4911,"seasonEnding":4911,"seasonEndGlobalRank":null},{"seasonNumber":3,"seasonHighest":5064,"seasonEnding":4913,"seasonEndGlobalRank":null},{"seasonNumber":2,"seasonHighest":4899,"seasonEnding":4804,"seasonEndGlobalRank":null},{"seasonNumber":1,"seasonHighest":4808,"seasonEnding":4508,"seasonEndGlobalRank":null}]}
 		# if 'error' in datadict:
 		# 	await StatsCRPlayer.create(tag)
 		# 	defaultdatadict = {"tag":"","name":"","trophies":'',"arena":
@@ -487,6 +532,7 @@ class CRPlayer:
 		formatted.globalrank = "Global Rank: {}".format(self.globalrank) if self.globalrank != None  else ''
 				
 		self.clan = await CRClan.create(datadict['clan']['tag'])
+		self.clan = self.clan[0]
 		formatted.clan = "Clan: [{}]({})".format(self.clan.name, self.clan.url)
 				
 		self.xp = XP(datadict['experience']['xpRequiredForLevelUp'],datadict['experience']['xp'], datadict['experience']['level'])
@@ -723,15 +769,20 @@ class CRTags:
 		self.backsettings = dataIO.load_json(BACKSETTINGS_JSON)
 		self.clansettings = dataIO.load_json(CLAN_JSON)
 		self.bot = bot
+		self.author = None
+		self.player_data = []
+		self.player_datadict = {}
+		self.user = None
+		self.currentemojiobjs = []
 		cremojis = self.allemojis = dataIO.load_json(CREMOJIS_JSON)
 		self.emojiservers = []
 		for e in cremojis:
 			cremojilist.append(cremojis[e])
 		for server in self.bot.servers:
 			for emoji in server.emojis:
-				print(emoji.name)
+				# print(emoji.name)
 				cremojiobjs[emoji.name] = emoji
-
+		
 		self.reactionemojislist = [
 			'levelbig',
 			'trophy',
@@ -743,11 +794,31 @@ class CRTags:
 			'shopgranpagoblin',
 			'rank',
 			'deck',
-			'nocancel'
 		]
+		self.utilreactionemojislist = [
+			'nocancel',
+			'refresh',
+			'helpinfo'
+		]
+		self.reactionemojishelpinfo = {
+			'levelbig': 'Experience',
+			'trophy': 'Current Trophies',
+			'shop': 'Chest Cycle',
+			'crownshield': 'General Stats',
+			'battle': 'Games',
+			'search': 'Player Tag',
+			'social': 'Clan',
+			'shopgranpagoblin': 'Shop Offers',
+			'rank': 'Seasons',
+			'deck': 'Deck',
+			'nocancel': 'Exit the UI',
+			'refresh': 'Refresh the emoji options',
+			'helpinfo': 'Shows This message'
+		}
+		self.reactionemojislist.extend(self.utilreactionemojislist)
 		self.emojis2specembeds = {
 			'levelbig':'xp',
-			'trophy':'trophy',
+			'trophy':'trophies',
 			'shop':'chestcycle',
 			'crownshield':'stats',
 			'battle':'games',
@@ -758,12 +829,20 @@ class CRTags:
 			'deck':'deck'
 		}
 		self.reactionemojis = {}
+		d = {}
 		for e in self.reactionemojislist:
-			self.reactionemojis[e] = cremojiobjs[e]
+			# print(self.reactionemojis[e])
+				d[e] = cremojiobjs[e]
+		self.reactionemojis = d
+		helptitle = "When an emoji is pressed, the embed will change. If you want to remove part of a player profile, unclick the emoji, and click the refresh emoji. Here are what the emojis show:"
+		helpemojis = []
+		for e in self.reactionemojislist:
+			helpemojis.append("{}: {}".format(self.reactionemojis[e], self.reactionemojishelpinfo[e]))
+		self.helpembed = discord.Embed(title=helptitle,description='\n'.join(helpemojis),color=discord.Color(0x50d2fe))
+
 	@checks.is_owner()
 	@commands.command(pass_context=True)
 	async def bestwinstreak(self, ctx):
-		
 		highest = []
 
 	@checks.is_owner()
@@ -1865,7 +1944,6 @@ class CRTags:
 			await self.bot.say("Invalid tag {}, it must only have the following characters {}".format(ctx.message.author.mention, validChars))
 	async def keyortag2tag2(self,userortag,ctx):
 		tags = dataIO.load_json(SETTINGS_JSON)
-		# print(userortag)
 		tag = None
 		userid = None
 		valid=False
@@ -1878,7 +1956,6 @@ class CRTags:
 		if userortag == None: #assume author if none
 			userid = ctx.message.author.id
 		elif userortag.startswith('<@'): #assume mention
-			# print(userid)
 			userid = userortag[2:-1]
 		elif userortag.isdigit(): #assume userid
 			userid = userortag
@@ -1901,8 +1978,10 @@ class CRTags:
 				await self.bot.say("{} does not have a tag set.".format(user.display_name))
 				return None
 		return [tag, user]
+
 	def elements2data(self, elements2display, fplayer):
 		player_data = []
+		player_datadict = {}
 		for ele in elements2display:
 			thing = eval('fplayer.{}'.format(ele))
 			# print(type(thing)==type([]))
@@ -1910,34 +1989,121 @@ class CRTags:
 			# print('\n')
 			# print('i am {}'.format(type(thing)))
 			if type(thing) == type(['list']):
-				eval("player_data.append(fplayer.{})".format(ele))
+				player_datadict[ele]=getattr(fplayer, ele)
+				player_data.append(getattr(fplayer, ele))
+
 			else:
 				thing = str(thing)
-				eval("player_data.append(fplayer.{})".format(ele))
-		return player_data
+				player_datadict[ele] = getattr(fplayer, ele)
+				player_data.append(getattr(fplayer, ele))
+		return [player_datadict, player_data]
 
-	async def reactembeds(self, ctx, specembeds, message):
+	def react_check(self, reaction, user):
+		if user is None or user.id != self.author.id:
+			return False
+
+		for emoji in self.currentemojiobjs:
+			if reaction.emoji == emoji:
+				return True
+		return False
+
+	async def reactembeds(self, ctx, message, player, player_data, player_datadict):
+
+		self.author = ctx.message.author
+		self.currentemojiobjs = []
+		# print(cremojiobjs)
 		for e in self.reactionemojislist:
+			self.currentemojiobjs.append(cremojiobjs[e])
+		# for e in self.currentemojiobjs:
+		# 	await self.bot.say(e)
+		# self.reactionemojislist = ['😄', reactionemojis[]]
+		for e in self.reactionemojislist: #successfully adds custom emojis
 			await self.bot.add_reaction(message,self.reactionemojis[e])
+		botreactionsmsg = await self.bot.get_message(message.channel, message.id)
+		elementspossible = []
+		for e in self.reactionemojislist:
+			elementspossible.append(e)
+		elements2display = []
+		u = await self.bot.get_user_info(ctx.message.author.id)
 		while True:
-			print(ctx.message.author)
-			reaction = await self.bot.wait_for_reaction(emoji=self.reactionemojis,user=ctx.message.author,timeout=15,message=message)
-			myreacts = []
-			for reaction in message.reactions
-			print(reaction)
-			if reaction==None or reaction.custom_emoji.name=='nocancel':
-				print('rip')
+			reaction = await self.bot.wait_for_reaction(emoji=self.currentemojiobjs,timeout=30,message=message)#, check=self.react_check)
+			if reaction==None or list(reaction)[0].emoji.name=='nocancel':
+				await self.bot.edit_message(message,new_content=message.content+' Timed out, UI exited.')
 				break
-			emoji = reaction.custom_emoji
-			print(specembeds)
-			print(emoji.name)
-			print('')
-			await self.bot.say(embed=specembeds[emojis2specembeds[emoji.name]])
-			await self.bot.edit_message(message,embed=specembeds[emoji.name])
+			reaction = list(reaction)
+			currentuser = reaction[1]
+			reaction = list(reaction)[0]
+			myreacts = []
+			message = await self.bot.get_message(message.channel, message.id)
+			emojiclicked = {}
+			for r in botreactionsmsg.reactions:
+				users = await self.bot.get_reaction_users(r)
+				# print(type(r.emoji), r.emoji)
+				try:
+					emojiclicked[r.emoji.name] = ctx.message.author in users
+				except AttributeError:
+					pass
+			emojiclicked['refresh'] = False
+			emojiclicked['helpinfo'] = False
+			elements2display = []
+			for e in elementspossible:
+				if emojiclicked[e]:
+					elements2display.append(self.emojis2specembeds[e])
+			embed = self.data2embed(ctx.message.author, player, player_data, player_datadict, elements2display)
 
-	@clashroyale.command(name='em', aliases=['e'],  pass_context=True)
-	async def emoji(self, ctx, userortag=None):
+			if reaction.emoji.name == 'helpinfo':
+				await self.bot.edit_message(message, embed=self.helpembed)
+			else:
+				await self.bot.edit_message(message,embed=embed)#specembeds[self.emojis2specembeds[emoji]])
+
+	def data2embed(self, user, player, player_data, player_datadict, elements2display):
+		try:
+			discordname = user.name if user.nick is None else user.nick
+		except:
+			discordname = user.name
+		# specembeds = {}
+		em = discord.Embed(title=player.name, color = discord.Color(0x50d2fe))
+		n = 0
+		for ele in elements2display:
+			chars = 0
+			# print(type(self.player_datadict[ele]), self.player_datadict[ele])
+			cele = ele
+			inline = not( cele == 'seasons' or cele == 'games')
+			tempe = discord.Embed(title=player.name, color = discord.Color(0x50d2fe))
+			tempe.set_author(icon_url=user.avatar_url,name=discordname)
+			tempe.set_footer(text='Data provided by CR-API', icon_url='https://i.imgur.com/Grj2j6D.png')
+			if type(player_datadict[ele]) == type(['list']):
+				for d in player_datadict[ele]:
+					chars += len(d)
+				# if chars >256:
+				# 	if cele == 'stats':
+				# 		tempe.add_field(name = cele.title(), value = '\n'.join(self.player_datadict[ele][:int(len(self.player_datadict[ele])/2)]), inline=False)
+				# 	else:
+				# 		em.add_field(name = cele.title(), value = '\n'.join(self.player_datadict[ele][:int(len(self.player_datadict[ele])/2)]), inline=inline)
+				# 	em.add_field(name = '\u200b', value = '\n'.join(self.player_datadict[ele][int(len(self.player_datadict[ele])/2):]),inline=inline)
+				# 	if cele == 'stats':
+				# 		tempe.add_field(name = cele.title(), value = '\n'.join(self.player_datadict[ele][:int(len(self.player_datadict[ele])/2)]), inline=False)
+				# 	else:
+				# 		tempe.add_field(name = cele.title(), value = '\n'.join(self.player_datadict[ele][:int(len(self.player_datadict[ele])/2)]), inline=inline)
+				# 	tempe.add_field(name = '\u200b', value = '\n'.join(self.player_datadict[ele][int(len(self.player_datadict[ele])/2):]),inline=inline)
+				if False:
+					pass
+				else:
+					em.add_field(name = cele.title(), value = '\n'.join(player_datadict[ele]),inline=inline)
+					tempe.add_field(name = cele.title(), value = '\n'.join(player_datadict[ele]),inline=inline)
+			elif type(player_datadict[ele]) == type('str'):
+				chars += len(player_datadict[ele])
+				em.add_field(name = ele.title(), value = player_datadict[ele])
+				tempe.add_field(name = ele.title(), value = player_datadict[ele])
+			# specembeds[cele] = tempe
+			n+=1
+
+		return em
+
+	@clashroyale.command(name='emoj', aliases=['e', 'em'],  pass_context=True)
+	async def _emoji(self, ctx, userortag=None):
 		"""Get user trophies. If not given a user, get author's data"""
+		#fix user, player, player_data, player_data, player_datadict
 		tag = await self.keyortag2tag2(userortag, ctx)
 		if tag == None:
 			return
@@ -1951,8 +2117,6 @@ class CRTags:
 		fplayer = player[1]
 		player = player[0]
 		elements = []
-		player_data = []
-		print(dir(fplayer))
 		elements2display  = [
 			'tag',
 			'clan',
@@ -1965,314 +2129,174 @@ class CRTags:
 			'games',
 			'offers'
 		]
-		player_data = self.elements2data(elements2display, fplayer)
+		print(fplayer.tag)
+		things = self.elements2data(elements2display, fplayer)
+		player_datadict = things[0]
+		print(player_datadict)
+		player_data = things[1]
+		# print('{}\n{}'.format(fplayer.stats, type(fplayer.stats)))
+		specembeds = {}
+		em = self.data2embed(user, player, player_data, player_datadict, elements2display)
+		# for key in specembeds:
+		# 	await self.bot.say(embed=specembeds[key])
+		message = await self.bot.say("React to this for stats! click {} for help.".format(self.reactionemojis['helpinfo']))
+		await self.reactembeds(ctx, message, player, player_data, player_datadict)
+		# em.set_author(icon_url=user.avatar_url,name=discordname)
+		# em.set_thumbnail(url=player.clan.badge)
+		# em.set_footer(text='Data provided by CR-API', icon_url='https://i.imgur.com/Grj2j6D.png')
+		# await self.bot.say(embed=em)
 
+	def clanelements2data(self, elements2display, fclan):
+		clan_data = []
+		clan_datadict = {}
+		for ele in elements2display:
+			thing = getattr(fclan, ele)
+			# print(type(thing)==type([]))
+			# print(thing)
+			# print('\n')
+			# print('i am {}'.format(type(thing)))
+			if type(thing) == type(['list']):
+				clan_datadict[ele]=getattr(fclan, ele)
+				clan_data.append(getattr(fclan, ele))
+
+			else:
+				thing = str(thing)
+				clan_datadict[ele] = getattr(fclan, ele)
+				clan_data.append(getattr(fclan, ele))
+		return [clan_datadict, clan_data]
+
+	async def clanreactembeds(self, ctx, message, player, clan_data, clan_datadict):
+
+		self.author = ctx.message.author
+		self.currentemojiobjs = []
+		# print(cremojiobjs)
+		for e in self.reactionemojislist:
+			self.currentemojiobjs.append(cremojiobjs[e])
+		# for e in self.currentemojiobjs:
+		# 	await self.bot.say(e)
+		# self.reactionemojislist = ['😄', reactionemojis[]]
+		for e in self.reactionemojislist: #successfully adds custom emojis
+			await self.bot.add_reaction(message,self.reactionemojis[e])
+		botreactionsmsg = await self.bot.get_message(message.channel, message.id)
+		elementspossible = []
+		for e in self.reactionemojislist:
+			elementspossible.append(e)
+		elements2display = []
+		u = await self.bot.get_user_info(ctx.message.author.id)
+		while True:
+			reaction = await self.bot.wait_for_reaction(emoji=self.currentemojiobjs,timeout=30,message=message)#, check=self.react_check)
+			if reaction==None or list(reaction)[0].emoji.name=='nocancel':
+				await self.bot.edit_message(message,new_content=message.content+' Timed out, UI exited.')
+				break
+			reaction = list(reaction)
+			currentuser = reaction[1]
+			reaction = list(reaction)[0]
+			myreacts = []
+			message = await self.bot.get_message(message.channel, message.id)
+			emojiclicked = {}
+			for r in botreactionsmsg.reactions:
+				users = await self.bot.get_reaction_users(r)
+				# print(type(r.emoji), r.emoji)
+				try:
+					emojiclicked[r.emoji.name] = ctx.message.author in users
+				except AttributeError:
+					pass
+			emojiclicked['refresh'] = False
+			emojiclicked['helpinfo'] = False
+			elements2display = []
+			for e in elementspossible:
+				if emojiclicked[e]:
+					elements2display.append(self.emojis2specembeds[e])
+			embed = self.data2embed(ctx.message.author, player, clan_data, clan_datadict, elements2display)
+
+			if reaction.emoji.name == 'helpinfo':
+				await self.bot.edit_message(message, embed=self.helpembed)
+			else:
+				await self.bot.edit_message(message,embed=embed)#specembeds[self.emojis2specembeds[emoji]])
+
+	def clandata2embed(self, user, player, clan_data, clan_datadict, elements2display):
 		try:
 			discordname = user.name if user.nick is None else user.nick
 		except:
 			discordname = user.name
-		# print('{}\n{}'.format(fplayer.stats, type(fplayer.stats)))
-		specembeds = {}
+		# specembeds = {}
 		em = discord.Embed(title=player.name, color = discord.Color(0x50d2fe))
 		n = 0
-		for data in player_data:
+		for ele in elements2display:
 			chars = 0
-			# print(type(data), data)
-			cele = elements2display[n]
+			# print(type(self.clan_datadict[ele]), self.clan_datadict[ele])
+			cele = ele
 			inline = not( cele == 'seasons' or cele == 'games')
 			tempe = discord.Embed(title=player.name, color = discord.Color(0x50d2fe))
 			tempe.set_author(icon_url=user.avatar_url,name=discordname)
 			tempe.set_footer(text='Data provided by CR-API', icon_url='https://i.imgur.com/Grj2j6D.png')
-			if type(data) == type(['list']):
-				for d in data:
+			if type(clan_datadict[ele]) == type(['list']):
+				for d in clan_datadict[ele]:
 					chars += len(d)
-				if chars >256:
-					if cele == 'stats':
-						tempe.add_field(name = cele.title(), value = '\n'.join(data[:int(len(data)/2)]), inline=False)
-					else:
-						em.add_field(name = cele.title(), value = '\n'.join(data[:int(len(data)/2)]), inline=inline)
-					em.add_field(name = '\u200b', value = '\n'.join(data[int(len(data)/2):]),inline=inline)
-					if cele == 'stats':
-						tempe.add_field(name = cele.title(), value = '\n'.join(data[:int(len(data)/2)]), inline=False)
-					else:
-						tempe.add_field(name = cele.title(), value = '\n'.join(data[:int(len(data)/2)]), inline=inline)
-					tempe.add_field(name = '\u200b', value = '\n'.join(data[int(len(data)/2):]),inline=inline)
+				# if chars >256:
+				# 	if cele == 'stats':
+				# 		tempe.add_field(name = cele.title(), value = '\n'.join(self.clan_datadict[ele][:int(len(self.clan_datadict[ele])/2)]), inline=False)
+				# 	else:
+				# 		em.add_field(name = cele.title(), value = '\n'.join(self.clan_datadict[ele][:int(len(self.clan_datadict[ele])/2)]), inline=inline)
+				# 	em.add_field(name = '\u200b', value = '\n'.join(self.clan_datadict[ele][int(len(self.clan_datadict[ele])/2):]),inline=inline)
+				# 	if cele == 'stats':
+				# 		tempe.add_field(name = cele.title(), value = '\n'.join(self.clan_datadict[ele][:int(len(self.clan_datadict[ele])/2)]), inline=False)
+				# 	else:
+				# 		tempe.add_field(name = cele.title(), value = '\n'.join(self.clan_datadict[ele][:int(len(self.clan_datadict[ele])/2)]), inline=inline)
+				# 	tempe.add_field(name = '\u200b', value = '\n'.join(self.clan_datadict[ele][int(len(self.clan_datadict[ele])/2):]),inline=inline)
+				if False:
+					pass
 				else:
-					em.add_field(name = cele.title(), value = '\n'.join(data),inline=inline)
-					tempe.add_field(name = cele.title(), value = '\n'.join(data),inline=inline)
-			elif type(data) == type('str'):
-				chars += len(data)
-				em.add_field(name = elements2display[n].title(), value = data)
-				tempe.add_field(name = elements2display[n].title(), value = data)
-			specembeds[cele] = tempe
+					em.add_field(name = cele.title(), value = '\n'.join(clan_datadict[ele]),inline=inline)
+					tempe.add_field(name = cele.title(), value = '\n'.join(clan_datadict[ele]),inline=inline)
+			elif type(clan_datadict[ele]) == type('str'):
+				chars += len(clan_datadict[ele])
+				em.add_field(name = ele.title(), value = clan_datadict[ele])
+				tempe.add_field(name = ele.title(), value = clan_datadict[ele])
+			# specembeds[cele] = tempe
 			n+=1
+
+		return em
+
+	@clan.command(name='emoji', aliases=['e', 'em'],  pass_context=True)
+	async def _emoji(self, ctx, keyortag=None):
+		"""Get user trophies. If not given a user, get author's data"""
+		#fix user, player, clan_data, clan_data, clan_datadict
+		if keyortag == None:
+			keyortag = ctx.message.author.id
+		tag = await self.keyortag2tag(keyortag, ctx)
+		if tag == None:
+			return
+		if tag[0] == None:
+			return
+		user = tag[1]
+		if user == None:
+			user = ctx.message.author
+		tag = tag[0]
+		clan = await CRClan.create(tag)
+		fclan = clan[1]
+		clan = clan[0]
+		elements = []
+		elements2display  = [
+			'tr_req'
+		]
+		print(fclan.tag)
+		things = self.elements2data(elements2display, fclan)
+		clan_datadict = things[0]
+		print(clan_datadict)
+		clan_data = things[1]
+		# print('{}\n{}'.format(fclan.stats, type(fclan.stats)))
+		specembeds = {}
+		em = self.data2embed(user, clan, clan_data, clan_datadict, elements2display)
 		# for key in specembeds:
 		# 	await self.bot.say(embed=specembeds[key])
-		message = await self.bot.say('react to this')
-		await self.reactembeds(ctx, specembeds, message)
-		em.set_author(icon_url=user.avatar_url,name=discordname)
-		em.set_thumbnail(url=player.clan.badge)
-		em.set_footer(text='Data provided by CR-API', icon_url='https://i.imgur.com/Grj2j6D.png')
-		await self.bot.say(embed=em)
+		message = await self.bot.say("React to this for stats! click {} for help.".format(self.reactionemojis['helpinfo']))
+		await self.reactembedsclan(ctx, message, clan, clan_data, clan_datadict)
+		# em.set_author(icon_url=user.avatar_url,name=discordname)
+		# em.set_thumbnail(url=clan.clan.badge)
+		# em.set_footer(text='Data provided by CR-API', icon_url='https://i.imgur.com/Grj2j6D.png')
+		# await self.bot.say(embed=em)
 
-		
-	@clashroyale.command(name='chests',  pass_context=True)
-	async def _chests(self, ctx, userortag=None):
-		"""Get user trophies. If not given a user, get author's data"""
-		tags = dataIO.load_json(SETTINGS_JSON)
-		tag = None
-		userid = None
-		valid=False
-		if userortag != None:
-			valid = True
-			for letter in userortag.upper():
-				if letter not in validChars:
-					valid = False
-		if userortag == None: #assume author if none
-			userid = ctx.message.author.id
-		elif userortag.startswith('<@'): #assume mention
-			userid = userortag[2:-1]
-		elif userortag.isdigit(): #assume userid
-			userid = userortag
-		elif valid: #assume it is a tag
-			tag = userortag.upper()
-		else:	#assume member name
-			for member in list(ctx.message.server.members):
-				name = member.name
-				if userortag == name:
-					userid = member.id
-				elif userortag == name + '#' + member.discriminator:
-					userid = member.id
-		if userid != None:
-			user = ctx.message.server.get_member(userid)
-		if tag == None:
-			if userid in tags:
-				tag = tags[userid]
-			else:
-				await self.bot.say("{} does not have a tag set.".format(user.display_name))
-				return
-		
-		user_url = (statscr_url+ tag)
-		things = await CRPlayer.create(tag)
-		player_data  = []
-		player_data.append('[{}]({})'.format(tag, user_url))
-		# player_data.append(things.pb)
-		# player_data.append(things.trophy)
-		# player_data.append(things.cardswon)
-		# player_data.append(things.tcardswon)
-		# player_data.append(things.donations)
-		# player_data.append(things.prevseasonrank)
-		# player_data.append(things.prevseasontrophy)
-		# player_data.append(things.prevseasonpb)
-		# player_data.append(things.wins)
-		# player_data.append(things.losses)
-		# player_data.append(things.crown3)
-		# player_data.append(things.league)
-		player_data.append(things.chests)
-		em = discord.Embed(title=things.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
-		try:
-			discordname = user.name if user.nick is None else user.nick
-		except:
-			discordname = user.name
-		em.set_author(icon_url=user.avatar_url,name=discordname)
-		em.set_thumbnail(url=things.clan_badge)
-		em.set_footer(text='Data provided by StatsRoyale', icon_url='http://i.imgur.com/17R3DVU.png')
-		await self.bot.say(embed=em)
-
-
-	@clashroyale.command(name='cardswon', aliases=['cards'],  pass_context=True)
-	async def _cardswon(self, ctx, userortag=None):
-		"""Get user trophies. If not given a user, get author's data"""
-		tags = dataIO.load_json(SETTINGS_JSON)
-		tag = None
-		userid = None
-		valid=False
-		if userortag != None:
-			valid = True
-			for letter in userortag.upper():
-				if letter not in validChars:
-					valid = False
-		if userortag == None: #assume author if none
-			userid = ctx.message.author.id
-		elif userortag.startswith('<@'): #assume mention
-			userid = userortag[2:-1]
-		elif userortag.isdigit(): #assume userid
-			userid = userortag
-		elif valid: #assume it is a tag
-			tag = userortag.upper()
-		else:	#assume member name
-			for member in list(ctx.message.server.members):
-				name = member.name
-				if userortag == name:
-					userid = member.id
-				elif userortag == name + '#' + member.discriminator:
-					userid = member.id
-		if userid != None:
-			user = ctx.message.server.get_member(userid)
-		if tag == None:
-			if userid in tags:
-				tag = tags[userid]
-			else:
-				await self.bot.say("{} does not have a tag set.".format(user.display_name))
-				return
-		
-		user_url = (statscr_url+ tag)
-		things = await CRPlayer.create(tag)
-		player_data  = []
-		player_data.append('[{}]({})'.format(tag, user_url))
-		# player_data.append(things.pb)
-		# player_data.append(things.trophy)
-		player_data.append(things.cardswon)
-		player_data.append(things.tcardswon)
-		# player_data.append(things.donations)
-		# player_data.append(things.prevseasonrank)
-		# player_data.append(things.prevseasontrophy)
-		# player_data.append(things.prevseasonpb)
-		# player_data.append(things.wins)
-		# player_data.append(things.losses)
-		# player_data.append(things.crown3)
-		# player_data.append(things.league)
-		player_data.append(things.chests)
-		em = discord.Embed(title=things.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
-		try:
-			discordname = user.name if user.nick is None else user.nick
-		except:
-			discordname = user.name
-		em.set_author(icon_url=user.avatar_url,name=discordname)
-		em.set_thumbnail(url=things.clan_badge)
-		em.set_footer(text='Data provided by StatsRoyale', icon_url='http://i.imgur.com/17R3DVU.png')
-		await self.bot.say(embed=em)
-
-
-	@clashroyale.command(pass_context=True)
-	async def profile(self, ctx, userortag=None):
-		"""Get user trophies. If not given a user, get author's data"""
-		tags = dataIO.load_json(SETTINGS_JSON)
-		tag = None
-		userid = None
-		valid=False
-		if userortag != None:
-			valid = True
-			for letter in userortag.upper():
-				if letter not in validChars:
-					valid = False
-		if userortag == None: #assume author if none
-			userid = ctx.message.author.id
-		elif userortag.startswith('<@'): #assume mention
-			userid = userortag[2:-1]
-		elif userortag.isdigit(): #assume userid
-			userid = userortag
-		elif valid: #assume it is a tag
-			tag = userortag.upper()
-		else:	#assume member name
-			for member in list(ctx.message.server.members):
-				name = member.name
-				if userortag == name:
-					userid = member.id
-				elif userortag == name + '#' + member.discriminator:
-					userid = member.id
-		if userid != None:
-			user = ctx.message.server.get_member(userid)
-		if tag == None:
-			if userid in tags:
-				tag = tags[userid]
-			else:
-				await self.bot.say("{} does not have a tag set.".format(user.display_name))
-				return
-		
-		user_url = (statscr_url+ tag)
-		things = await CRPlayer.create(tag)
-		player_data  = []
-		player_data.append('[{}]({})'.format(tag, user_url))
-		if things.clan_url != '':
-			player_data.append('[{}]({})'.format(things.clan,things.clan_url))
-		else:
-			player_data.append('{}'.format(things.clan))
-		player_data.append(things.pb)
-		player_data.append(things.trophy)
-		player_data.append(things.cardswon)
-		player_data.append(things.tcardswon)
-		player_data.append(things.donations)
-		player_data.append(things.prevseasonrank)
-		player_data.append(things.prevseasontrophy)
-		player_data.append(things.prevseasonpb)
-		player_data.append(things.wins)
-		player_data.append(things.losses)
-		player_data.append(things.crown3)
-		player_data.append(things.league)
-		# player_data.append(things.chests)
-		em = discord.Embed(title=things.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
-		try:
-			discordname = user.name if user.nick is None else user.nick
-		except:
-			discordname = user.name
-		em.set_author(icon_url=user.avatar_url,name=discordname)
-		em.set_thumbnail(url=things.clan_badge)
-		em.set_footer(text='Data provided by StatsRoyale', icon_url='http://i.imgur.com/17R3DVU.png')
-		await self.bot.say(embed=em)
-
-	@clashroyale.command(name='pb', pass_context=True)
-	async def _pb(self, ctx, userortag=None):
-		"""Get user trophies. If not given a user, get author's data"""
-		tags = dataIO.load_json(SETTINGS_JSON)
-		tag = None
-		userid = None
-		valid=False
-		if userortag != None:
-			valid = True
-			for letter in userortag.upper():
-				if letter not in validChars:
-					valid = False
-		if userortag == None: #assume author if none
-			userid = ctx.message.author.id
-		elif userortag.startswith('<@'): #assume mention
-			userid = userortag[2:-1]
-		elif userortag.isdigit(): #assume userid
-			userid = userortag
-		elif valid: #assume it is a tag
-			tag = userortag.upper()
-		else:	#assume member name
-			for member in list(ctx.message.server.members):
-				name = member.name
-				if userortag == name:
-					userid = member.id
-				elif userortag == name + '#' + member.discriminator:
-					userid = member.id
-		if userid != None:
-			user = ctx.message.server.get_member(userid)
-		if tag == None:
-			if userid in tags:
-				tag = tags[userid]
-			else:
-				await self.bot.say("{} does not have a tag set.".format(user.display_name))
-				return
-		
-		user_url = (statscr_url+ tag)
-		things = await CRPlayer.create(tag)
-		player_data  = []
-		player_data.append('[{}]({})'.format(tag, user_url))
-		player_data.append(things.pb)
-		# player_data.append(things.trophy)
-		# player_data.append(things.cardswon)
-		# player_data.append(things.tcardswon)
-		# player_data.append(things.donations)
-		# player_data.append(things.prevseasonrank)
-		# player_data.append(things.prevseasontrophy)
-		# player_data.append(things.prevseasonpb)
-		# player_data.append(things.wins)
-		# player_data.append(things.losses)
-		# player_data.append(things.crown3)
-		# player_data.append(things.league)
-		# player_data.append(things.chests)
-		em = discord.Embed(title=things.name, description='\n'.join(player_data),color = discord.Color(0x50d2fe))
-		try:
-			discordname = user.name if user.nick is None else user.nick
-		except:
-			discordname = user.name
-		em.set_author(icon_url=user.avatar_url,name=discordname)
-		em.set_thumbnail(url=things.clan_badge)
-		em.set_footer(text='Data provided by StatsRoyale', icon_url='http://i.imgur.com/17R3DVU.png')
-		await self.bot.say(embed=em)
 
 	
 
