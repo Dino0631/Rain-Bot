@@ -147,18 +147,19 @@ class CRClan:
 		# if clan_url != '':
 		async with aiohttp.ClientSession() as session:
 			async with session.get(self._url) as resp:
-				datadict = await resp.json()
-		# print(datadict)
-		# for x in datadict:
+				# print(await resp.read())
+				clandatadict = await resp.json()
+		# print(clandatadict)
+		# for x in clandatadict:
 		# 	try:
 		# 		print(x)
 		# 	except:
 		# 		print('some key')
 		# 	try:
-		# 		print(datadict[x])
+		# 		print(clandatadict[x])
 		# 	except:
 		# 		print('some value')
-		# for member in datadict['members']:
+		# for member in clandatadict['members']:
 		# 	try:
 		# 		print(member)
 		# 	except:
@@ -166,7 +167,20 @@ class CRClan:
 		# r = requests.get(self.clan_url, headers=headers)
 		# html_doc = r.text
 		formattedmembers = []
-		for i, m in enumerate(datadict['members']):
+		members = []
+		print(clandatadict)
+		print("members in clandatadict?", 'members' in clandatadict)
+		for data in clandatadict:
+			print('H{}H'.format(data))
+			print(data == 'members')
+			if data == 'members':
+				members = clandatadict[data]
+			# if type(clandatadict[data]) == type(1):
+			# 	clandatadict[data] = str(clandatadict[data])
+			# print(data, ':', clandatadict[data])
+		print(len(members))
+		i = 0
+		for  m in members:
 			rank = str(m['currentRank'])
 			name = str(m['name'])
 			tag = str(m['tag']).upper()
@@ -211,13 +225,14 @@ class CRClan:
 				formatted.leader = memberdict
 			self.size += 1
 			self.members.append(memberdict)
+			i+= 1
 
 		formatted.members = formattedmembers
-		self.clan_badge = crapiurl + datadict['badge_url']
+		self.clan_badge = crapiurl + clandatadict['badge_url']
 		formatted.clan_badge = self.badge
-		self.name = datadict['name']
+		self.name = clandatadict['name']
 		formatted.name = "Clan: {}".format(self.name)
-		self.desc = datadict['description']
+		self.desc = clandatadict['description']
 		formatted.desc = "Description: {}".format(self.desc)
 		d = self.desc
 		
@@ -271,14 +286,14 @@ class CRClan:
 			tag = tag.replace(sym, '')
 			d2 = d2.replace(sym+tag, '[{}]({})'.format(sym+tag, 'https://cr-api.com/clan/'+tag))
 		self.desc2 =  d2
-		formatted.desc2 = "Description: {}".format(desc2)
-		self.clan_trophy = datadict['score']
+		formatted.desc2 = "Description: {}".format(self.desc2)
+		self.clan_trophy = clandatadict['score']
 		formatted.clan_trophy = "Trophies: {}".format(str(self.clan_trophy))
-		self.tr_req = datadict['requiredScore']
+		self.tr_req = clandatadict['requiredScore']
 		formatted.tr_req = "Trophy requirement: {}".format(str(self.tr_req))
-		self.donperweek = datadict['donations']
+		self.donperweek = clandatadict['donations']
 		formatted.donperweek = "Donations this week: {}".format(str(self.donperweek))
-		self.badge = crapi_url +'/static/img'+ datadict['badge_url']
+		self.badge = crapi_url +'/static/img'+ clandatadict['badge_url']
 		return [self, formatted]
 
 class XP:
@@ -959,7 +974,7 @@ class CRTags:
 				if copy_emote_bool:
 					try:
 						await self.bot.create_custom_emoji(ctx.message.server, name=emote_name, image=e)
-						embed = discord.Embed(title="Added new emote", color=discord.Color.blue())
+						embed = discord.Embed(title="Added new emote", color=discord.Color(0x50d2fe))
 						embed.description = "New emote added: " + emote_name
 						await self.bot.say("", embed=embed)
 					except:
@@ -985,16 +1000,6 @@ class CRTags:
 		dataIO.save_json(CREMOJIS_JSON, cremojis)
 		await self.bot.say("Initialized")
 
-	@commands.group(pass_context=True)
-	async def clan(self, ctx):
-		"""get clan info
-		"""
-		# racfserver = self.bot.get_server('218534373169954816')
-		# await self.bot.say(racfserver.get_member('222925389641547776').mention)
-		# await self.bot.say(server.get_member('222925389641547776').mention)
-		# print(dir(CRClan('QUYCYV8')))
-		if ctx.invoked_subcommand is None:
-			await send_cmd_help(ctx)
 
 	async def keyortag2tag(self, keyortag, ctx):
 		originalkey = keyortag
@@ -1043,494 +1048,9 @@ class CRTags:
 				return None
 			player = await CRPlayer.create(usertag)			
 			tag = player[0].clan.url.replace(crapi_url,'').replace('/clan/', '')
-			print(tag)
+			# print(tag)
 		return tag
 
-	@checks.mod_or_permissions()
-	@clan.command(name='set', pass_context=True)
-	async def clansettag(self, ctx, tag, *, key):
-		author = ctx.message.author
-		server = ctx.message.server
-		author = server.get_member(author.id)
-		rolenames = []
-		for role in author.roles:
-			rolenames.append(author.name)
-		isbotcmder=False
-		for role in rolenames:
-			if role in BOTCMDER:
-				isbotcmder = True
-				break
-		if checks.is_owner_check(ctx) or isbotcmder:
-			pass
-		else:
-			return
-		key = key.upper()
-		tag = tag.upper()
-		tag.replace('O', '0')
-		valid = True
-		for letter in tag:
-			if letter not in validChars:
-				valid = False
-		if valid: #self.is_valid(tag):
-			self.clansettings[key] = str(tag)
-			dataIO.save_json(CLAN_JSON, self.clansettings)
-			await self.bot.say("Saved {} for {}".format(tag, key))
-		else:
-			await self.bot.say("Invalid tag {}, it must only have the following characters {}".format(author.mention), validChars)
-			
-	@clan.command(name='get',pass_context=True)
-	async def get_clan(self, ctx, keyortag=None):
-		user = ctx.message.author
-		if keyortag == None:
-			keyortag = user.id
-		tag = await self.keyortag2tag(keyortag, ctx)
-		if tag == None:
-			return
-		clanurl = crapiurl + '/clan/' + tag
-		await ctx.invoke(self.claninfo, tag)
-		await ctx.invoke(self.clanroster, tag)
-		return
-		# await self.async_refresh(clanurl+ '/refresh')
-		clan = await CRClan.create(tag)
-		clan_data = []
-		member_data = [] # for displaying all members 
-		clan_data.append(clan.desc2)
-		clan_data.append(clan.leader['formatted'])
-		clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clanurl))
-		clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
-		clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
-		# clan_data.append("")
-		# n = 0
-		# while n<len(clan.members):
-		#     await self.bot.say(clan.members[n])
-		#     n += 1
-		# return
-		members2display = clan.members
-		n = 0
-		members_per_embed = 13
-		member_data = [] # for displaying all members
-		while n<int(len(members2display)/members_per_embed+1):
-			member_data.append([])
-			n += 1
-
-		n = 0
-		while n<int(len(members2display)/members_per_embed+1):
-			try:
-				membersection = members2display[(n)*members_per_embed:(n+1)*members_per_embed]
-			except:
-				membersection = members2display[(n)*members_per_embed:]
-			# await self.bot.say(membersection)
-			for member in membersection:
-				memberstring = member['formatted']
-				member_data[n].append(memberstring)
-			n += 1
-
-
-		em = []
-
-		if len(clan_data)>0:
-			em.append(discord.Embed(url=clan.clanurl, title="{}".format(clan.name), description='\n'.join(clan_data),color = discord.Color(0x50d2fe)))
-		for data in member_data:
-			if len(em) == 0:
-				em.append(discord.Embed(url=clan.clanurl, title="{}".format(clan.name), description='\n'.join(data),color = discord.Color(0x50d2fe)))
-			else:
-				em.append(discord.Embed(description='\n'.join(data),color = discord.Color(0x50d2fe)))
-		try:
-			discordname = user.name if user.nick is None else user.nick
-		except:
-			discordname = user.name
-		em[0].set_author(icon_url=user.avatar_url,name=discordname)
-		em[0].set_thumbnail(url=clan.clan_badge)
-		em[len(em)-1].set_footer(text='Data provided by {}'.format(crapiurl.replace('api.', '', 1)), icon_url='https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
-
-
-		for e in em:
-			await self.bot.say(embed=e)
-
-
-	@clan.command(name='roster',aliases=[],pass_context=True)
-	async def clanroster(self, ctx, keyortag=None):
-		user = ctx.message.author
-		if keyortag == None:
-			keyortag = user.id
-		tag = await self.keyortag2tag(keyortag, ctx)
-		if tag == None:
-			return
-		clanurl = crapiurl + '/clan/' + tag
-		# await self.async_refresh(clanurl+ '/refresh')
-		clan = await CRClan.create(tag)
-		clan_data = []
-		member_data = [] # for displaying all members 
-		# clan_data.append(clan.desc2)
-		# clan_data.append(clan.leader['formatted'])
-		# clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clan_url))
-		# clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
-		# clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
-		# clan_data.append("")
-		# n = 0
-		# while n<len(clan.members):
-		#     await self.bot.say(clan.members[n])
-		#     n += 1
-		# return
-		membertype = None
-		members2display = clan.members
-		if members2display != clan.members:
-			membertype = members2display[0]['role']
-		n = 0
-		members_per_embed = 13
-		member_data = [] # for displaying all members
-		while n<int(len(members2display)/members_per_embed+1):
-			member_data.append([])
-			n += 1
-
-		n = 0
-		while n<int(len(members2display)/members_per_embed+1):
-			try:
-				membersection = members2display[(n)*members_per_embed:(n+1)*members_per_embed]
-			except:
-				membersection = members2display[(n)*members_per_embed:]
-			# await self.bot.say(membersection)
-			for member in membersection:
-				memberstring = member['formatted']
-				member_data[n].append(memberstring)
-			n += 1
-
-
-		em = []
-		if membertype != None:
-			currentdesc = "**{}** `{}s`\n".format(len(members2display), membertype)
-		else:
-			currentdesc = ''
-		if len(clan_data)>0:
-			# emtitle = clan.name
-			# if membertype != None:
-				# emtitle += '\n{} {}s'.format(len(members2display), membertype)
-			e = discord.Embed(url=clan.clanurl, title="{}".format(clan.name), description='{}{}'.format(currentdesc, '\n'.join(data)),color = discord.Color(0x50d2fe))
-			em.append(e)
-		for data in member_data:
-			if len(em) == 0:
-				# emtitle = clan.name
-				# if membertype != None:
-				# 	emtitle += '\n{} {}s'.format(len(members2display), membertype)
-				e = discord.Embed(url=clan.url, title="{}".format(clan.name), description='{}{}'.format(currentdesc, '\n'.join(data)),color = discord.Color(0x50d2fe))
-				em.append(e)
-				
-			else:
-				em.append(discord.Embed(description='\n'.join(data),color = discord.Color(0x50d2fe)))
-		try:
-			discordname = user.name if user.nick is None else user.nick
-		except:
-			discordname = user.name
-		em[0].set_author(icon_url=user.avatar_url,name=discordname)
-		# em[0].
-		em[0].set_thumbnail(url=clan.badge)
-		em[len(em)-1].set_footer(text='Data provided by {}'.format(crapi_url), icon_url='https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
-
-
-		for e in em:
-			await self.bot.say(embed=e)
-
-
-
-	@clan.command(name='coleaders',aliases=['cos'],pass_context=True)
-	async def clancoleaders(self, ctx, keyortag=None):
-		user = ctx.message.author
-		if keyortag == None:
-			keyortag = user.id
-		tag = await self.keyortag2tag(keyortag, ctx)
-		if tag == None:
-			return
-		clanurl = crapiurl + '/clan/' + tag
-		# await self.async_refresh(clanurl+ '/refresh')
-		clan = await CRClan.create(tag)
-		clan_data = []
-		member_data = [] # for displaying all members 
-		# clan_data.append(clan.desc2)
-		# clan_data.append(clan.leader['formatted'])
-		# clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clan_url))
-		# clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
-		# clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
-		# clan_data.append("")
-		# n = 0
-		# while n<len(clan.members):
-		#     await self.bot.say(clan.members[n])
-		#     n += 1
-		# return
-		membertype = None
-		members2display = clan.coleaders
-		if members2display != clan.members:
-			membertype = members2display[0]['role']
-		n = 0
-		members_per_embed = 13
-		member_data = [] # for displaying all members
-		while n<int(len(members2display)/members_per_embed+1):
-			member_data.append([])
-			n += 1
-
-		n = 0
-		while n<int(len(members2display)/members_per_embed+1):
-			try:
-				membersection = members2display[(n)*members_per_embed:(n+1)*members_per_embed]
-			except:
-				membersection = members2display[(n)*members_per_embed:]
-			# await self.bot.say(membersection)
-			for member in membersection:
-				memberstring = member['formatted']
-				member_data[n].append(memberstring)
-			n += 1
-
-
-		em = []
-		if membertype != None:
-			currentdesc = "**{}** `{}s`\n".format(len(members2display), membertype)
-		else:
-			currentdesc = ''
-		if len(clan_data)>0:
-			# emtitle = clan.name
-			# if membertype != None:
-				# emtitle += '\n{} {}s'.format(len(members2display), membertype)
-			e = discord.Embed(url=clan.clanurl, title="{}".format(clan.name), description='{}{}'.format(currentdesc, '\n'.join(data)),color = discord.Color(0x50d2fe))
-			em.append(e)
-		for data in member_data:
-			if len(em) == 0:
-				# emtitle = clan.name
-				# if membertype != None:
-				# 	emtitle += '\n{} {}s'.format(len(members2display), membertype)
-				e = discord.Embed(url=clan.url, title="{}".format(clan.name), description='{}{}'.format(currentdesc, '\n'.join(data)),color = discord.Color(0x50d2fe))
-				em.append(e)
-				
-			else:
-				em.append(discord.Embed(description='\n'.join(data),color = discord.Color(0x50d2fe)))
-		try:
-			discordname = user.name if user.nick is None else user.nick
-		except:
-			discordname = user.name
-		em[0].set_author(icon_url=user.avatar_url,name=discordname)
-		# em[0].
-		em[0].set_thumbnail(url=clan.badge)
-		em[len(em)-1].set_footer(text='Data provided by {}'.format(crapi_url), icon_url='https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
-
-
-		for e in em:
-			await self.bot.say(embed=e)
-
-
-
-	@clan.command(name='elders',aliases=['elder'],pass_context=True)
-	async def clanelders(self, ctx, keyortag=None):
-		user = ctx.message.author
-		if keyortag == None:
-			keyortag = user.id
-		tag = await self.keyortag2tag(keyortag, ctx)
-		if tag == None:
-			return
-		clanurl = crapiurl + '/clan/' + tag
-		# await self.async_refresh(clanurl+ '/refresh')
-		clan = await CRClan.create(tag)
-		clan_data = []
-		member_data = [] # for displaying all members 
-		# clan_data.append(clan.desc2)
-		# clan_data.append(clan.leader['formatted'])
-		# clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clan_url))
-		# clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
-		# clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
-		# clan_data.append("")
-		# n = 0
-		# while n<len(clan.members):
-		#     await self.bot.say(clan.members[n])
-		#     n += 1
-		# return
-		membertype = None
-		members2display = clan.elders
-		if members2display != clan.members:
-			membertype = members2display[0]['role']
-		n = 0
-		members_per_embed = 13
-		member_data = [] # for displaying all members
-		while n<int(len(members2display)/members_per_embed+1):
-			member_data.append([])
-			n += 1
-
-		n = 0
-		while n<int(len(members2display)/members_per_embed+1):
-			try:
-				membersection = members2display[(n)*members_per_embed:(n+1)*members_per_embed]
-			except:
-				membersection = members2display[(n)*members_per_embed:]
-			# await self.bot.say(membersection)
-			for member in membersection:
-				memberstring = member['formatted']
-				member_data[n].append(memberstring)
-			n += 1
-
-
-		em = []
-		if membertype != None:
-			currentdesc = "**{}** `{}s`\n".format(len(members2display), membertype)
-		else:
-			currentdesc = ''
-		if len(clan_data)>0:
-			# emtitle = clan.name
-			# if membertype != None:
-				# emtitle += '\n{} {}s'.format(len(members2display), membertype)
-			e = discord.Embed(url=clan.clanurl, title="{}".format(clan.name), description='{}{}'.format(currentdesc, '\n'.join(data)),color = discord.Color(0x50d2fe))
-			em.append(e)
-		for data in member_data:
-			if len(em) == 0:
-				# emtitle = clan.name
-				# if membertype != None:
-				# 	emtitle += '\n{} {}s'.format(len(members2display), membertype)
-				e = discord.Embed(url=clan.url, title="{}".format(clan.name), description='{}{}'.format(currentdesc, '\n'.join(data)),color = discord.Color(0x50d2fe))
-				em.append(e)
-				
-			else:
-				em.append(discord.Embed(description='\n'.join(data),color = discord.Color(0x50d2fe)))
-		try:
-			discordname = user.name if user.nick is None else user.nick
-		except:
-			discordname = user.name
-		em[0].set_author(icon_url=user.avatar_url,name=discordname)
-		# em[0].
-		em[0].set_thumbnail(url=clan.badge)
-		em[len(em)-1].set_footer(text='Data provided by {}'.format(crapi_url), icon_url='https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
-
-
-		for e in em:
-			await self.bot.say(embed=e)
-
-
-
-
-	@clan.command(name='norole',aliases=[],pass_context=True)
-	async def clannorole(self, ctx, keyortag=None):
-		user = ctx.message.author
-		if keyortag == None:
-			keyortag = user.id
-		tag = await self.keyortag2tag(keyortag, ctx)
-		if tag == None:
-			return
-		clanurl = crapiurl + '/clan/' + tag
-		# await self.async_refresh(clanurl+ '/refresh')
-		clan = await CRClan.create(tag)
-		clan_data = []
-		member_data = [] # for displaying all members 
-		# clan_data.append(clan.desc2)
-		# clan_data.append(clan.leader['formatted'])
-		# clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.clan_url))
-		# clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
-		# clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
-		# clan_data.append("")
-		# n = 0
-		# while n<len(clan.members):
-		#     await self.bot.say(clan.members[n])
-		#     n += 1
-		# return
-		membertype = None
-		members2display = clan.members
-		if members2display != clan.members:
-			membertype = members2display[0]['role']
-		n = 0
-		members_per_embed = 13
-		member_data = [] # for displaying all members
-		while n<int(len(members2display)/members_per_embed+1):
-			member_data.append([])
-			n += 1
-
-		n = 0
-		while n<int(len(members2display)/members_per_embed+1):
-			try:
-				membersection = members2display[(n)*members_per_embed:(n+1)*members_per_embed]
-			except:
-				membersection = members2display[(n)*members_per_embed:]
-			# await self.bot.say(membersection)
-			for member in membersection:
-				memberstring = member['formatted']
-				member_data[n].append(memberstring)
-			n += 1
-
-
-		em = []
-		if membertype != None:
-			currentdesc = "**{}** `{}s`\n".format(len(members2display), membertype)
-		else:
-			currentdesc = ''
-		if len(clan_data)>0:
-			# emtitle = clan.name
-			# if membertype != None:
-				# emtitle += '\n{} {}s'.format(len(members2display), membertype)
-			e = discord.Embed(url=clan.clanurl, title="{}".format(clan.name), description='{}{}'.format(currentdesc, '\n'.join(data)),color = discord.Color(0x50d2fe))
-			em.append(e)
-		for data in member_data:
-			if len(em) == 0:
-				# emtitle = clan.name
-				# if membertype != None:
-				# 	emtitle += '\n{} {}s'.format(len(members2display), membertype)
-				e = discord.Embed(url=clan.url, title="{}".format(clan.name), description='{}{}'.format(currentdesc, '\n'.join(data)),color = discord.Color(0x50d2fe))
-				em.append(e)
-				
-			else:
-				em.append(discord.Embed(description='\n'.join(data),color = discord.Color(0x50d2fe)))
-		try:
-			discordname = user.name if user.nick is None else user.nick
-		except:
-			discordname = user.name
-		em[0].set_author(icon_url=user.avatar_url,name=discordname)
-		# em[0].
-		em[0].set_thumbnail(url=clan.badge)
-		em[len(em)-1].set_footer(text='Data provided by {}'.format(crapi_url), icon_url='https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
-
-
-		for e in em:
-			await self.bot.say(embed=e)
-
-
-	@clan.command(name='info',pass_context=True)
-	async def claninfo(self, ctx, keyortag=None):
-		user = ctx.message.author
-		if keyortag == None:
-			keyortag = user.id
-		elif keyortag.lower() == 'racf':
-			for clan in racfclanslist:
-				await ctx.invoke(self.claninfo, clan)
-			return
-
-		tag = await self.keyortag2tag(keyortag, ctx)
-		if tag == None:
-			return
-		if tag == '':
-			await self.bot.say("That user is not in a clan.")
-			return
-		clanurl = crapiurl + '/clan/' + tag
-		# await self.async_refresh(clanurl+ '/refresh')
-		clan = await CRClan.create(tag)
-		clan_data = []
-		member_data = [] # for displaying all members 
-		clan_data.append(clan.desc2)
-		clan_data.append(clan.leader['formatted'])
-		clan_data.append("Clan Tag: [`{}`]({})".format(tag, clan.url))
-		clan_data.append("Clan Score: [{}](http://)".format(clan.clan_trophy))
-		clan_data.append("Trophy Requirement: [{}](http://)".format(clan.tr_req))
-
-
-		em = []
-
-		if len(clan_data)>0:
-			em.append(discord.Embed(url=clan.url, title="{}".format(clan.name), description='\n'.join(clan_data),color = discord.Color(0x50d2fe)))
-		for data in member_data:
-			if len(em) == 0:
-				em.append(discord.Embed(url=clan.url, title="{}".format(clan.name), description='\n'.join(data),color = discord.Color(0x50d2fe)))
-			else:
-				em.append(discord.Embed(description='\n'.join(data),color = discord.Color(0x50d2fe)))
-		try:
-			discordname = user.name if user.nick is None else user.nick
-		except:
-			discordname = user.name
-		em[0].set_author(icon_url=user.avatar_url,name=discordname)
-		em[0].set_thumbnail(url=clan.badge)
-		em[len(em)-1].set_footer(text='Data provided by {}'.format(crapiurl.replace('api.', '', 1)), icon_url='https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
-
-		for e in em:
-			await self.bot.say(embed=e)
 
 
 	def goldcalc(self, cardlvl):
@@ -1559,6 +1079,7 @@ class CRTags:
 			elif str(x).isdigit():
 				cardlvl[currentrarity].append(x)
 		return cardlvl
+
 	@commands.command(pass_context=True)
 	async def gold(self, ctx, *, args):
 		totalgold = {'c':0,'r':0,'e':0,'l':0,}
@@ -2027,8 +1548,11 @@ class CRTags:
 		u = await self.bot.get_user_info(ctx.message.author.id)
 		while True:
 			reaction = await self.bot.wait_for_reaction(emoji=self.currentemojiobjs,timeout=30,message=message)#, check=self.react_check)
-			if reaction==None or list(reaction)[0].emoji.name=='nocancel':
+			if reaction==None:
 				await self.bot.edit_message(message,new_content=message.content+' Timed out, UI exited.')
+				await asyncio.sleep(30)
+				em = discord.Embed(title=player.name,color=discord.Color.blue())
+				await self.bot.edit_message(message, embed = em)
 				break
 			reaction = list(reaction)
 			currentuser = reaction[1]
@@ -2045,11 +1569,17 @@ class CRTags:
 					pass
 			emojiclicked['refresh'] = False
 			emojiclicked['helpinfo'] = False
+			emojiclicked['nocancel'] = False
 			elements2display = []
 			for e in elementspossible:
 				if emojiclicked[e]:
 					elements2display.append(self.emojis2specembeds[e])
+			if reaction.emoji.name=='nocancel':
+				elements2display = []
 			embed = self.data2embed(ctx.message.author, player, player_data, player_datadict, elements2display)
+			if reaction.emoji.name=='nocancel':
+				await self.bot.edit_message(message, new_content=message.content+ " {} clicked, UI exited.".format(reaction.emoji), embed=embed)
+				break
 
 			if reaction.emoji.name == 'helpinfo':
 				await self.bot.edit_message(message, embed=self.helpembed)
@@ -2100,7 +1630,7 @@ class CRTags:
 
 		return em
 
-	@clashroyale.command(name='emoj', aliases=['e', 'em'],  pass_context=True)
+	@clashroyale.command(name='emoji', aliases=['e', 'em'],  pass_context=True)
 	async def _emoji(self, ctx, userortag=None):
 		"""Get user trophies. If not given a user, get author's data"""
 		#fix user, player, player_data, player_data, player_datadict
@@ -2257,45 +1787,6 @@ class CRTags:
 			n+=1
 
 		return em
-
-	@clan.command(name='emoji', aliases=['e', 'em'],  pass_context=True)
-	async def _emoji(self, ctx, keyortag=None):
-		"""Get user trophies. If not given a user, get author's data"""
-		#fix user, player, clan_data, clan_data, clan_datadict
-		if keyortag == None:
-			keyortag = ctx.message.author.id
-		tag = await self.keyortag2tag(keyortag, ctx)
-		if tag == None:
-			return
-		if tag[0] == None:
-			return
-		user = tag[1]
-		if user == None:
-			user = ctx.message.author
-		tag = tag[0]
-		clan = await CRClan.create(tag)
-		fclan = clan[1]
-		clan = clan[0]
-		elements = []
-		elements2display  = [
-			'tr_req'
-		]
-		print(fclan.tag)
-		things = self.elements2data(elements2display, fclan)
-		clan_datadict = things[0]
-		print(clan_datadict)
-		clan_data = things[1]
-		# print('{}\n{}'.format(fclan.stats, type(fclan.stats)))
-		specembeds = {}
-		em = self.data2embed(user, clan, clan_data, clan_datadict, elements2display)
-		# for key in specembeds:
-		# 	await self.bot.say(embed=specembeds[key])
-		message = await self.bot.say("React to this for stats! click {} for help.".format(self.reactionemojis['helpinfo']))
-		await self.reactembedsclan(ctx, message, clan, clan_data, clan_datadict)
-		# em.set_author(icon_url=user.avatar_url,name=discordname)
-		# em.set_thumbnail(url=clan.clan.badge)
-		# em.set_footer(text='Data provided by CR-API', icon_url='https://i.imgur.com/Grj2j6D.png')
-		# await self.bot.say(embed=em)
 
 
 	
