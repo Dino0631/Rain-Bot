@@ -790,13 +790,6 @@ class CRTags:
 		self.user = None
 		self.currentemojiobjs = []
 		cremojis = self.allemojis = dataIO.load_json(CREMOJIS_JSON)
-		self.emojiservers = []
-		for e in cremojis:
-			cremojilist.append(cremojis[e])
-		for server in self.bot.servers:
-			for emoji in server.emojis:
-				# print(emoji.name)
-				cremojiobjs[emoji.name] = emoji
 		
 		self.reactionemojislist = [
 			'levelbig',
@@ -843,17 +836,33 @@ class CRTags:
 			'rank':'seasons',
 			'deck':'deck'
 		}
-		self.reactionemojis = {}
-		d = {}
-		for e in self.reactionemojislist:
-			# print(self.reactionemojis[e])
-				d[e] = cremojiobjs[e]
-		self.reactionemojis = d
-		helptitle = "When an emoji is pressed, the embed will change. If you want to remove part of a player profile, unclick the emoji, and click the refresh emoji. Here are what the emojis show:"
-		helpemojis = []
-		for e in self.reactionemojislist:
-			helpemojis.append("{}: {}".format(self.reactionemojis[e], self.reactionemojishelpinfo[e]))
-		self.helpembed = discord.Embed(title=helptitle,description='\n'.join(helpemojis),color=discord.Color(0x50d2fe))
+		def my_decorator(some_function):
+
+			async def wrapper(*args, **kwargs):
+
+				await some_function(*args, **kwargs)
+				self.emojiservers = []
+				for e in cremojis:
+					cremojilist.append(cremojis[e])
+				for server in self.bot.servers:
+					for emoji in server.emojis:
+						# print(emoji.name)
+						cremojiobjs[emoji.name] = emoji
+				self.reactionemojis = {}
+				d = {}
+				for e in self.reactionemojislist:
+					# print(self.reactionemojis[e])
+						d[e] = cremojiobjs[e]
+				self.reactionemojis = d
+				helptitle = "When an emoji is pressed, the embed will change. If you want to remove part of a player profile, unclick the emoji, and click the refresh emoji. Here are what the emojis show:"
+				helpemojis = []
+				for e in self.reactionemojislist:
+					helpemojis.append("{}: {}".format(self.reactionemojis[e], self.reactionemojishelpinfo[e]))
+				self.helpembed = discord.Embed(title=helptitle,description='\n'.join(helpemojis),color=discord.Color(0x50d2fe))
+
+			return wrapper
+			#loads some CRTags atttributes when bot is ready, otherwise it cant get servers/emojis
+		self.bot.on_ready = my_decorator(self.bot.on_ready) #adds the above code to on_ready
 
 	@checks.is_owner()
 	@commands.command(pass_context=True)

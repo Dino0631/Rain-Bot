@@ -44,18 +44,18 @@ class General:
                      "Don't count on it", "My reply is no", "My sources say no", "Outlook not so good", "Very doubtful"]
         self.poll_sessions = []
 
-    @commands.command(pass_context=True)
-    async def findcmd(self, ctx, command):
-        cog = ''
-        for cogclass in self.bot.cogs:
-            for cmd  in dir(self.bot.cogs[cogclass]):
-                if cmd.lower() == command.lower():
-                    for cog in self.bot.extensions:
-                        if cogclass in dir(self.bot.extensions[cog]):
-                            break
-                    await self.bot.say("Command `{}` is in class `{}` in cog `{}`".format(command, cogclass, cog))
-                    return
-        await self.bot.say("Couldn't find command `{}`".format(command))
+    # @commands.command(pass_context=True)
+    # async def findcmd(self, ctx, command):
+    #     cog = ''
+    #     for cogclass in self.bot.cogs:
+    #         for cmd  in dir(self.bot.cogs[cogclass]):
+    #             if cmd.lower() == command.lower():
+    #                 for cog in self.bot.extensions:
+    #                     if cogclass in dir(self.bot.extensions[cog]):
+    #                         break
+    #                 await self.bot.say("Command `{}` is in class `{}` in cog `{}`".format(command, cogclass, cog))
+    #                 return
+    #     await self.bot.say("Couldn't find command `{}`".format(command))
 
     @commands.command(hidden=True)
     async def ping(self):

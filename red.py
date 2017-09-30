@@ -613,8 +613,8 @@ def set_cog(cog, value):  # TODO: move this out of red.py
 
 def load_cogs(bot):
 	defaults = ("alias", "audio", "customcom", "downloader", "economy",
-				"general", "image", "mod", "streams", "trivia", "crtags",
-				"crtags2","utils2", "welcome", "mm")
+				"general", "image", "mod", "streams", "trivia", "crsml",
+				"crsml2","utils2", "welcome", "mm")
 
 	try:
 		registry = dataIO.load_json("data/red/cogs.json")
@@ -636,11 +636,13 @@ def load_cogs(bot):
 
 	failed = []
 	extensions = owner_cog._list_cogs()
-
-	if not registry:  # All default cogs enabled by default
+	print(extensions)
+	print(registry)
+	if True:#not registry:  # All default cogs enabled by default
 		for ext in defaults:
+			print(ext)
 			registry["cogs." + ext] = True
-
+	print(registry)
 	for extension in extensions:
 		if extension.lower() == "cogs.owner":
 			continue
@@ -648,6 +650,7 @@ def load_cogs(bot):
 		if to_load:
 			try:
 				owner_cog._load_cog(extension)
+				print('loaded {}'.format(extension))
 			except Exception as e:
 				print("{}: {}".format(e.__class__.__name__, str(e)))
 				bot.logger.exception(e)
