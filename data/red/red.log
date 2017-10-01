@@ -10587,3 +10587,137 @@ Traceback (most recent call last):
   File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 59, in <module>
     if heroku:
 NameError: name 'heroku' is not defined
+[01/10/2017 12:37] ERROR red <module> 701: Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\http.py", line 258, in static_login
+    data = yield from self.request(Route('GET', '/users/@me'))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\http.py", line 200, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: UNAUTHORIZED (status code: 401): 401: Unauthorized
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "red.py", line 699, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 682, in main
+    bot=not bot.settings.self_bot)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 416, in login
+    yield from getattr(self, '_login_' + str(n))(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 346, in _login_1
+    data = yield from self.http.static_login(token, bot=is_bot)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\http.py", line 262, in static_login
+    raise LoginFailure('Improper token has been passed.') from e
+discord.errors.LoginFailure: Improper token has been passed.
+
+[01/10/2017 12:48] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 178, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 118, in connect_with_user
+    voiceclient = await self.get_voice_client(ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 100, in get_voice_client
+    if client.server == ctx.message.server:
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\voice_client.py", line 237, in server
+    return self.channel.server
+AttributeError: 'NoneType' object has no attribute 'server'
+[01/10/2017 12:58] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 180, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 122, in connect_with_user
+    await voiceclient.move_to(user.channel)
+AttributeError: 'Member' object has no attribute 'channel'
+[01/10/2017 13:05] ERROR red on_command_error 438: Exception in command 'restart'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 654, in restart
+    await self.bot.shutdown(restart=True)
+  File "red.py", line 165, in shutdown
+    await self.logout()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 426, in logout
+    yield from self.close()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\bot.py", line 283, in close
+    yield from super().close()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 474, in close
+    self.connection._remove_voice_client(voice.server.id)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\voice_client.py", line 237, in server
+    return self.channel.server
+AttributeError: 'NoneType' object has no attribute 'server'
+[01/10/2017 13:09] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 189, in crclip
+    player.start()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\threading.py", line 840, in start
+    raise RuntimeError("threads can only be started once")
+RuntimeError: threads can only be started once
+[01/10/2017 13:09] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 190, in crclip
+    player.start()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\threading.py", line 840, in start
+    raise RuntimeError("threads can only be started once")
+RuntimeError: threads can only be started once
+[01/10/2017 13:17] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 191, in crclip
+    player = client.create_ffmpeg_player(filename, 'penis')
+TypeError: create_ffmpeg_player() takes 2 positional arguments but 3 were given
+[01/10/2017 13:24] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 191, in crclip
+    popen = subprocess.Popen(("ffprobe","-show_entries", "format=duration","-i",filename),stdout=subprocess.PIPE)
+NameError: name 'subprocess' is not defined
+[01/10/2017 13:25] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 191, in crclip
+    popen = subprocess.Popen(("ffprobe","-show_entries", "format=duration","-i",filename),stdout=subprocess.PIPE)
+NameError: name 'subprocess' is not defined
+[01/10/2017 13:31] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 192, in crclip
+    popen = ffmpy.subprocess.Popen(("ffprobe","-show_entries", "format=duration","-i",filename),stdout=subprocess.PIPE)
+NameError: name 'subprocess' is not defined
+[01/10/2017 13:32] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 192, in crclip
+    popen = ffmpy.subprocess.Popen(("ffprobe","-show_entries", "format=duration","-i",filename),stdout=subprocess.PIPE)
+NameError: name 'subprocess' is not defined
+[01/10/2017 13:32] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 193, in crclip
+    popen = ffmpy.subprocess.Popen(("ffprobe","-show_entries", "format=duration","-i",filename),stdout=subprocess.PIPE)
+NameError: name 'subprocess' is not defined
+[01/10/2017 13:33] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 194, in crclip
+    popen = ffmpy.subprocess.Popen(("ffprobe","-show_entries", "format=duration","-i",filename),stdout=subprocess.PIPE)
+NameError: name 'subprocess' is not defined

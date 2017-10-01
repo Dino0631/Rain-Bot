@@ -23,6 +23,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 """
+import os
 heroku = False
 if 'DYNO_RAM' in os.environ:
 	heroku = True
@@ -36,7 +37,6 @@ if not heroku:
 	import asyncio
 	import json
 	import requests
-	import os
 	from bs4 import BeautifulSoup
 	# from __main__ import send_cmd_help
 	import string
@@ -52,6 +52,7 @@ if not heroku:
 	from cogs.utils import checks
 	import locale
 	import imageio
+	# from ffmpy import subprocess
 	# try:
 	#     imageio.plugins.ffmpeg.download()
 	# except Exception as e:
@@ -64,6 +65,9 @@ if not heroku:
 	class UserNotConnected(Exception):
 		def __init__(self):
 			self.msg = "User is not in a voice channel of this server."
+	class ChannelNotPrivate(Exception):
+		def __init__(self):
+			self.msg = "This command only works in dm or group."
 
 	class CRSFX:
 		"""Display RACF specifc info.
@@ -75,7 +79,8 @@ if not heroku:
 			"""Constructor."""
 			self.bot = bot
 
-		# async def on_ready(self):
+		async def on_ready(self):
+			imageio.plugins.ffmpeg.download()
 
 		@checks.is_owner()
 		@commands.command(pass_context=True)
@@ -93,6 +98,8 @@ if not heroku:
 		async def get_voice_client(self, ctx):
 			servclient = None
 			for client in list(self.bot.voice_clients):
+				# print(client.server)
+				# print(ctx.message.content)
 				if client.server == ctx.message.server:
 					servclient = client
 					break
@@ -112,11 +119,25 @@ if not heroku:
 			else:
 				if self.bot.is_voice_connected(ctx.message.server):
 					voiceclient = await self.get_voice_client(ctx)
-					if voiceclient.channel != user.voice_channel:
-						await voiceclient.move_to(user.channel)
+					if voiceclient.channel != user.voice_channel or not self.bot.user.bot:
+						await voiceclient.move_to(user.voice_channel)
 				else:
 					voiceclient = await self.bot.join_voice_channel(channel)
 			return voiceclient
+
+		# async def connect_with_userdm(self, ctx, user=None):
+		# 	if user == None:
+		# 		user = ctx.message.author
+		# 	if not ctx.message.channel.is_private:
+		# 		raise ChannelNotPrivate()
+		# 	else:
+		# 		if self.bot.is_voice_connected(ctx.message.server):
+		# 			voiceclient = await self.get_voice_client(ctx)
+		# 			if voiceclient.channel != user.voice_channel:
+		# 				await voiceclient.move_to(user.channel)
+		# 		else:
+		# 			voiceclient = await self.bot.join_voice_channel(channel)
+		# 	return voiceclient
 
 		async def playmp3(self, client, filename):
 			player = client.create_ffmpeg_player(filename)
@@ -146,7 +167,7 @@ if not heroku:
 
 		
 		@commands.command(pass_context=True)
-		async def crclip(self, ctx, filename=None, user:discord.User=None):
+		async def crclip(self, ctx, filename=None, times=1,user:discord.User=None):
 			if user == None:
 				user = ctx.message.author
 			exten = '.mp3'
@@ -161,13 +182,36 @@ if not heroku:
 			except UserNotConnected as e:
 				await self.bot.say(e.msg)
 				return
-			
 			filename = os.path.join(AUDIOPATH, filename + exten)
-			player = client.create_ffmpeg_player(filename)
-			player.start()
+			times = int(times)
+			if times>5:
+				times=5
+			elif times<1:
+				times=1
+			if times==1:
+				player = client.create_ffmpeg_player(filename)
+				player.start()
+			else:
+				n = 0
+				
+				for x in range(times):
+					print('hi')
+					if n>0:
+						while player.is_playing():
+							await asyncio.sleep(.2)
+					player = client.create_ffmpeg_player(filename)
+					player.start()
+					n += 1
+			# print(dir(player))
+			# print(player)
+			# print(type(player))
+			# print(player.loops)
+			# print(inspect.getsource(player.start))
+			# await asyncio.sleep(5)
+			# player.start()
 			# await asyncio.sleep(2)
 			# await self.disconnect(ctx)
-			
+		
 
 	def setup(bot):
 		r = CRSFX(bot)

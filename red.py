@@ -349,8 +349,6 @@ def initialize(bot_class=Bot, formatter_class=Formatter):
 
 	@bot.event
 	async def on_ready():
-		print("installing ffmpeg?")
-		imageio.plugins.ffmpeg.download()
 		bot.on_member_join = myon_member_join # add welcome message
 		if bot._intro_displayed:
 			return
@@ -409,7 +407,11 @@ def initialize(bot_class=Bot, formatter_class=Formatter):
 	@bot.event
 	async def on_message(message):
 		bot.counter["messages_read"] += 1
-		if bot.user_allowed(message):
+		if bot.settings.self_bot:
+			condition =  bot.user.id == message.author.id
+		else:
+			condition = bot.user_allowed(message)
+		if condition:
 			await bot.process_commands(message)
 
 	@bot.event
