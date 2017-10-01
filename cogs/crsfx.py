@@ -54,7 +54,10 @@ import imageio
 #     print(e)
 #     print(dir(e))
 # input()
-# discord.opus.load_opus()
+from ctypes.util import find_library
+
+find_library('opus')
+discord.opus.load_opus()
 PATH = os.path.join('data', 'crsfx')
 AUDIOPATH = os.path.join(PATH, 'mp3')
 VIDEOPATH = os.path.join(PATH, 'mp4')

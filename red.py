@@ -349,6 +349,8 @@ def initialize(bot_class=Bot, formatter_class=Formatter):
 
 	@bot.event
 	async def on_ready():
+		print("installing ffmpeg?")
+		imageio.plugins.ffmpeg.download()
 		bot.on_member_join = myon_member_join # add welcome message
 		if bot._intro_displayed:
 			return
@@ -367,8 +369,6 @@ def initialize(bot_class=Bot, formatter_class=Formatter):
 
 		owner = await set_bot_owner()
 
-		print("installing ffmpeg?")
-		imageio.plugins.ffmpeg.download()
 		print("-----------------")
 		print("Red - Discord Bot")
 		print("-----------------")

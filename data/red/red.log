@@ -10535,3 +10535,41 @@ Traceback (most recent call last):
   File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\bot.py", line 736, in load_extension
     raise discord.ClientException('extension does not have a setup function')
 discord.errors.ClientException: extension does not have a setup function
+[01/10/2017 10:10] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 676, in poll_event
+    msg = yield from asyncio.wait_for(self.recv(), timeout=30.0, loop=self.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 400, in wait_for
+    return fut.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\websockets\protocol.py", line 299, in recv
+    raise ConnectionClosed(self.close_code, self.close_reason)
+websockets.exceptions.ConnectionClosed: WebSocket connection is closed: code = 4006, reason = Session is no longer valid..
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 160, in crclip
+    return
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 118, in connect_with_user
+    async def playmp3(self, client, filename):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 3203, in join_voice_channel
+    yield from voice.connect()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\voice_client.py", line 258, in connect
+    self.ws = yield from DiscordVoiceWebSocket.from_client(self)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 591, in from_client
+    yield from asyncio.wait_for(ws.poll_event(), timeout=60, loop=client.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 400, in wait_for
+    return fut.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 679, in poll_event
+    raise ConnectionClosed(e) from e
+discord.errors.ConnectionClosed: WebSocket connection is closed: code = 4006, reason = Session is no longer valid..
