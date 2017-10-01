@@ -5,6 +5,7 @@ from __main__ import set_cog
 from .utils.dataIO import dataIO
 from .utils.chat_formatting import pagify, box
 
+import ctypes
 import importlib
 import traceback
 import logging
