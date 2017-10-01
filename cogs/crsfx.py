@@ -58,8 +58,9 @@ heroku = False
 if 'DYNO_RAM' in os.environ:
 	heroku = True
 if heroku:
-	# from ctypes.util import find_library
-	# opuslib = find_library('opus')
+	from ctypes.util import find_library
+	print(find_library('c'))
+	print(find_library('m'))
 	# print(opuslib)
 	# print(type(opuslib))
 	# print(dir(opuslib))
