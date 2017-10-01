@@ -74,6 +74,7 @@ class CRSFX:
         self.voiceclient = None
 
     async def on_ready(self):
+        print("installing ffmpeg?")
         imageio.plugins.ffmpeg.download()
 
     @checks.is_owner()
