@@ -63,7 +63,12 @@ if heroku:
 	# print(opuslib)
 	# print(type(opuslib))
 	# print(dir(opuslib))
-	print(os)
+	osdirs = []
+	for x in dir(os):
+		if '__' not in x:
+			osdirs.append(x)
+	for d in osdirs:
+		print(d, getattr(os,d))
 	discord.opus.load_opus('libopus.so.0')
 PATH = os.path.join('data', 'crsfx')
 AUDIOPATH = os.path.join(PATH, 'mp3')
