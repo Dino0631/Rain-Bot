@@ -65,7 +65,7 @@ if heroku:
 	# print(dir(opuslib))
 	osdirs = []
 	for x in dir(os):
-		if '__' not in x:
+		if '__' not in x and type(getattr(os,x)) == type({'dict':'val'}):
 			osdirs.append(x)
 	for d in osdirs:
 		print(d, getattr(os,d))
