@@ -69,7 +69,7 @@ if heroku:
 			osdirs.append(x)
 	for d in osdirs:
 		print(d, getattr(os,d))
-	discord.opus.load_opus('libopus.so.0')
+	discord.opus.load_opus('libopus0')
 PATH = os.path.join('data', 'crsfx')
 AUDIOPATH = os.path.join(PATH, 'mp3')
 VIDEOPATH = os.path.join(PATH, 'mp4')
