@@ -58,12 +58,12 @@ heroku = False
 if 'DYNO_RAM' in os.environ:
 	heroku = True
 if heroku:
-	from ctypes.util import find_library
-	opuslib = find_library('opus')
-	print(opuslib)
-	print(type(opuslib))
-	print(dir(opuslib))
-	discord.opus.load_opus(find_library('opus'))
+	# from ctypes.util import find_library
+	# opuslib = find_library('opus')
+	# print(opuslib)
+	# print(type(opuslib))
+	# print(dir(opuslib))
+	discord.opus.load_opus('libopus.so.1')
 PATH = os.path.join('data', 'crsfx')
 AUDIOPATH = os.path.join(PATH, 'mp3')
 VIDEOPATH = os.path.join(PATH, 'mp4')
