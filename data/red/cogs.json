@@ -1,6 +1,7 @@
 {
     "cogs.alias" : true,
     "cogs.audio" : true,
+    "cogs.crsfx" : true,
     "cogs.crsml" : true,
     "cogs.crsml2" : true,
     "cogs.crtags" : false,

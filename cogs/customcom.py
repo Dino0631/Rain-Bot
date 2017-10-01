@@ -1,3 +1,5 @@
+import discord
+from cogs.utils import checks
 from discord.ext import commands
 from .utils.dataIO import dataIO
 from .utils import checks
@@ -23,7 +25,8 @@ class CustomCommands:
             await self.bot.send_cmd_help(ctx)
 
     @customcom.command(name="add", pass_context=True)
-    @checks.mod_or_permissions(administrator=True)
+    # @checks.mod_or_permissions(administrator=True)
+    @checks.is_owner()
     async def cc_add(self, ctx, command : str, *, text):
         """Adds a custom command
 
@@ -52,7 +55,8 @@ class CustomCommands:
                                "".format(ctx.prefix))
 
     @customcom.command(name="edit", pass_context=True)
-    @checks.mod_or_permissions(administrator=True)
+    # @checks.mod_or_permissions(administrator=True)
+    @checks.is_owner()
     async def cc_edit(self, ctx, command : str, *, text):
         """Edits a custom command
 
@@ -78,7 +82,8 @@ class CustomCommands:
                                "".format(ctx.prefix))
 
     @customcom.command(name="delete", pass_context=True)
-    @checks.mod_or_permissions(administrator=True)
+    # @checks.mod_or_permissions(administrator=True)
+    @checks.is_owner()
     async def cc_delete(self, ctx, command : str):
         """Deletes a custom command
 
@@ -130,8 +135,8 @@ class CustomCommands:
 
         if not prefix:
             return
-
-        if server.id in self.c_commands and self.bot.user_allowed(message):
+        samplectx = discord.ext.commands.context.Context(message=message,prefix=prefix)
+        if server.id in self.c_commands and self.bot.user_allowed(message) and checks.is_owner_check(samplectx):
             cmdlist = self.c_commands[server.id]
             cmd = message.content[len(prefix):]
             if cmd in cmdlist:

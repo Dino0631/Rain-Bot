@@ -1078,7 +1078,6 @@ class CRTags:
 			return wrapper
 			#loads some CRTags atttributes when bot is ready, otherwise it cant get servers/emojis
 		self.bot.on_ready = my_decorator(self.bot.on_ready) #adds the above code to on_ready
-		# print('\n{}'.format(str(inspect.getsource(self.bot.on_ready))))
 
 
 	@commands.group(pass_context=True)

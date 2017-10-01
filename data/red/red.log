@@ -9628,3 +9628,901 @@ Traceback (most recent call last):
   File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsml.py", line 1679, in _emoji
     message = await self.bot.say("React to this for stats! click {} for help.".format(self.reactionemojis['helpinfo']))
 AttributeError: 'CRTags' object has no attribute 'reactionemojis'
+[30/09/2017 15:44] ERROR owner load 73: No module named 'cogs.economy'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 64, in load
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 36, in <module>
+    from cogs.economy import SetParser
+ImportError: No module named 'cogs.economy'
+[30/09/2017 15:44] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 55, in playmusic
+    voiceclient = await self.bot.join_voice_channel(genvc)
+  File "lib\discord\client.py", line 3209, in join_voice_channel
+    voice = VoiceClient(**kwargs)
+  File "lib\discord\voice_client.py", line 230, in __init__
+    self.encoder = opus.Encoder(48000, 2)
+  File "lib\discord\opus.py", line 197, in __init__
+    raise OpusNotLoaded()
+discord.opus.OpusNotLoaded
+[30/09/2017 15:53] ERROR red load_cogs 656: name 'os' is not defined
+Traceback (most recent call last):
+  File "red.py", line 652, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 37, in <module>
+    PATH = os.path.join('data', 'crsfx')
+NameError: name 'os' is not defined
+[30/09/2017 15:54] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 57, in playmusic
+    self.voiceclient = await self.bot.join_voice_channel(genvc)
+  File "lib\discord\client.py", line 3209, in join_voice_channel
+    voice = VoiceClient(**kwargs)
+  File "lib\discord\voice_client.py", line 230, in __init__
+    self.encoder = opus.Encoder(48000, 2)
+  File "lib\discord\opus.py", line 197, in __init__
+    raise OpusNotLoaded()
+discord.opus.OpusNotLoaded
+[30/09/2017 16:10] ERROR red on_command_error 434: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 37, in <module>
+    discord.opus.load_opus()
+TypeError: load_opus() missing 1 required positional argument: 'name'
+[30/09/2017 16:34] ERROR red on_command_error 434: Exception in command 'reload'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 45, in <module>
+    discord.opus.load_opus()
+TypeError: load_opus() missing 1 required positional argument: 'name'
+[30/09/2017 16:34] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 72, in playmusic
+    self.voiceclient = await self.bot.join_voice_channel(genvc)
+  File "lib\discord\client.py", line 3198, in join_voice_channel
+    raise e
+  File "lib\discord\client.py", line 3195, in join_voice_channel
+    data = yield from asyncio.wait_for(voice_data_future, timeout=10.0, loop=self.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 404, in wait_for
+    raise futures.TimeoutError()
+concurrent.futures._base.TimeoutError
+[30/09/2017 16:35] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 72, in playmusic
+    self.voiceclient = await self.bot.join_voice_channel(genvc)
+  File "lib\discord\client.py", line 3209, in join_voice_channel
+    voice = VoiceClient(**kwargs)
+  File "lib\discord\voice_client.py", line 230, in __init__
+    self.encoder = opus.Encoder(48000, 2)
+  File "lib\discord\opus.py", line 197, in __init__
+    raise OpusNotLoaded()
+discord.opus.OpusNotLoaded
+[30/09/2017 16:35] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 72, in playmusic
+    self.voiceclient = await self.bot.join_voice_channel(genvc)
+  File "lib\discord\client.py", line 3198, in join_voice_channel
+    raise e
+  File "lib\discord\client.py", line 3195, in join_voice_channel
+    data = yield from asyncio.wait_for(voice_data_future, timeout=10.0, loop=self.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 404, in wait_for
+    raise futures.TimeoutError()
+concurrent.futures._base.TimeoutError
+[30/09/2017 16:40] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 73, in playmusic
+    self.voiceclient = await self.bot.join_voice_channel(genvc)
+  File "lib\discord\client.py", line 3209, in join_voice_channel
+    voice = VoiceClient(**kwargs)
+  File "lib\discord\voice_client.py", line 230, in __init__
+    self.encoder = opus.Encoder(48000, 2)
+  File "lib\discord\opus.py", line 197, in __init__
+    raise OpusNotLoaded()
+discord.opus.OpusNotLoaded
+[30/09/2017 16:55] ERROR red load_cogs 656: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 72, 14, '        player.start()\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 72
+    player.start()
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "red.py", line 652, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 72, 14, '        player.start()\n'))
+[30/09/2017 16:55] ERROR owner load 73: No module named 'ext'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 64, in load
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 27, in <module>
+    from ext.commands import bot
+ImportError: No module named 'ext'
+[30/09/2017 16:56] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 70, in playmusic
+    self.voiceclient = await self.bot.join_voice_channel(genvc)
+  File "lib\discord\client.py", line 3209, in join_voice_channel
+    voice = VoiceClient(**kwargs)
+  File "lib\discord\voice_client.py", line 230, in __init__
+    self.encoder = opus.Encoder(48000, 2)
+  File "lib\discord\opus.py", line 197, in __init__
+    raise OpusNotLoaded()
+discord.opus.OpusNotLoaded
+[30/09/2017 16:57] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 70, in playmusic
+    self.voiceclient = await self.bot.join_voice_channel(genvc)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 3169, in join_voice_channel
+    raise ClientException('Already connected to a voice channel in this server')
+discord.errors.ClientException: Already connected to a voice channel in this server
+[30/09/2017 16:59] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 65, 18, '        print self.bot.voice_clients\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 65
+    print self.bot.voice_clients
+             ^
+SyntaxError: Missing parentheses in call to 'print'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 65, 18, '        print self.bot.voice_clients\n'))
+[30/09/2017 17:04] ERROR red on_command_error 434: Exception in command 'sfxdc'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 65, in sfxdc
+    servclient = await get_voice_client(ctx)
+NameError: name 'get_voice_client' is not defined
+[30/09/2017 17:05] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 84, in playmusic
+    voiceclient = await self.bot.join_voice_channel(genvc)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 3169, in join_voice_channel
+    raise ClientException('Already connected to a voice channel in this server')
+discord.errors.ClientException: Already connected to a voice channel in this server
+[30/09/2017 17:05] ERROR red on_command_error 434: Exception in command 'sfxdc'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 65, in sfxdc
+    servclient = await self.get_voice_client(ctx)
+NameError: name 'get_voice_client' is not defined
+[30/09/2017 17:06] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 89, in playmusic
+    await ctx.invoke(self.sfxdc, ctx)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\context.py", line 112, in invoke
+    ret = yield from command.callback(*arguments, **kwargs)
+TypeError: sfxdc() takes 2 positional arguments but 3 were given
+[30/09/2017 17:06] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 85, in playmusic
+    voiceclient = await self.bot.join_voice_channel(genvc)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 3169, in join_voice_channel
+    raise ClientException('Already connected to a voice channel in this server')
+discord.errors.ClientException: Already connected to a voice channel in this server
+[30/09/2017 17:06] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 85, in playmusic
+    voiceclient = await self.bot.join_voice_channel(genvc)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 3169, in join_voice_channel
+    raise ClientException('Already connected to a voice channel in this server')
+discord.errors.ClientException: Already connected to a voice channel in this server
+[30/09/2017 17:07] ERROR red on_command_error 434: Exception in command 'playmusic'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 91, in playmusic
+    await ctx.invoke(self.sfxdc, ctx)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\context.py", line 112, in invoke
+    ret = yield from command.callback(*arguments, **kwargs)
+TypeError: sfxdc() takes 2 positional arguments but 3 were given
+[30/09/2017 17:35] ERROR red on_command_error 434: Exception in command 'crsfx clip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 111, in clip
+    voiceclient = await self.connect_with_user(ctx)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 76, in connect_with_user
+    if self.bot.is_voice_connected():
+TypeError: is_voice_connected() missing 1 required positional argument: 'server'
+[30/09/2017 17:36] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 116, in crclip
+    await ctx.invoke(self.sfxdc, ctx)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\context.py", line 112, in invoke
+    ret = yield from command.callback(*arguments, **kwargs)
+TypeError: sfxdc() takes 2 positional arguments but 3 were given
+[30/09/2017 17:51] ERROR red on_command_error 434: Exception in command 'reload'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 49, in <module>
+    class CRSFX:
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 60, in CRSFX
+    @checks.is_owner()
+NameError: name 'checks' is not defined
+[30/09/2017 17:52] ERROR red on_command_error 434: Exception in command 'mp4s2mp3'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 70, in mp4s2mp3
+    clip = mp.VideoFileClip(os.path.join(VOICEPATH, name + '.mp4')).subclip(0,20)
+NameError: name 'VOICEPATH' is not defined
+[30/09/2017 17:53] ERROR red on_command_error 434: Exception in command 'mp4s2mp3'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 71, in mp4s2mp3
+    clip.audio.write_audiofile(name + ".mp3")
+  File "<decorator-gen-73>", line 2, in write_audiofile
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\decorators.py", line 54, in requires_duration
+    return f(clip, *a, **k)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\audio\AudioClip.py", line 208, in write_audiofile
+    progress_bar=progress_bar)
+  File "<decorator-gen-70>", line 2, in ffmpeg_audiowrite
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\decorators.py", line 54, in requires_duration
+    return f(clip, *a, **k)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\audio\io\ffmpeg_audiowriter.py", line 161, in ffmpeg_audiowrite
+    progress_bar=progress_bar):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\tqdm\_tqdm.py", line 833, in __iter__
+    for obj in iterable:
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\audio\AudioClip.py", line 81, in generator
+    buffersize=chunksize)
+  File "<decorator-gen-72>", line 2, in to_soundarray
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\decorators.py", line 54, in requires_duration
+    return f(clip, *a, **k)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\audio\AudioClip.py", line 127, in to_soundarray
+    snd_array = self.get_frame(tt)
+  File "<decorator-gen-14>", line 2, in get_frame
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\decorators.py", line 89, in wrapper
+    return f(*new_a, **new_kw)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\Clip.py", line 95, in get_frame
+    return self.make_frame(t)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\Clip.py", line 136, in <lambda>
+    newclip = self.set_make_frame(lambda t: fun(self.get_frame, t))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\Clip.py", line 188, in <lambda>
+    return self.fl(lambda gf, t: gf(t_func(t)), apply_to,
+  File "<decorator-gen-14>", line 2, in get_frame
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\decorators.py", line 89, in wrapper
+    return f(*new_a, **new_kw)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\Clip.py", line 95, in get_frame
+    return self.make_frame(t)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\audio\io\AudioFileClip.py", line 71, in <lambda>
+    self.make_frame =  lambda t: reader.get_frame(t)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\moviepy\audio\io\readers.py", line 169, in get_frame
+    "with clip duration=%d seconds, "%self.duration)
+OSError: Error in file C:\Users\Dino Non Admin\Videos\Captures\forRain\surgical.mp4, Accessing time t=6.39-6.44 seconds, with clip duration=6 seconds, 
+[30/09/2017 18:15] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 140, in crclip
+    await self.playmp3(voiceclient, filename)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 104, in playmp3
+    pritn(dir(player))
+NameError: name 'pritn' is not defined
+[30/09/2017 18:28] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 136, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 98, in connect_with_user
+    voiceclient = await self.bot.join_voice_channel(channel)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 3190, in join_voice_channel
+    raise e
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 3187, in join_voice_channel
+    data = yield from asyncio.wait_for(voice_data_future, timeout=10.0, loop=self.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 404, in wait_for
+    raise futures.TimeoutError()
+concurrent.futures._base.TimeoutError
+[30/09/2017 18:29] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 676, in poll_event
+    msg = yield from asyncio.wait_for(self.recv(), timeout=30.0, loop=self.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 400, in wait_for
+    return fut.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\websockets\protocol.py", line 299, in recv
+    raise ConnectionClosed(self.close_code, self.close_reason)
+websockets.exceptions.ConnectionClosed: WebSocket connection is closed: code = 4006, reason = Session is no longer valid..
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 136, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 98, in connect_with_user
+    voiceclient = await self.bot.join_voice_channel(channel)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 3203, in join_voice_channel
+    yield from voice.connect()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\voice_client.py", line 258, in connect
+    self.ws = yield from DiscordVoiceWebSocket.from_client(self)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 595, in from_client
+    return (yield from cls.from_client(client))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 591, in from_client
+    yield from asyncio.wait_for(ws.poll_event(), timeout=60, loop=client.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 400, in wait_for
+    return fut.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 679, in poll_event
+    raise ConnectionClosed(e) from e
+discord.errors.ConnectionClosed: WebSocket connection is closed: code = 4006, reason = Session is no longer valid..
+[30/09/2017 18:33] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 677, in poll_event
+    yield from self.received_message(json.loads(msg))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 639, in received_message
+    yield from self.initial_connection(data)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 664, in initial_connection
+    yield from self.select_protocol(state.ip, state.port)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 613, in select_protocol
+    yield from self.send_as_json(payload)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 558, in send_as_json
+    yield from self.send(utils.to_json(data))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\websockets\protocol.py", line 310, in send
+    yield from self.ensure_open()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\websockets\protocol.py", line 394, in ensure_open
+    raise ConnectionClosed(self.close_code, self.close_reason)
+websockets.exceptions.ConnectionClosed: WebSocket connection is closed: code = 4006, reason = Session is no longer valid..
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 136, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 98, in connect_with_user
+    voiceclient = await self.bot.join_voice_channel(channel)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 3203, in join_voice_channel
+    yield from voice.connect()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\voice_client.py", line 258, in connect
+    self.ws = yield from DiscordVoiceWebSocket.from_client(self)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 591, in from_client
+    yield from asyncio.wait_for(ws.poll_event(), timeout=60, loop=client.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 400, in wait_for
+    return fut.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 679, in poll_event
+    raise ConnectionClosed(e) from e
+discord.errors.ConnectionClosed: WebSocket connection is closed: code = 4006, reason = Session is no longer valid..
+[30/09/2017 18:37] ERROR red on_command_error 434: Exception in command 'mp4s2mp3'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 71, in mp4s2mp3
+    for name in os.listdir(VIDEOPATH):
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\Dino Non Admin\\Videos\\Captures\\forRain'
+[30/09/2017 18:41] ERROR red on_command_error 434: Exception in command 'mp4s2mp3'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 73, in mp4s2mp3
+    mp3 = name.replace('.mp4','.mp3')
+NameError: name 'name' is not defined
+[30/09/2017 18:43] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 138, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 98, in connect_with_user
+    if self.bot.is_voice_connected(ctx.message.server) and self.bot.user.voice_channel != user.voice_channel:
+AttributeError: 'User' object has no attribute 'voice_channel'
+[30/09/2017 18:43] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 138, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 98, in connect_with_user
+    if self.bot.is_voice_connected(ctx.message.server) and self.bot.voice_channel != user.voice_channel:
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 296, in __getattr__
+    raise AttributeError(msg.format(self.__class__, name))
+AttributeError: '<class '__main__.Bot'>' object has no attribute 'voice_channel'
+[30/09/2017 18:44] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 138, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 98, in connect_with_user
+    if self.bot.is_voice_connected(ctx.message.server) and self.get_voice_client(ctx).channel != user.voice_channel:
+AttributeError: 'coroutine' object has no attribute 'channel'
+[30/09/2017 18:44] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 138, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 100, in connect_with_user
+    voiceclient = await self.bot.join_voice_channel(channel)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 3169, in join_voice_channel
+    raise ClientException('Already connected to a voice channel in this server')
+discord.errors.ClientException: Already connected to a voice channel in this server
+[30/09/2017 18:47] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 140, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 102, in connect_with_user
+    voiceclient = await self.bot.join_voice_channel(channel)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\client.py", line 3169, in join_voice_channel
+    raise ClientException('Already connected to a voice channel in this server')
+discord.errors.ClientException: Already connected to a voice channel in this server
+[30/09/2017 18:57] ERROR owner _reload 155: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 74, 23, "            if option = 'overwrite':\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 945, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 74
+    if option = 'overwrite':
+              ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 149, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 949, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 74, 23, "            if option = 'overwrite':\n"))
+[30/09/2017 19:04] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 149, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 100, in connect_with_user
+    raise UserNotConnected()
+TypeError: __init__() missing 1 required positional argument: 'msg'
+[30/09/2017 19:05] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 153, in crclip
+    player = client.create_ffmpeg_player(filename)
+UnboundLocalError: local variable 'client' referenced before assignment
+[30/09/2017 19:51] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 149, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 107, in connect_with_user
+    voiceclient = await self.bot.join_voice_channel(channel)
+  File "lib\discord\client.py", line 3209, in join_voice_channel
+    voice = VoiceClient(**kwargs)
+  File "lib\discord\voice_client.py", line 230, in __init__
+    self.encoder = opus.Encoder(48000, 2)
+  File "lib\discord\opus.py", line 197, in __init__
+    raise OpusNotLoaded()
+discord.opus.OpusNotLoaded
+[30/09/2017 20:05] ERROR red <module> 719: Fatal exception, attempting graceful logout
+Traceback (most recent call last):
+  File "red.py", line 699, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 686, in main
+    yield from bot.connect()
+  File "lib\discord\client.py", line 454, in connect
+    yield from self.ws.poll_event()
+  File "lib\discord\gateway.py", line 431, in poll_event
+    yield from self.received_message(msg)
+  File "lib\discord\gateway.py", line 318, in received_message
+    self._dispatch('socket_raw_receive', msg)
+  File "lib\discord\ext\commands\bot.py", line 262, in dispatch
+    super().dispatch(event_name, *args, **kwargs)
+  File "lib\discord\client.py", line 319, in dispatch
+    if 'siegebutt' in a:
+TypeError: a bytes-like object is required, not 'str'
+[30/09/2017 20:05] ERROR red <module> 719: Fatal exception, attempting graceful logout
+Traceback (most recent call last):
+  File "red.py", line 699, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 686, in main
+    yield from bot.connect()
+  File "lib\discord\client.py", line 454, in connect
+    yield from self.ws.poll_event()
+  File "lib\discord\gateway.py", line 431, in poll_event
+    yield from self.received_message(msg)
+  File "lib\discord\gateway.py", line 318, in received_message
+    self._dispatch('socket_raw_receive', msg)
+  File "lib\discord\ext\commands\bot.py", line 262, in dispatch
+    super().dispatch(event_name, *args, **kwargs)
+  File "lib\discord\client.py", line 319, in dispatch
+    if 'siegebutt' in a:
+TypeError: a bytes-like object is required, not 'str'
+[30/09/2017 20:05] ERROR red <module> 719: Fatal exception, attempting graceful logout
+Traceback (most recent call last):
+  File "red.py", line 699, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 686, in main
+    yield from bot.connect()
+  File "lib\discord\client.py", line 454, in connect
+    yield from self.ws.poll_event()
+  File "lib\discord\gateway.py", line 431, in poll_event
+    yield from self.received_message(msg)
+  File "lib\discord\gateway.py", line 318, in received_message
+    self._dispatch('socket_raw_receive', msg)
+  File "lib\discord\ext\commands\bot.py", line 262, in dispatch
+    super().dispatch(event_name, *args, **kwargs)
+  File "lib\discord\client.py", line 319, in dispatch
+    if 'siegebutt' in a:
+TypeError: a bytes-like object is required, not 'str'
+[30/09/2017 20:06] ERROR red <module> 719: Fatal exception, attempting graceful logout
+Traceback (most recent call last):
+  File "red.py", line 699, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 686, in main
+    yield from bot.connect()
+  File "lib\discord\client.py", line 454, in connect
+    yield from self.ws.poll_event()
+  File "lib\discord\gateway.py", line 431, in poll_event
+    yield from self.received_message(msg)
+  File "lib\discord\gateway.py", line 318, in received_message
+    self._dispatch('socket_raw_receive', msg)
+  File "lib\discord\ext\commands\bot.py", line 262, in dispatch
+    super().dispatch(event_name, *args, **kwargs)
+  File "lib\discord\client.py", line 319, in dispatch
+    if 'siegebutt' in a:
+TypeError: a bytes-like object is required, not 'str'
+[30/09/2017 20:12] ERROR red <module> 719: Fatal exception, attempting graceful logout
+Traceback (most recent call last):
+  File "red.py", line 699, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 686, in main
+    yield from bot.connect()
+  File "lib\discord\client.py", line 446, in connect
+    self.ws = yield from DiscordWebSocket.from_client(self)
+  File "lib\discord\gateway.py", line 226, in from_client
+    yield from asyncio.wait_for(ws.poll_event(), timeout=60, loop=client.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 400, in wait_for
+    return fut.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "lib\discord\gateway.py", line 431, in poll_event
+    yield from self.received_message(msg)
+  File "lib\discord\gateway.py", line 318, in received_message
+    self._dispatch('socket_raw_receive', msg)
+  File "lib\discord\ext\commands\bot.py", line 262, in dispatch
+    super().dispatch(event_name, *args, **kwargs)
+  File "lib\discord\client.py", line 321, in dispatch
+    if validnesss:
+NameError: name 'validnesss' is not defined
+[30/09/2017 20:13] ERROR red <module> 719: Fatal exception, attempting graceful logout
+Traceback (most recent call last):
+  File "red.py", line 699, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 686, in main
+    yield from bot.connect()
+  File "lib\discord\client.py", line 446, in connect
+    self.ws = yield from DiscordWebSocket.from_client(self)
+  File "lib\discord\gateway.py", line 226, in from_client
+    yield from asyncio.wait_for(ws.poll_event(), timeout=60, loop=client.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 400, in wait_for
+    return fut.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "lib\discord\gateway.py", line 431, in poll_event
+    yield from self.received_message(msg)
+  File "lib\discord\gateway.py", line 318, in received_message
+    self._dispatch('socket_raw_receive', msg)
+  File "lib\discord\ext\commands\bot.py", line 262, in dispatch
+    super().dispatch(event_name, *args, **kwargs)
+  File "lib\discord\client.py", line 321, in dispatch
+    if validnesss:
+NameError: name 'validnesss' is not defined
+[30/09/2017 20:13] ERROR red <module> 719: Fatal exception, attempting graceful logout
+Traceback (most recent call last):
+  File "red.py", line 699, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 686, in main
+    yield from bot.connect()
+  File "lib\discord\client.py", line 446, in connect
+    self.ws = yield from DiscordWebSocket.from_client(self)
+  File "lib\discord\gateway.py", line 226, in from_client
+    yield from asyncio.wait_for(ws.poll_event(), timeout=60, loop=client.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 400, in wait_for
+    return fut.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "lib\discord\gateway.py", line 431, in poll_event
+    yield from self.received_message(msg)
+  File "lib\discord\gateway.py", line 318, in received_message
+    self._dispatch('socket_raw_receive', msg)
+  File "lib\discord\ext\commands\bot.py", line 262, in dispatch
+    super().dispatch(event_name, *args, **kwargs)
+  File "lib\discord\client.py", line 321, in dispatch
+    if validnesss:
+NameError: name 'validnesss' is not defined
+[30/09/2017 20:13] ERROR red <module> 719: Fatal exception, attempting graceful logout
+Traceback (most recent call last):
+  File "red.py", line 699, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 686, in main
+    yield from bot.connect()
+  File "lib\discord\client.py", line 446, in connect
+    self.ws = yield from DiscordWebSocket.from_client(self)
+  File "lib\discord\gateway.py", line 226, in from_client
+    yield from asyncio.wait_for(ws.poll_event(), timeout=60, loop=client.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 400, in wait_for
+    return fut.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "lib\discord\gateway.py", line 431, in poll_event
+    yield from self.received_message(msg)
+  File "lib\discord\gateway.py", line 318, in received_message
+    self._dispatch('socket_raw_receive', msg)
+  File "lib\discord\ext\commands\bot.py", line 262, in dispatch
+    super().dispatch(event_name, *args, **kwargs)
+  File "lib\discord\client.py", line 321, in dispatch
+    if validnesss:
+NameError: name 'validnesss' is not defined
+[30/09/2017 20:14] ERROR red <module> 719: Fatal exception, attempting graceful logout
+Traceback (most recent call last):
+  File "red.py", line 699, in <module>
+    loop.run_until_complete(main(bot))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "red.py", line 686, in main
+    yield from bot.connect()
+  File "lib\discord\client.py", line 446, in connect
+    self.ws = yield from DiscordWebSocket.from_client(self)
+  File "lib\discord\gateway.py", line 226, in from_client
+    yield from asyncio.wait_for(ws.poll_event(), timeout=60, loop=client.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 400, in wait_for
+    return fut.result()
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\futures.py", line 293, in result
+    raise self._exception
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "lib\discord\gateway.py", line 431, in poll_event
+    yield from self.received_message(msg)
+  File "lib\discord\gateway.py", line 318, in received_message
+    self._dispatch('socket_raw_receive', msg)
+  File "lib\discord\ext\commands\bot.py", line 262, in dispatch
+    super().dispatch(event_name, *args, **kwargs)
+  File "lib\discord\client.py", line 321, in dispatch
+    if validnesss:
+NameError: name 'validnesss' is not defined
+[30/09/2017 20:21] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 149, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 107, in connect_with_user
+    voiceclient = await self.bot.join_voice_channel(channel)
+  File "lib\discord\client.py", line 3221, in join_voice_channel
+    voice = VoiceClient(**kwargs)
+  File "lib\discord\voice_client.py", line 230, in __init__
+    self.encoder = opus.Encoder(48000, 2)
+  File "lib\discord\opus.py", line 197, in __init__
+    raise OpusNotLoaded()
+discord.opus.OpusNotLoaded
+[30/09/2017 20:22] ERROR red on_command_error 434: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "lib\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 149, in crclip
+    client = await self.connect_with_user(ctx,user)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 107, in connect_with_user
+    voiceclient = await self.bot.join_voice_channel(channel)
+  File "lib\discord\client.py", line 3210, in join_voice_channel
+    raise e
+  File "lib\discord\client.py", line 3207, in join_voice_channel
+    data = yield from asyncio.wait_for(voice_data_future, timeout=10.0, loop=self.loop)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\asyncio\tasks.py", line 404, in wait_for
+    raise futures.TimeoutError()
+concurrent.futures._base.TimeoutError
