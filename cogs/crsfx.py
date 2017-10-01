@@ -47,6 +47,7 @@ import aiohttp
 from .utils.dataIO import dataIO
 from cogs.utils import checks
 import locale
+import imageio
 # discord.opus.load_opus()
 PATH = os.path.join('data', 'crsfx')
 AUDIOPATH = os.path.join(PATH, 'mp3')
@@ -65,6 +66,9 @@ class CRSFX:
         """Constructor."""
         self.bot = bot
         self.voiceclient = None
+
+    async def on_ready():
+        imageio.plugins.ffmpeg.download()
 
     @checks.is_owner()
     @commands.command(pass_context=True)
