@@ -367,6 +367,8 @@ def initialize(bot_class=Bot, formatter_class=Formatter):
 
 		owner = await set_bot_owner()
 
+        print("installing ffmpeg?")
+        imageio.plugins.ffmpeg.download()
 		print("-----------------")
 		print("Red - Discord Bot")
 		print("-----------------")

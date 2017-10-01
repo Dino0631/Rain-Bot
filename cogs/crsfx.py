@@ -71,7 +71,6 @@ class CRSFX:
     def __init__(self, bot):
         """Constructor."""
         self.bot = bot
-        self.voiceclient = None
 
     async def on_ready(self):
         print("installing ffmpeg?")
