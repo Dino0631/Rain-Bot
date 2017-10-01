@@ -1,10 +1,7 @@
-data/red/settings.json
-
+data/red/*
 *.pyc
 
 __pycache__
 
-
-*.exe
 
 *.dll
