@@ -10573,3 +10573,17 @@ Traceback (most recent call last):
   File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\gateway.py", line 679, in poll_event
     raise ConnectionClosed(e) from e
 discord.errors.ConnectionClosed: WebSocket connection is closed: code = 4006, reason = Session is no longer valid..
+[01/10/2017 10:18] ERROR owner load 73: name 'heroku' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 64, in load
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    importlib.reload(mod_obj)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 166, in reload
+    _bootstrap._exec(spec, module)
+  File "<frozen importlib._bootstrap>", line 626, in _exec
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 59, in <module>
+    if heroku:
+NameError: name 'heroku' is not defined

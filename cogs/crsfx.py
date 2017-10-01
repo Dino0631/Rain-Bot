@@ -54,13 +54,13 @@ import imageio
 #     print(e)
 #     print(dir(e))
 # input()
+heroku = False
 if 'DYNO_RAM' in os.environ:
 	heroku = True
 if heroku:
 	from ctypes.util import find_library
 
-	find_library('opus')
-	discord.opus.load_opus()
+	discord.opus.load_opus(find_library('opus'))
 PATH = os.path.join('data', 'crsfx')
 AUDIOPATH = os.path.join(PATH, 'mp3')
 VIDEOPATH = os.path.join(PATH, 'mp4')
