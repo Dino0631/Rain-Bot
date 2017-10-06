@@ -11,6 +11,7 @@
     "cogs.economy" : true,
     "cogs.general" : true,
     "cogs.image" : true,
+    "cogs.makegif" : true,
     "cogs.mm" : true,
     "cogs.mod" : true,
     "cogs.streams" : true,

@@ -10721,3 +10721,384 @@ Traceback (most recent call last):
   File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 194, in crclip
     popen = ffmpy.subprocess.Popen(("ffprobe","-show_entries", "format=duration","-i",filename),stdout=subprocess.PIPE)
 NameError: name 'subprocess' is not defined
+[03/10/2017 16:44] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 209, in crclip
+    self.is_playing = dataIO.load_json(SETTINGS_JSON)['playing']
+NameError: name 'SETTINGS_JSON' is not defined
+[03/10/2017 16:54] ERROR red on_command_error 438: Exception in command 'reload'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 948, in _load_cog
+    self.bot.load_extension(mod_obj.__name__)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\bot.py", line 736, in load_extension
+    raise discord.ClientException('extension does not have a setup function')
+discord.errors.ClientException: extension does not have a setup function
+[03/10/2017 16:59] ERROR red on_command_error 438: Exception in command 'reload'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 73, in <module>
+    class CRSFX:
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 168, in CRSFX
+    @sfx.command(pass_context=True)
+NameError: name 'sfx' is not defined
+[03/10/2017 17:20] ERROR owner _reload 156: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 189, 52, '        \tmod_role = settings.get_server_mod(server)\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 189
+    mod_role = settings.get_server_mod(server)
+                                             ^
+TabError: inconsistent use of tabs and spaces in indentation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('inconsistent use of tabs and spaces in indentation', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 189, 52, '        \tmod_role = settings.get_server_mod(server)\n'))
+[03/10/2017 17:20] ERROR owner _reload 156: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 194, 35, '\t\t\tif user == None not mod_or_admin:\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 194
+    if user == None not mod_or_admin:
+                                   ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 194, 35, '\t\t\tif user == None not mod_or_admin:\n'))
+[03/10/2017 17:21] ERROR owner _reload 156: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 194, 35, '\t\t\tif user == None not mod_or_admin:\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 194
+    if user == None not mod_or_admin:
+                                   ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\crsfx.py', 194, 35, '\t\t\tif user == None not mod_or_admin:\n'))
+[03/10/2017 17:22] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 189, in crclip
+    mod_role = settings.get_server_mod(server)
+NameError: name 'settings' is not defined
+[03/10/2017 17:22] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 190, in crclip
+    mod_role = settings.get_server_mod(server)
+NameError: name 'server' is not defined
+[04/10/2017 06:33] ERROR red on_command_error 438: Exception in command 'tts'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 277, in tts
+    return_code = subprocess.call(["afplay", audio_file])
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\subprocess.py", line 247, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\subprocess.py", line 676, in __init__
+    restore_signals, start_new_session)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\subprocess.py", line 955, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+[04/10/2017 06:40] ERROR red on_command_error 438: Exception in command 'tts'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 270, in tts
+    filename = args + exten
+NameError: name 'exten' is not defined
+[04/10/2017 06:41] ERROR red on_command_error 438: Exception in command 'tts'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 277, in tts
+    player = client.create_ffmpeg_player(filename)
+NameError: name 'client' is not defined
+[04/10/2017 06:50] ERROR red on_command_error 438: Exception in command 'crsfx'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 168, in crsfx
+    await send_cmd_help(ctx)
+NameError: name 'send_cmd_help' is not defined
+[04/10/2017 06:50] ERROR red on_command_error 438: Exception in command 'crclip'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 227, in crclip
+    filenames = list(map(lambda filename:os.path.join(AUDIOPATH if filename +self.exten in os.listdir else TTSPATH, filename + self.exten), filenames))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 227, in <lambda>
+    filenames = list(map(lambda filename:os.path.join(AUDIOPATH if filename +self.exten in os.listdir else TTSPATH, filename + self.exten), filenames))
+TypeError: argument of type 'builtin_function_or_method' is not iterable
+[05/10/2017 19:21] ERROR red on_command_error 438: Exception in command 'crsfx'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\crsfx.py", line 171, in crsfx
+    await send_cmd_help(ctx)
+NameError: name 'send_cmd_help' is not defined
+[05/10/2017 21:29] ERROR owner _reload 156: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 106, 72, "\t\tasync def showgif(self,ctx, shape=ellipse, eq='(cos(t),sin(t))' option=None):\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 106
+    async def showgif(self,ctx, shape=ellipse, eq='(cos(t),sin(t))' option=None):
+                                                                         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 106, 72, "\t\tasync def showgif(self,ctx, shape=ellipse, eq='(cos(t),sin(t))' option=None):\n"))
+[05/10/2017 21:29] ERROR red on_command_error 438: Exception in command 'reload'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 82, in <module>
+    class MakeGif:
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 106, in MakeGif
+    async def showgif(self,ctx, shape=ellipse, eq='(cos(t),sin(t))', option=None):
+NameError: name 'ellipse' is not defined
+[05/10/2017 21:30] ERROR red on_command_error 438: Exception in command 'showgif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 107, in showgif
+    if is_drawing:
+NameError: name 'is_drawing' is not defined
+[05/10/2017 21:31] ERROR red on_command_error 438: Exception in command 'showgif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 114, in showgif
+    print(center2coords(c,s))
+NameError: name 'center2coords' is not defined
+[05/10/2017 21:32] ERROR red on_command_error 438: Exception in command 'showgif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 114, in showgif
+    print(self.center2coords(c,s))
+TypeError: center2coords() takes 2 positional arguments but 3 were given
+[05/10/2017 21:38] ERROR red on_command_error 438: Exception in command 'showgif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 136, in showgif
+    draw.ellipse([self.center2coords((n,shapeheight/2)(shapewidth,shapeheight))], fill = (0,192,255))
+TypeError: 'tuple' object is not callable
+[05/10/2017 21:38] ERROR red on_command_error 438: Exception in command 'showgif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 136, in showgif
+    draw.ellipse([self.center2coords((n,shapeheight/2),(shapewidth,shapeheight))], fill = (0,192,255))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\PIL\ImageDraw.py", line 145, in ellipse
+    self.draw.draw_ellipse(xy, fill, 1)
+SystemError: new style getargs format but argument is not a tuple
+[05/10/2017 21:39] ERROR red on_command_error 438: Exception in command 'showgif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 138, in showgif
+    draw.ellipse([self.center2coords((n,shapeheight/2),(shapewidth,shapeheight))], fill = (0,192,255))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\PIL\ImageDraw.py", line 145, in ellipse
+    self.draw.draw_ellipse(xy, fill, 1)
+SystemError: new style getargs format but argument is not a tuple
+[05/10/2017 21:41] ERROR red on_command_error 438: Exception in command 'showgif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 139, in showgif
+    draw.ellipse(self.center2coords((cos(math.pi*n/imagewidth)),(shapewidth,shapeheight)), fill = (0,192,255))
+NameError: name 'cos' is not defined
+[05/10/2017 21:43] ERROR red on_command_error 438: Exception in command 'showgif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 139, in showgif
+    center = (imagewidht*math.cos(math.pi*n/imagewidth),imageheight*math.sin(math.pi*n/imagewidth))
+NameError: name 'imagewidht' is not defined
+[05/10/2017 21:58] ERROR red on_command_error 438: Exception in command 'showgif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 129, in showgif
+    for n in range(0,imagewidth, 4):
+NameError: name 'imagewidth' is not defined
+[06/10/2017 06:31] ERROR owner _reload 156: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 120, 15, "\t\t\t\t'imagesize':[200,200]\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 120
+    'imagesize':[200,200]
+              ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 120, 15, "\t\t\t\t'imagesize':[200,200]\n"))
+[06/10/2017 06:32] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 141, in makegif
+    for n in range(interval[0], interval[1], interval[2]):
+NameError: name 'interval' is not defined
+[06/10/2017 06:33] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 154, in makegif
+    size = (shapewidth,shapeheight)
+NameError: name 'shapewidth' is not defined
+[06/10/2017 06:39] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 126, in makegif
+    shapewidth = shapesize[0]
+NameError: name 'shapesize' is not defined
+[06/10/2017 06:43] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 145, in makegif
+    for n in range(options['interval'][0], options['interval'][1], options['interval'][2]):
+TypeError: 'float' object cannot be interpreted as an integer
+[06/10/2017 07:37] ERROR owner _reload 156: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 121, 17, "\t\t\t\t'shapesize=':'shapesize',\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 121
+    'shapesize=':'shapesize',
+                ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 121, 17, "\t\t\t\t'shapesize=':'shapesize',\n"))

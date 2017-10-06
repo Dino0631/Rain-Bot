@@ -38,7 +38,7 @@ if not heroku:
 	import json
 	import requests
 	from bs4 import BeautifulSoup
-	# from __main__ import send_cmd_help
+	from __main__ import send_cmd_help
 	import string
 	import aiohttp
 	from urllib.parse import quote_plus
@@ -52,6 +52,9 @@ if not heroku:
 	from cogs.utils import checks
 	import locale
 	import imageio
+	from __main__ import settings
+	import subprocess
+	from gtts import gTTS
 	# from ffmpy import subprocess
 	# try:
 	#     imageio.plugins.ffmpeg.download()
@@ -62,6 +65,8 @@ if not heroku:
 	PATH = os.path.join('data', 'crsfx')
 	AUDIOPATH = os.path.join(PATH, 'mp3')
 	VIDEOPATH = os.path.join(PATH, 'mp4')
+	TTSPATH = os.path.join(PATH, 'tts')
+	SETTINGS_JSON = os.path.join(PATH, 'settings.json')
 	class UserNotConnected(Exception):
 		def __init__(self):
 			self.msg = "User is not in a voice channel of this server."
@@ -75,12 +80,25 @@ if not heroku:
 		Note: RACF specific plugin for Red
 		"""
 
+		def set_play(self, boolean):
+			self.is_playing = boolean
+			self.settings = dataIO.load_json(SETTINGS_JSON)
+			self.settings['playing'] = self.is_playing
+			dataIO.save_json(SETTINGS_JSON, self.settings)
+
 		def __init__(self, bot):
 			"""Constructor."""
 			self.bot = bot
+			self.exten = '.mp3'
+			self.is_playing = False
+			self.settings = {}
+			self.set_play(False)
+			
+			
 
 		async def on_ready(self):
 			imageio.plugins.ffmpeg.download()
+
 
 		@checks.is_owner()
 		@commands.command(pass_context=True)
@@ -160,59 +178,138 @@ if not heroku:
 				await self.bot.say(v)
 
 		@crsfx.command(pass_context=True)
-		async def sfxdc(self, ctx):
+		async def dc(self, ctx):
 			servclient = await self.get_voice_client(ctx)
+			print(servclient)
 			if servclient is not None:
 				await servclient.disconnect()
 
-		
-		@commands.command(pass_context=True)
+		@crsfx.command(pass_context=True)
+		async def list(self,ctx):
+			mp3list = []
+			for x in os.listdir(AUDIOPATH):
+				if '.mp3' in x:
+					mp3list.append('`{}`'.format(x))
+			await self.bot.say(', '.join(mp3list))
+
+		@commands.command(pass_context=True, no_pm=True)
 		async def crclip(self, ctx, filename=None, times=1,user:discord.User=None):
-			if user == None:
+			'''
+			syntax:
+			filename must be a filename in my folder or filenames in my folder, separated by a /
+			times must be a number or it will just do it once
+			user must be a mention, id, username and it will find the voice channel in the server
+			where the user is, and play it to them. specifying user only works for mods.
+
+			'''
+			# print('checking')
+			# print(await ctx.invoke(self.perm_to_join_to_user))
+			server = ctx.message.server
+			mod_role = settings.get_server_mod(server)
+			admin_role = settings.get_server_admin(server)
+			mod_or_admin = False
+			roles = list(map(lambda x: x.name, ctx.message.author.roles))
+			mod_or_admin = admin_role in roles or mod_role in roles or checks.is_owner_check(ctx)
+			if user == None or not mod_or_admin:
 				user = ctx.message.author
-			exten = '.mp3'
+			filenames = []
 			if filename == None:
 				await self.bot.say("You must specify a filename to play")
 				return
-			elif filename + exten not in os.listdir(AUDIOPATH):
-				await self.bot.say("That file is not saved in the audio folder.")
-				return
+			if '/' in filename:
+				filenames = filename.split('/')
+			else:
+				filenames = [filename]
+			for name in filenames:
+				if name + self.exten not in os.listdir(AUDIOPATH) and name + self.exten not in os.listdir(TTSPATH):
+					await self.bot.say("The file, `{}` is not saved in the audio folder.".format(name+self.exten))
+					return
 			try:
 				client = await self.connect_with_user(ctx,user)
 			except UserNotConnected as e:
 				await self.bot.say(e.msg)
 				return
-			filename = os.path.join(AUDIOPATH, filename + exten)
-			times = int(times)
+			filenames = list(map(lambda filename:os.path.join(AUDIOPATH if filename +self.exten in os.listdir(AUDIOPATH) else TTSPATH, filename + self.exten), filenames))
+			try:
+				times = int(times)
+			except:
+				times = 1
 			if times>5:
 				times=5
 			elif times<1:
 				times=1
+			self.is_playing = dataIO.load_json(SETTINGS_JSON)['playing']
+			if self.is_playing:
+				await self.bot.say("You may not play anything if it is already playing something.")
+				return
+
+			self.set_play(True)
+			dataIO.save_json(SETTINGS_JSON, self.settings)
+			n = 0
 			if times==1:
-				player = client.create_ffmpeg_player(filename)
-				player.start()
-			else:
-				n = 0
-				
-				for x in range(times):
-					print('hi')
+				for name in filenames:
 					if n>0:
 						while player.is_playing():
 							await asyncio.sleep(.2)
-					player = client.create_ffmpeg_player(filename)
+					player = client.create_ffmpeg_player(name)
 					player.start()
 					n += 1
-			# print(dir(player))
-			# print(player)
-			# print(type(player))
-			# print(player.loops)
-			# print(inspect.getsource(player.start))
-			# await asyncio.sleep(5)
-			# player.start()
-			# await asyncio.sleep(2)
-			# await self.disconnect(ctx)
-		
+			else:
+				
+				for x in range(times):
+					for name in filenames:
+						if n>0:
+							while player.is_playing():
+								await asyncio.sleep(.2)
+						player = client.create_ffmpeg_player(name)
+						player.start()
+						n += 1
 
-	def setup(bot):
-		r = CRSFX(bot)
-		bot.add_cog(r)
+			while player.is_playing():
+				await asyncio.sleep(.2)
+			self.set_play(False)
+			print(self.is_playing)
+		
+		@commands.command(pass_context=True)
+		async def tts(self, ctx, *, args):
+			user = ctx.message.author
+			try:
+				client = await self.connect_with_user(ctx,user)
+			except UserNotConnected as e:
+				await self.bot.say(e.msg)
+				return
+			if len(args)>20:
+				filename = args[:20]
+			else:
+				filename = args
+			filename = filename + self.exten
+			filename = os.path.join(TTSPATH, filename)
+			tts = gTTS(text=args, lang="en")
+			tts.save(filename)
+			self.set_play(False)
+			player = client.create_ffmpeg_player(filename)
+			player.start()
+			self.set_play(True)
+
+
+
+def check_folder():
+	if not os.path.exists(PATH):
+		os.makedirs(PATH)
+	if not os.path.exists(AUDIOPATH):
+		os.makedirs(AUDIOPATH)
+	if not os.path.exists(VIDEOPATH):
+		os.makedirs(VIDEOPATH)
+	if not os.path.exists(TTSPATH):
+		os.makedirs(TTSPATH)
+
+def check_file():
+	defaults = {'playing' : False}
+	if not dataIO.is_valid_json(SETTINGS_JSON):
+		dataIO.save_json(SETTINGS_JSON, defaults)
+
+def setup(bot):
+	check_folder()
+	check_file()
+	r = CRSFX(bot)
+	bot.add_cog(r)
