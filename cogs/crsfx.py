@@ -268,7 +268,6 @@ if not heroku:
 			while player.is_playing():
 				await asyncio.sleep(.2)
 			self.set_play(False)
-			print(self.is_playing)
 		
 		@commands.command(pass_context=True)
 		async def tts(self, ctx, *, args):
@@ -286,10 +285,10 @@ if not heroku:
 			filename = os.path.join(TTSPATH, filename)
 			tts = gTTS(text=args, lang="en")
 			tts.save(filename)
-			self.set_play(False)
+			self.set_play(True)
 			player = client.create_ffmpeg_player(filename)
 			player.start()
-			self.set_play(True)
+			self.set_play(False)
 
 
 

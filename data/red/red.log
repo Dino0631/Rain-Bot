@@ -11102,3 +11102,631 @@ Traceback (most recent call last):
   File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
     raise CogLoadError(*e.args)
 cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 121, 17, "\t\t\t\t'shapesize=':'shapesize',\n"))
+[06/10/2017 16:48] ERROR owner _reload 156: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 118, 40, '\t\t\tif word not in mathcodes + mathchars\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 118
+    if word not in mathcodes + mathchars
+                                       ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 118, 40, '\t\t\tif word not in mathcodes + mathchars\n'))
+[06/10/2017 16:58] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 159, in makegif
+    equation = checkmath(equation)
+NameError: name 'checkmath' is not defined
+[06/10/2017 16:59] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 159, in makegif
+    equation = convert2math(equation)
+UnboundLocalError: local variable 'equation' referenced before assignment
+[06/10/2017 16:59] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 183, in makegif
+    equation = convert2math(equation)
+UnboundLocalError: local variable 'equation' referenced before assignment
+[06/10/2017 17:00] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 183, in makegif
+    options['equation'] = convert2math(equation)
+NameError: name 'equation' is not defined
+[06/10/2017 17:00] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 183, in makegif
+    options['equation'] = convert2math(options['equation'])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 116, in convert2math
+    letters.append(current_letters)
+NameError: name 'letters' is not defined
+[06/10/2017 17:02] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 183, in makegif
+    options['equation'] = convert2math(options['equation'])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 122, in convert2math
+    raise NotMathCode(word)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 68, in __init__
+    self.msg = "{} is not in the math functions. If you think it should be added, dm {}#{}".format(word, settings.owner.name, settings.owner.discriminator)
+NameError: name 'settings' is not defined
+[06/10/2017 17:02] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 184, in makegif
+    options['equation'] = convert2math(options['equation'])
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 123, in convert2math
+    raise NotMathCode(word)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 69, in __init__
+    self.msg = "{} is not in the math functions. If you think it should be added, dm {}#{}".format(word, settings.owner.name, settings.owner.discriminator)
+AttributeError: 'str' object has no attribute 'name'
+[06/10/2017 17:38] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 184, in makegif
+    options['equation'] = convert2math(options['equation'])
+KeyError: 'equation'
+[06/10/2017 17:39] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 184, in makegif
+    options['equation'] = convert2math(options['equation'])
+KeyError: 'equation'
+[06/10/2017 19:22] ERROR owner _reload 156: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 174, 15, "\t\t\t\t'interval':[0,2*math.pi,math.pi/64],\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 174
+    'interval':[0,2*math.pi,math.pi/64],
+              ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 174, 15, "\t\t\t\t'interval':[0,2*math.pi,math.pi/64],\n"))
+[06/10/2017 19:24] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 226, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+NameError: name 'sin' is not defined
+[06/10/2017 19:46] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 202, in makegif
+    interval = interval.replace('[','').repalce(']','')
+AttributeError: 'str' object has no attribute 'repalce'
+[06/10/2017 19:47] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 239, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 19:49] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 244, in makegif
+    print(self.center2coords(center,size))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 151, in center2coords
+    center = (center[0]*self.imagewidth/2,center[1]*self.imageheight/2)
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+[06/10/2017 19:52] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 240, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 19:53] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 240, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 19:54] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 241, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 19:55] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 242, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 19:55] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 242, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 19:56] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 243, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 19:57] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 244, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 19:58] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 245, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 19:59] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 245, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 19:59] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 245, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 20:00] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 246, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: a float is required
+[06/10/2017 20:19] ERROR owner _reload 156: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 168, 13, "\t\t\t\t'shape=':'shape',\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 168
+    'shape=':'shape',
+            ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 168, 13, "\t\t\t\t'shape=':'shape',\n"))
+[06/10/2017 20:20] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 207, in makegif
+    shapesize, words = convert2math(shapesize)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 112, in convert2math
+    if x.isalpha():
+AttributeError: 'int' object has no attribute 'isalpha'
+[06/10/2017 20:21] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 262, in makegif
+    draw.rectangle([(0,0),(self.imagewidth,self.imageheight)],fill=eval(bgcolor))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\PIL\ImageDraw.py", line 188, in rectangle
+    ink, fill = self._getink(outline, fill)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\PIL\ImageDraw.py", line 115, in _getink
+    fill = self.draw.draw_ink(fill, self.mode)
+TypeError: integer argument expected, got float
+[06/10/2017 20:27] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 266, in makegif
+    draw.rectangle([(0,0),(self.imagewidth,self.imageheight)],fill=inttuple(eval(bgcolor)))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 132, in inttuple
+    bg.append(int(c))
+NameError: name 'bg' is not defined
+[06/10/2017 20:27] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 267, in makegif
+    draw.rectangle([(0,0),(self.imagewidth,self.imageheight)],fill=inttuple(eval(bgcolor)))
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 134, in inttuple
+    return tuple(bg)
+NameError: name 'bg' is not defined
+[06/10/2017 20:34] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 273, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: unsupported operand type(s) for ^: 'float' and 'int'
+[06/10/2017 20:36] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 274, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1, in <module>
+TypeError: unsupported operand type(s) for ^: 'float' and 'int'
+[06/10/2017 20:40] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 274, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1
+    (t,e*(2t)/10)
+           ^
+SyntaxError: invalid syntax
+[07/10/2017 12:08] ERROR red load_cogs 660: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 258, 20, '\t\t\tnumframes = 0\t\t\tt = interval[0]\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 258
+    numframes = 0			t = interval[0]
+                 			^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "red.py", line 656, in load_cogs
+    owner_cog._load_cog(extension)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 258, 20, '\t\t\tnumframes = 0\t\t\tt = interval[0]\n'))
+[07/10/2017 12:16] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 275, in makegif
+    center = eval(options['equation'].replace('t','a'))
+  File "<string>", line 1, in <module>
+NameError: name 'arcaan' is not defined
+[07/10/2017 12:19] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 282, in makegif
+    center = eval(options['equation'].replace('t','a'))
+  File "<string>", line 1, in <module>
+NameError: name 'aaan' is not defined
+[07/10/2017 12:24] ERROR owner _reload 156: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 287, 7, '\t\t\t\t\t\t\texcept IndexError:\n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 287
+    except IndexError:
+    ^
+IndentationError: expected an indented block
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 287, 7, '\t\t\t\t\t\t\texcept IndexError:\n'))
+[07/10/2017 12:25] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 292, in makegif
+    draw.rectangle(self.center2coords(center,size), fill = inttuple(eval(shapecolor)))
+UnboundLocalError: local variable 'center' referenced before assignment
+[07/10/2017 12:32] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 304, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1
+    (cos(2*t),sin(abs(t))
+                        ^
+SyntaxError: unexpected EOF while parsing
+[07/10/2017 12:33] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 304, in makegif
+    center = eval(options['equation'])
+  File "<string>", line 1
+    (cos(t),sin(2*abs(t))
+                        ^
+SyntaxError: unexpected EOF while parsing
+[07/10/2017 12:35] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 308, in makegif
+    size = eval(shapesize)
+  File "<string>", line 1
+    (abs(40*cos(t))),abs(40*sin(t)))
+                                   ^
+SyntaxError: unexpected EOF while parsing
+[07/10/2017 12:49] ERROR owner _reload 156: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 201, 12, "\t\t\t\t'text=':'text'\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 201
+    'text=':'text'
+           ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 201, 12, "\t\t\t\t'text=':'text'\n"))
+[07/10/2017 12:50] ERROR owner _reload 156: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 219, 12, "\t\t\t\t\toptions[string2var[s]] = x.replace(s,'')\n"))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 219
+    options[string2var[s]] = x.replace(s,'')
+          ^
+IndentationError: expected an indented block
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('expected an indented block', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 219, 12, "\t\t\t\t\toptions[string2var[s]] = x.replace(s,'')\n"))
+[07/10/2017 12:51] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 178, in makegif
+    for s in string2var:
+UnboundLocalError: local variable 'string2var' referenced before assignment
+[07/10/2017 12:52] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 203, in makegif
+    if x.startswith(s):
+UnboundLocalError: local variable 'x' referenced before assignment
+[07/10/2017 12:53] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 208, in makegif
+    opts[len(opts)-1] += " {}".format(arg)
+IndexError: list index out of range
+[07/10/2017 12:53] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 209, in makegif
+    opts[len(opts)-1] += " {}".format(arg)
+IndexError: list index out of range
+[07/10/2017 12:57] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 289, in makegif
+    font = ImageFont.load("arial.pil")
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\PIL\ImageFont.py", line 229, in load
+    f._load_pilfont(filename)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\PIL\ImageFont.py", line 68, in _load_pilfont
+    with open(filename, "rb") as fp:
+FileNotFoundError: [Errno 2] No such file or directory: 'arial.pil'
+[07/10/2017 13:08] ERROR owner _reload 156: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 71, 5, '\tif \n'))
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 946, in _load_cog
+    mod_obj = importlib.import_module(cogname)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 669, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 775, in get_code
+  File "<frozen importlib._bootstrap_external>", line 735, in source_to_code
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 71
+    if
+      ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 150, in _reload
+    self._load_cog(module)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\owner.py", line 950, in _load_cog
+    raise CogLoadError(*e.args)
+cogs.owner.CogLoadError: ('invalid syntax', ('C:\\Users\\Dino Non Admin\\Desktop\\myFiles\\meStuff\\Red-DiscordBot-develop\\RedRain-Bot\\cogs\\makegif.py', 71, 5, '\tif \n'))
+[07/10/2017 13:11] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 259, in makegif
+    realinterval[n] = eval(interval[n])
+  File "<string>", line 1
+    8pi
+      ^
+SyntaxError: unexpected EOF while parsing
+[07/10/2017 13:12] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 282, in makegif
+    for f in os.listdir(FONTPATH):
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:Windows\\Fonts'
+[07/10/2017 13:15] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 287, in makegif
+    font = ImageFont.load()
+TypeError: load() missing 1 required positional argument: 'filename'
+[07/10/2017 13:15] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 287, in makegif
+    font = ImageFont.load(currentfont)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\PIL\ImageFont.py", line 229, in load
+    f._load_pilfont(filename)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\PIL\ImageFont.py", line 79, in _load_pilfont
+    raise IOError("cannot find glyph data file")
+OSError: cannot find glyph data file
+[07/10/2017 13:24] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 297, in makegif
+    img = Image.new('RGB', (self.imagewidth, self.imageheight))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\PIL\Image.py", line 2217, in new
+    _check_size(size)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\PIL\Image.py", line 2195, in _check_size
+    if size[0] < 0 or size[1] < 0:
+TypeError: unorderable types: str() < int()
+[07/10/2017 13:43] ERROR red on_command_error 438: Exception in command 'makegif'
+Traceback (most recent call last):
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\site-packages\discord\ext\commands\core.py", line 50, in wrapped
+    ret = yield from coro(*args, **kwargs)
+  File "C:\Users\Dino Non Admin\Desktop\myFiles\meStuff\Red-DiscordBot-develop\RedRain-Bot\cogs\makegif.py", line 340, in makegif
+    print(inspect.getsource(draw.draw.draw_bitmap))
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\inspect.py", line 943, in getsource
+    lines, lnum = getsourcelines(object)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\inspect.py", line 930, in getsourcelines
+    lines, lnum = findsource(object)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\inspect.py", line 743, in findsource
+    file = getsourcefile(object)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\inspect.py", line 659, in getsourcefile
+    filename = getfile(object)
+  File "C:\Users\Dino Non Admin\AppData\Local\Programs\Python\Python35\lib\inspect.py", line 624, in getfile
+    'function, traceback, frame, or code object'.format(object))
+TypeError: <built-in method draw_bitmap of ImagingDraw object at 0x0000026536197450> is not a module, class, method, function, traceback, frame, or code object
