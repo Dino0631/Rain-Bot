@@ -27,7 +27,7 @@ import os
 heroku = False
 if 'DYNO_RAM' in os.environ:
 	heroku = True
-if not heroku:
+if True:
 	from PIL import Image, ImageDraw,ImageFont
 	from __main__ import send_cmd_help, settings
 	from bs4 import BeautifulSoup

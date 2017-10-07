@@ -292,23 +292,23 @@ if not heroku:
 
 
 
-def check_folder():
-	if not os.path.exists(PATH):
-		os.makedirs(PATH)
-	if not os.path.exists(AUDIOPATH):
-		os.makedirs(AUDIOPATH)
-	if not os.path.exists(VIDEOPATH):
-		os.makedirs(VIDEOPATH)
-	if not os.path.exists(TTSPATH):
-		os.makedirs(TTSPATH)
+	def check_folder():
+		if not os.path.exists(PATH):
+			os.makedirs(PATH)
+		if not os.path.exists(AUDIOPATH):
+			os.makedirs(AUDIOPATH)
+		if not os.path.exists(VIDEOPATH):
+			os.makedirs(VIDEOPATH)
+		if not os.path.exists(TTSPATH):
+			os.makedirs(TTSPATH)
 
-def check_file():
-	defaults = {'playing' : False}
-	if not dataIO.is_valid_json(SETTINGS_JSON):
-		dataIO.save_json(SETTINGS_JSON, defaults)
+	def check_file():
+		defaults = {'playing' : False}
+		if not dataIO.is_valid_json(SETTINGS_JSON):
+			dataIO.save_json(SETTINGS_JSON, defaults)
 
-def setup(bot):
-	check_folder()
-	check_file()
-	r = CRSFX(bot)
-	bot.add_cog(r)
+	def setup(bot):
+		check_folder()
+		check_file()
+		r = CRSFX(bot)
+		bot.add_cog(r)
