@@ -71,6 +71,8 @@ if not heroku:
 	FONTPATH = ''
 	if sys.platform == 'win32':
 		FONTPATH = os.path.join('C:\\', 'Windows', 'Fonts')
+	else:
+		FONTPATH = PATH
 	# class UserNotConnected(Exception):
 	# 	def __init__(self):
 	# 		self.msg = "User is not in a voice channel of this server."
