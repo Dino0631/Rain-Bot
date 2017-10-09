@@ -51,6 +51,7 @@ if not heroku:
 	import os
 	import random
 	import requests
+	import shutil
 	import string
 	import sys
 	import time
@@ -68,6 +69,7 @@ if not heroku:
 	SETTINGS_JSON = os.path.join(PATH, 'settings.json')
 	PICPATH = os.path.join(PATH, 'png')
 	GIFPATH = os.path.join(PATH, 'gif')
+	IMGPATH = os.path.join(PATH, 'imgs')
 	FONTPATH = ''
 	if sys.platform == 'win32':
 		FONTPATH = os.path.join('C:\\', 'Windows', 'Fonts')
@@ -81,7 +83,6 @@ if not heroku:
 	# 		self.msg = "This command only works in dm or group."
 	mathchars = {
 		'^':'**',
-		't':'t'		#indep variable
 	}
 	mathcodes = {
 		'abs':'abs',
@@ -107,7 +108,14 @@ if not heroku:
 
 	}
 	mathcodes = {**mathcodes, **mathchars}
-	def convert2math(exp):
+	def convert2math(exp, variables=['t']):
+		bad = ['shutil', 'os', 'sys']
+		for i in bad:
+			if i in exp:
+				raise NotMathCode("Don't try to be malicious, it not nice... {}".format(i))
+		for v in variables:
+			if len(v) == 1 and v not in mathcodes:
+				mathcodes[v] = v
 		words = []
 		current_letters = ''
 		for x in exp:
@@ -164,6 +172,233 @@ if not heroku:
 			xy2 = (xy1[0]+size[0],xy1[1]+size[1])
 			return [xy1, xy2]
 
+		def coords2math(self, xy, imagesize):
+			xy = (xy[0]-imagesize[0]/2,xy[1]-imagesize[1]/2)
+			xy = (xy[0]/(imagesize[0]/2), -xy[1]/(imagesize[1]/2))
+			return xy
+
+		@checks.is_owner()
+		@commands.command(pass_context=True)
+		async def makegradient(self,ctx, *, args:str=''):
+			string2var = {
+				'c=':'color',
+				'c1=':'color1',
+				'size=':'imagesize',
+			}
+			options = {
+				'imagesize':'(200,200)',
+				'color':'(0,0,0)',
+				'color1':'(0,192,255)',
+			}
+			args = args.split(' ')
+			opts = []
+			n = 0
+			for arg in args:
+				hasopt = False
+				for s in string2var:
+					if arg.startswith(s):
+						hasopt = True
+				# print(arg, hasopt)
+				if hasopt:
+					opts.append(arg)
+				elif len(opts)>0:
+					opts[len(opts)-1] += " {}".format(arg)
+
+				n += 1
+			# print(opts)
+			args = opts
+			# args = args.split(' ')
+			while '' in args:
+				args.remove('')
+			n = 0
+			for x in args:
+				for s in string2var:
+					if x.startswith(s):
+						options[string2var[s]] = x.replace(s,'')
+				n += 1
+
+			# print(options)
+			# return
+			# print(options['shape'])
+			color = options['color']
+			color1 = options['color1']
+			imagesize = options['imagesize']
+			imagesize = imagesize.replace('(','').replace(')','').split(',')
+			try:
+				color, words = convert2math(color, [])
+				color = eval(color)
+			except NotMathCode as e:
+				await self.bot.say(e.msg)
+				return
+			try:
+				color1, words = convert2math(color1, [])
+				color1 = eval(color1)
+			except NotMathCode as e:
+				await self.bot.say(e.msg)
+				return
+
+			try:
+				imagesize, words = convert2math(imagesize, [])
+				imagesize = inttuple(imagesize)
+			except NotMathCode as e:
+				await self.bot.say(e.msg)
+				return
+			lastimg = None
+			try:
+				filelist = [ f for f in os.listdir(IMGPATH) ]
+			except Exception as e:
+				print(e)
+			if len(filelist) >0:
+				lastimg = filelist[len(filelist)-1]
+			# print(filelist)
+			if lastimg is not None:
+				currentfolder = 'image{0:03d}'.format(int(lastimg.replace('image',''))+1)
+			else:
+				currentfolder = 'image000'
+			# print(currentfolder)
+			currentfolder = os.path.join(IMGPATH, currentfolder)
+			# print(currentfolder)
+			os.mkdir(currentfolder)
+			# print(imagesize)
+			# print(color)
+			deltacolors = []
+			colors = [color, color1]
+			n = 0
+			for c in colors[0]:
+				deltacolors.append((colors[1][n]-colors[0][n])/imagesize[0])
+				n += 1
+			IMAGE = os.path.join(currentfolder, 'image.png')
+			maxx = int(imagesize[0]/2)
+			maxy = int(imagesize[1]/2)
+			img = Image.new('RGB', (imagesize[0], imagesize[1]))
+			for xpos in range(-maxx,maxx):
+				for ypos in range(-maxy,maxy):
+					draw = ImageDraw.Draw(img, mode='RGB')
+					# draw.rectangle([(xpos,ypos),(xpos,ypos)], fill=inttuple(eval(color)))
+					coords = self.coords2math((xpos,ypos),(imagesize[0],imagesize[1]))
+					coords2 = (xpos/imagesize[0]*255, ypos/imagesize[1]*255)
+					x = coords2[0]
+					y = coords2[1]
+					
+					gradient = ((xpos+maxx))
+					currentcolors = []
+					n = 0
+					for c in colors[0]:
+						# print(c,gradient,deltacolors[n])
+						# print(c+gradient*deltacolors[n])
+						currentcolors.append( sqrt(255*(c+gradient*deltacolors[n])) )
+						n += 1
+					# currentcolors = (sqrt(255*(colors[0][1]+gradient*r)), sqrt(255*(sg+gradient*g)), sqrt(255*(sb+gradient*b)))
+					# fill(currentcolors[0], currentcolors[1],currentcolors[2])
+					rect = [(xpos+maxx,ypos+maxy),(xpos+maxx,ypos+maxy)]
+					draw.rectangle(rect, fill=inttuple(inttuple(currentcolors)))
+					# print(coords, coords2)
+				# print(inttuple(currentcolors))
+			# except Exception as e:
+			# 	print(e, dir(e))
+			img.save(IMAGE, "png")
+
+			with open(IMAGE, 'rb') as f:
+				await self.bot.send_file(ctx.message.channel, f)
+			shutil.rmtree(currentfolder)
+
+		@checks.is_owner()
+		@commands.command(pass_context=True)
+		async def makeimg(self,ctx, *, args:str=''):
+			string2var = {
+				'color=':'color',
+				'size=':'imagesize',
+			}
+			options = {
+				'imagesize':'(200,200)',
+				'color':'(0,192,255)',
+			}
+			args = args.split(' ')
+			opts = []
+			n = 0
+			for arg in args:
+				hasopt = False
+				for s in string2var:
+					if arg.startswith(s):
+						hasopt = True
+				print(arg, hasopt)
+				if hasopt:
+					opts.append(arg)
+				elif len(opts)>0:
+					opts[len(opts)-1] += " {}".format(arg)
+
+				n += 1
+			print(opts)
+			args = opts
+			# args = args.split(' ')
+			while '' in args:
+				args.remove('')
+			n = 0
+			for x in args:
+				for s in string2var:
+					if x.startswith(s):
+						options[string2var[s]] = x.replace(s,'')
+				n += 1
+
+			print(options)
+			# return
+			# print(options['shape'])
+			color = options['color']
+			imagesize = options['imagesize']
+			imagesize = imagesize.replace('(','').replace(')','').split(',')
+			try:
+				color, words = convert2math(color, ['x','y'])
+			except NotMathCode as e:
+				await self.bot.say(e.msg)
+				return
+			try:
+				imagesize, words = convert2math(imagesize, [])
+				imagesize = inttuple(imagesize)
+			except NotMathCode as e:
+				await self.bot.say(e.msg)
+				return
+			lastimg = None
+			try:
+				filelist = [ f for f in os.listdir(IMGPATH) ]
+			except Exception as e:
+				print(e)
+			if len(filelist) >0:
+				lastimg = filelist[len(filelist)-1]
+			print(filelist)
+			if lastimg is not None:
+				currentfolder = 'image{0:03d}'.format(int(lastimg.replace('image',''))+1)
+			else:
+				currentfolder = 'image000'
+			print(currentfolder)
+			currentfolder = os.path.join(IMGPATH, currentfolder)
+			print(currentfolder)
+			os.mkdir(currentfolder)
+			print(imagesize)
+			print(color)
+			# try:
+			IMAGE = os.path.join(currentfolder, 'image.png')
+			img = Image.new('RGB', (imagesize[0], imagesize[1]))
+			for xpos in range(imagesize[0]):
+				for ypos in range(imagesize[1]):
+					draw = ImageDraw.Draw(img, mode='RGB')
+					# draw.rectangle([(xpos,ypos),(xpos,ypos)], fill=inttuple(eval(color)))
+					coords = self.coords2math((xpos,ypos),(imagesize[0],imagesize[1]))
+
+					coords2 = (xpos/imagesize[0]*255, ypos/imagesize[1]*255)
+					x = coords[0]*255
+					y = coords[1]*255
+					rect = [(xpos,ypos),(xpos,ypos)]
+					draw.rectangle(rect, fill=inttuple(eval(color)))
+					# print(coords, coords2)
+			# print('penis', self.coords2math((200,200),(200,200)))
+			# except Exception as e:
+			# 	print(e, dir(e))
+			img.save(IMAGE, "png")
+
+			with open(IMAGE, 'rb') as f:
+				await self.bot.send_file(ctx.message.channel, f)
+			shutil.rmtree(currentfolder)
+
 		@checks.is_owner()
 		@commands.command(pass_context=True)
 		async def makegif(self,ctx, *, args:str=''):
@@ -203,7 +438,7 @@ if not heroku:
 				print(arg, hasopt)
 				if hasopt:
 					opts.append(arg)
-				else:
+				elif len(opts)>0:
 					opts[len(opts)-1] += " {}".format(arg)
 
 				n += 1
@@ -224,6 +459,7 @@ if not heroku:
 				options['equation'], words = convert2math(options['equation'])
 			except NotMathCode as e:
 				await self.bot.say(e.msg)
+				return
 			print(options['equation'])
 			# return
 			# print(options['shape'])
@@ -245,18 +481,22 @@ if not heroku:
 				shapesize, words = convert2math(shapesize)
 			except NotMathCode as e:
 				await self.bot.say(e.msg)
+				return
 			try:
 				bgcolor, words = convert2math(bgcolor)
 			except NotMathCode as e:
 				await self.bot.say(e.msg)
+				return
 			try:
 				shapecolor, words = convert2math(shapecolor)
 			except NotMathCode as e:
 				await self.bot.say(e.msg)
+				return
 			try:
 				interval, words = convert2math(interval)
 			except NotMathCode as e:
 				await self.bot.say(e.msg)
+				return
 			if 't' in words:
 				await self.bot.say('`t` must not be in the interval equation')
 			interval = interval.replace('[','').replace(']','')
@@ -362,6 +602,8 @@ if not heroku:
 			os.makedirs(GIFPATH)
 		if not os.path.exists(PICPATH):
 			os.makedirs(PICPATH)
+		if not os.path.exists(IMGPATH):
+			os.makedirs(IMGPATH)
 
 	def check_file():
 		defaults = {'drawing' : False}
