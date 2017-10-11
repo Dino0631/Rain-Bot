@@ -960,8 +960,6 @@ class CRTags:
 		self.currentemojiobjs = []
 		cremojis = self.allemojis = dataIO.load_json(CREMOJIS_JSON)
 		self.emojiservers = []
-		for e in cremojis:
-			cremojilist.append(cremojis[e])
 		self.word2num = {
 			'one':1,
 			'two':2,

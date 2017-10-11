@@ -189,6 +189,22 @@ class General:
         await self.bot.say(msg)
 
     @commands.command(pass_context=True, no_pm=True)
+    async def avatar(self, ctx, member: discord.Member=None):
+        """Display avatar of the user."""
+        author = ctx.message.author
+
+        if member is None:
+            member = author
+        if(member.nick == None):
+            name = member.name
+        else:
+            name = member.nick
+        avatar_url = member.avatar_url
+        postembed = discord.Embed(title=name, url=member.avatar_url)
+        postembed.set_image(url=avatar_url)
+        await self.bot.say(embed=postembed)
+
+    @commands.command(pass_context=True, no_pm=True)
     async def userinfo(self, ctx, *, user: discord.Member=None):
         """Shows users's informations"""
         author = ctx.message.author

@@ -1,0 +1,47 @@
+{
+    "222925389641547776" : {},
+    "329126551423680512" : {
+        "hog nado" : [
+            "hogrider",
+            "skeletons",
+            "icespirit",
+            "tornado",
+            "zap",
+            "fireball",
+            "electrowizard",
+            "knight"
+        ]
+    },
+    "global" : {
+        "bait" : [
+            "princess",
+            "rocket",
+            "goblinbarrel",
+            "thelog",
+            "infernotower",
+            "goblingang",
+            "icespirit",
+            "knight"
+        ],
+        "cheapest" : [
+            "mirror",
+            "skeletons",
+            "icespirit",
+            "thelog",
+            "goblins",
+            "zap",
+            "firespirits",
+            "bats"
+        ],
+        "og mortar" : [
+            "mortar",
+            "knight",
+            "rocket",
+            "arrows",
+            "archers",
+            "skeletons",
+            "icespirit",
+            "thelog"
+        ]
+    }
+}
