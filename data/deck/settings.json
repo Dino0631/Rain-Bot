@@ -1,0 +1,55 @@
+{
+    "Servers" : {
+        "264119826069454849" : {
+            "Members" : {
+                "222925389641547776" : {
+                    "Decks" : {
+                        "2017-10-13 01:50:59.142387" : {
+                            "Deck" : [
+                                "bats",
+                                "goblin-gang",
+                                "arrows",
+                                "knight",
+                                "hog-rider",
+                                "archers",
+                                "zap",
+                                "the-log"
+                            ],
+                            "DeckName" : "Deck"
+                        },
+                        "2017-10-13 01:54:54.307147" : {
+                            "Deck" : [
+                                "bats",
+                                "goblin-gang",
+                                "arrows",
+                                "knight",
+                                "hog-rider",
+                                "archers",
+                                "zap",
+                                "mortar"
+                            ],
+                            "DeckName" : "Deck 1"
+                        },
+                        "2017-10-13 01:55:23.001472" : {
+                            "Deck" : [
+                                "bats",
+                                "goblin-gang",
+                                "arrows",
+                                "knight",
+                                "hog-rider",
+                                "archers",
+                                "zap",
+                                "rocket"
+                            ],
+                            "DeckName" : "Deck 3"
+                        }
+                    },
+                    "MemberDisplayName" : "im cool",
+                    "MemberID" : "222925389641547776"
+                }
+            },
+            "ServerID" : "264119826069454849",
+            "ServerName" : "test server"
+        }
+    }
+}
